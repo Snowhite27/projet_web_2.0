@@ -27,6 +27,12 @@
                     <p>Gestion des actualités</p>
                 </div>
             </div>
+            <br>
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200 flex flex-col justify-center items-center">
+                    <p>Gestion des réservations</p>
+                </div>
+            </div>
         </div>
     </div>
 </x-app-layout>
