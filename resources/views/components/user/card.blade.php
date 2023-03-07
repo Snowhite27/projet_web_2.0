@@ -2,19 +2,19 @@
 <div class="bg-white shadow flex justify-center rounded-xl">
     <div class="p-6 bg-white border-b border-gray-200 flex justify-center flex-col rounded-xl">
         <img class="mb-3 object-contain max-w-xs px-6" src="{{ asset('images/user_profile/' . ($user->profile_picture)) }}" alt="">
-        <form class="flex justify-start items-center w-full flex-col" action="{{ route('user.modify') }}" method="POST" enctype="multipart/form-data">
+        <form class="flex justify-start items-center w-full flex-col" action="{{ route('user.modify', $user->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <!-- First name -->
             <div class="w-full">
                 <x-label for="name" :value="__('First name')" />
-                <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus />
+                <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" value="{{ $user->first_name }}" required autofocus />
             </div>
 
             {{-- Last name --}}
             <div class="mt-4 w-full">
                 <x-label for="name" :value="__('Last name')" />
-                <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required />
+                <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" value="{{ $user->last_name }}" required />
             </div>
 
             <!-- Email Address -->
@@ -44,7 +44,7 @@
             <!-- User type -->
             <div class="mt-4 w-full">
                 <x-label for="user_type" :value="__('User type')" />
-                <select class="rounded" name="user_type" id="user_type">
+                <select class="rounded mb-4 w-full" name="user_type" id="user_type">
                     <option value="1">Administrator</option>
                     <option value="2">Standard</option>
                 </select>

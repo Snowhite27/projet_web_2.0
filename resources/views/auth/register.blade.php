@@ -64,7 +64,7 @@
             <!-- User type -->
             <div class="mt-4 w-full">
                 <x-label for="user_type" :value="__('User type')" />
-                <select class="rounded" name="user_type" id="user_type">
+                <select class="rounded mb-4 w-full" name="user_type" id="user_type">
                   <option value="1">Administrator</option>
                   <option value="2" selected>Standard</option>
                   {{-- <option value="3">Customer</option> --}}

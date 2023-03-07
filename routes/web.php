@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth'])->name('dashboard');
-Route::get('/account', [UserController::class, 'account'])->middleware(['auth'])->name('account');
-Route::match(['get', 'post'], '/account/modify', [UserController::class, 'modify'])->middleware(['auth'])->name('user.modify');
+Route::get('/account/{id?}', [UserController::class, 'account'])->middleware(['auth'])->name('account');
+Route::match(['get', 'post'], '/account/modify/{id?}', [UserController::class, 'modify'])->middleware(['auth'])->name('user.modify');
 
 require __DIR__.'/auth.php';
