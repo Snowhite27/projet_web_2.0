@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/account', [UserController::class, 'account'])->middleware(['auth'])->name('account');
+Route::match(['get', 'post'], '/account/modify', [UserController::class, 'modify'])->middleware(['auth'])->name('user.modify');
 
 require __DIR__.'/auth.php';
