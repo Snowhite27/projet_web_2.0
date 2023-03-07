@@ -52,7 +52,7 @@
 
             {{-- Submit --}}
             <div class="flex flex-row justify-evenly w-full">
-                <a class="text-white bg-gray-800 rounded px-5 h-10 text-center cursor-pointer my-2 flex items-center" href="{{ route('dashboard') }}">Cancel</a>
+                <a class="text-white bg-gray-800 rounded px-5 h-10 text-center cursor-pointer my-2 flex items-center" href="{{ route('admin') }}">Cancel</a>
                 <input type="submit" value="Apply" class="text-white bg-blue-500 rounded px-5 h-10 text-center cursor-pointer my-2">
             </div>
         </form>

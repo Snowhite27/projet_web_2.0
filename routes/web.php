@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/admin', [UserController::class, 'index'])->middleware(['auth'])->name('admin');
 Route::get('/account/{id?}', [UserController::class, 'account'])->middleware(['auth'])->name('account');
 Route::match(['get', 'post'], '/account/modify/{id?}', [UserController::class, 'modify'])->middleware(['auth'])->name('user.modify');
 
