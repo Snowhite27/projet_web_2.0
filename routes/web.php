@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
+use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,8 +39,8 @@ Route::get('admin/articles/', [AdminController::class, 'showArticles'])->name('a
 Route::get('admin/articles/add', [ArticleController::class, 'add'])->name('admin.articles.add');
 Route::post('admin/articles/add/submit', [ArticleController::class, 'addSubmit'])->name('admin.articles.add.submit');
 Route::get('admin/articles/edit/{id}', [ArticleController::class, 'edit'])->name('admin.articles.edit');
-Route::get('admin/articles/edit/submit', [ArticleController::class, 'editSubmit'])->name('admin.articles.edit.submit');
-
+Route::post('admin/articles/edit/submit/{id}', [ArticleController::class, 'editSubmit'])->name('admin.articles.edit.submit');
+Route::delete('/admin/articles/remove/{id}', [ArticleController::class, 'remove'])->name('admin.articles.remove');
 
 /*
 |--------------------------------------------------------------------------

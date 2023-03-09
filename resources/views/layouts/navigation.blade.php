@@ -8,11 +8,8 @@
                     <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
                         {{ __('Admin') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('account')" :active="request()->routeIs('account')">
-                        {{ __('Account') }}
-                    </x-nav-link>
                     <x-nav-link :href="route('admin.articles')" :active="request()->routeIs('admin.articles')">
-                        {{ __('Articles') }}
+                        {{ __('Actualités') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -41,7 +38,7 @@
                         </form>
                         <form method="GET" action="{{ route('account') }}">
                             <x-dropdown-link :href="route('account')">
-                                {{ __('Account') }}
+                                {{ __('Profile') }}
                             </x-dropdown-link>
                         </form>
                         <form method="POST" action="{{ route('logout') }}">
@@ -76,10 +73,10 @@
                 {{ __('Admin') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('account')" :active="request()->routeIs('account')">
-                {{ __('Account') }}
+                {{ __('Profile') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.articles')" :active="request()->routeIs('admin.articles')">
-                {{ __('Articles') }}
+                {{ __('Actualités') }}
             </x-responsive-nav-link>
         </div>
 
@@ -90,7 +87,6 @@
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">

@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200 flex flex-col justify-center items-center">
-                    <form class="flex justify-start items-center w-full flex-col" action="{{ route('admin.articles.add.submit') }}" method="POST" enctype="multipart/form-data">
+                    <form class="flex justify-start items-center w-full flex-col" action="{{ route('admin.articles.edit.submit', $article->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <!-- Title -->

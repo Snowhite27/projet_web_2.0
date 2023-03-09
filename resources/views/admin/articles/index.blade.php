@@ -19,6 +19,11 @@
                 <div class="p-6 bg-white border-b border-gray-200 flex flex-col justify-center items-center">
                     <a href="{{ route('admin.articles.edit', $article->id ) }}">Modifier</a>
                 </div>
+                <form class="" action="{{ route('admin.articles.remove', $article->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Remove" class="">
+                </form>
                 <div class="p-6 bg-white border-b border-gray-200 flex flex-col justify-center items-center">
                     <p>{{ $article->updated_at }}</p>
                 </div>
