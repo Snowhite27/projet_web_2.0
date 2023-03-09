@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Package extends Model
 {
     use HasFactory;
+
+    public function reservations() {
+        return $this->belongsTo(Reservation::class);
+    }
 }

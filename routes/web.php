@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', [UserController::class, 'index'])->middleware(['auth'])->name('admin');
+Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth'])->name('admin');
 Route::get('/account/{id?}', [UserController::class, 'account'])->middleware(['auth'])->name('account');
 Route::match(['get', 'post'], '/account/modify/{id?}', [UserController::class, 'modify'])->middleware(['auth'])->name('user.modify');
+
+Route::get('articles', [ArticleController::class, 'index'])->name('articles');
+Route::get('article/add', [ArticleController::class, 'add'])->name('article.add');
 
 require __DIR__.'/auth.php';

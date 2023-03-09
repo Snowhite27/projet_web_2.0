@@ -8,7 +8,7 @@
             <!-- First name -->
             <div class="w-full">
                 <x-label for="name" :value="__('First name')" />
-                <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" value="{{ $user->first_name }}" required autofocus />
+                <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" value="{{ $user->first_name }}" required />
             </div>
 
             {{-- Last name --}}
@@ -41,14 +41,18 @@
                 <x-input id="profile_picture" class="file:cursor-pointer block mt-1 w-full border-2 rounded file:border-0 file:p-2" type="file" name="image" :value="old('profile_picture')"/>
             </div>
 
+            @if (Auth()->user()->id == 1 && $user->id != 1)
             <!-- User type -->
             <div class="mt-4 w-full">
                 <x-label for="user_type" :value="__('User type')" />
                 <select class="rounded mb-4 w-full" name="user_type" id="user_type">
                     <option value="1">Administrator</option>
                     <option value="2">Standard</option>
+                    <option value="2">Client</option>
                 </select>
             </div>
+            @endif
+
 
             {{-- Submit --}}
             <div class="flex flex-row justify-evenly w-full">
