@@ -11,6 +11,9 @@
                     <x-nav-link :href="route('account')" :active="request()->routeIs('account')">
                         {{ __('Account') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.articles')" :active="request()->routeIs('admin.articles')">
+                        {{ __('Articles') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -74,6 +77,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('account')" :active="request()->routeIs('account')">
                 {{ __('Account') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.articles')" :active="request()->routeIs('admin.articles')">
+                {{ __('Articles') }}
             </x-responsive-nav-link>
         </div>
 

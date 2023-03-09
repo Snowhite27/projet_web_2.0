@@ -20,11 +20,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
+|--------------------------------------------------------------------------
+| Admin section
+|--------------------------------------------------------------------------
+*/
+
+//Dashboard
 Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth'])->name('admin');
+
+//Accounts
 Route::get('/account/{id?}', [UserController::class, 'account'])->middleware(['auth'])->name('account');
 Route::match(['get', 'post'], '/account/modify/{id?}', [UserController::class, 'modify'])->middleware(['auth'])->name('user.modify');
 
+//Articles
+Route::get('admin/articles/', [AdminController::class, 'showArticles'])->name('admin.articles');
+Route::get('admin/articles/add', [ArticleController::class, 'add'])->name('admin.articles.add');
+Route::post('admin/articles/add/submit', [ArticleController::class, 'addSubmit'])->name('admin.articles.add.submit');
+Route::get('admin/articles/edit/{id}', [ArticleController::class, 'edit'])->name('admin.articles.edit');
+Route::get('admin/articles/edit/submit', [ArticleController::class, 'editSubmit'])->name('admin.articles.edit.submit');
+
+
+/*
+|--------------------------------------------------------------------------
+| Client section
+|--------------------------------------------------------------------------
+*/
+//Articles
 Route::get('articles', [ArticleController::class, 'index'])->name('articles');
-Route::get('article/add', [ArticleController::class, 'add'])->name('article.add');
+
 
 require __DIR__.'/auth.php';

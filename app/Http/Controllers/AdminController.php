@@ -14,11 +14,16 @@ class AdminController extends Controller
             ->select('users.id', 'first_name', 'last_name', 'email', 'profile_picture', 'user_type', 'name')
             ->get();
 
-        $articles = DB::table('news');
-
         return view('admin.index')->with([
             'user' => $user,
-            'user_list' => $user_list,
+            'user_list' => $user_list
+        ]);
+    }
+
+    public function showArticles() {
+
+        $articles = DB::table('articles')->get()->sortByDesc('updated_at');
+        return view('admin.articles.index')->with([
             'articles' => $articles
         ]);
     }
