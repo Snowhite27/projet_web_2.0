@@ -21,10 +21,26 @@ class AdminController extends Controller
     }
 
     public function showArticles() {
-
         $articles = DB::table('articles')->get()->sortByDesc('updated_at');
+
         return view('admin.articles.index')->with([
             'articles' => $articles
+        ]);
+    }
+
+    public function showPackages() {
+        $packages = DB::table('packages')->get()->sortBy('price');
+
+        return view('admin.packages.index')->with([
+            'packages' => $packages
+        ]);
+    }
+
+    public function showActivities() {
+        $activities = DB::table('activities')->get();
+
+        return view('admin.activities.index')->with([
+            'activities' => $activities
         ]);
     }
 }

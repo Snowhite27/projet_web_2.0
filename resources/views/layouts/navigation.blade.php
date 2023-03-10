@@ -11,6 +11,12 @@
                     <x-nav-link :href="route('admin.articles')" :active="request()->routeIs('admin.articles')">
                         {{ __('Actualités') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.packages')" :active="request()->routeIs('admin.packages')">
+                        {{ __('Forfaits') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.activities')" :active="request()->routeIs('admin.activities')">
+                        {{ __('Activités') }}
+                    </x-nav-link>
                 </div>
             </div>
 
