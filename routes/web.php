@@ -4,8 +4,10 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\ReservationsController;
 use App\Http\Controllers\UserController;
 use App\Models\Article;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,5 +71,8 @@ Route::delete('/admin/activities/remove/{id}', [ActivityController::class, 'remo
 //Articles
 Route::get('articles', [ArticleController::class, 'index'])->name('articles');
 
+// Reservations
+Route::get('/reservations', [ReservationsController::class, 'index'])->name('reservations');
 
-require __DIR__.'/auth.php';
+
+require __DIR__ . '/auth.php';

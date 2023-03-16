@@ -1,0 +1,212 @@
+/***********************************************************
+                        VARIABLES
+
+***********************************************************/
+
+    /********************|  BORDER  |*******************/
+    /*  sm- = small
+    b-  = big  */
+    $sm-border: 8px;
+    $b-border:20px;
+
+/********************|  COLOR  |********************/
+/*  d-  = dark
+    sd- = semi-dark  */
+
+    $d-blue: #0A0421;
+    $sd-blue: #143057;
+    $blue: #2B6388;
+    $d-purple: #2C2159;
+    $purple: #2C2159;
+    $gold: #F9B96F;
+    $white: #E5F0FF;
+
+/********************|  FONT  |*********************/
+
+/* <link rel="stylesheet" href="https://use.typekit.net/vko1nol.css"> */
+
+/*SOFACHROME regular*/
+    // font-family: "sofachrome", sans-serif;
+    // font-weight: 400;
+    // font-style: normal;
+/*SOFACHROME light*/
+    // font-family: "sofachrome", sans-serif;
+    // font-weight: 300;
+    // font-style: normal;
+
+/*<link rel="stylesheet" href="https://use.typekit.net/vko1nol.css">*/
+
+/*ROBOTO regular*/
+    // font-family: "roboto", sans-serif;
+    // font-weight: 400;
+    // font-style: normal;
+/*ROBOTO bold*/
+    // font-family: "roboto", sans-serif;
+    // font-weight: 700;
+    // font-style: normal;
+
+
+/**********H1***********/
+    // font-family: "sofachrome", sans-serif;
+    // font-weight: 400;
+    // font-style: normal;
+    // font-size: 24px;
+    // color: $white;
+
+/**********H2***********/
+    // font-family: "sofachrome", sans-serif;
+    // font-weight: 300;
+    // font-style: normal;
+    // font-size: 22px;
+    // color: $white;
+
+/**********H3***********/
+    // font-family: "sofachrome", sans-serif;
+    // font-weight: 300;
+    // font-style: normal;
+    // font-size: 20px;
+    // color: $white;
+
+/**********p***********/
+    // // font-family: "roboto", sans-serif;
+    // font-weight: 400;
+    // font-style: normal;
+    // font-size: 20px;
+    // color: $white;
+
+
+   body{
+        margin: 0 auto;
+        background-color: $d-blue;
+        color: $white;
+        font-family: "roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+
+
+
+        h1{
+            font-family: "sofachrome", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 24px;
+        }
+
+        h2{
+            font-family: "sofachrome", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 22px;
+        }
+
+        .packages {
+
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .package {
+                padding: 25px;
+                box-sizing: border-box;
+                width: 350px;
+                height: 650px;
+                border-radius: $b-border;
+                backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+                -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+                background: rgba(229, 240, 255, 0.5);
+                background: linear-gradient(317deg, rgba(229,240,255,0.01) 0%, rgba(229,240,255,0.2) 100%);
+
+           &.lord{
+
+                border: 3px rgba(249, 185, 111, 0.7) solid;
+                backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+                -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+                background: rgba(229, 240, 255, 0.5);
+                background: linear-gradient(317deg,rgba(229,240,255,0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
+            }
+
+                h3{
+                    margin: 0;
+                    margin-top: 15px;
+                    font-family: "sofachrome", sans-serif;
+                    font-weight: 300;
+                    font-style: normal;
+                    font-size: 20px;
+                }
+
+                .prices{
+                    display: flex;
+                    gap: 15px;
+                    align-items: baseline;
+
+                    .price{
+                        margin: 0;
+                        font-size: 40px;
+                    }
+                    .day{
+                        opacity: 50%;
+                    }
+                }
+
+                .line{
+                    margin-top: 20px;
+                    height: 2px;
+                    width: 100%;
+                    background-color: $blue;
+                    opacity: 50%;
+                }
+
+                .details{
+
+                    .title{
+                        font-weight: bold ;
+                    }
+
+                    ul li{
+                        opacity: 50%;
+                    }
+
+                }
+
+                .includes{
+
+                    .title{
+                        font-weight: bold ;
+                    }
+
+
+                        ul {
+                             list-style-type: none;
+                             padding-left: 10px;
+
+                             .include{
+
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+
+                                li {
+                                    opacity: 50%;
+                                }
+
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        .validation{
+
+            h2{
+                font-family: "sofachrome", sans-serif;
+                font-weight: 300;
+                font-style: normal;
+                font-size: 22px;
+            }
+        }
+   }
+
