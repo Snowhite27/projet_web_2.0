@@ -69,5 +69,11 @@ Route::delete('/admin/activities/remove/{id}', [ActivityController::class, 'remo
 //Articles
 Route::get('articles', [ArticleController::class, 'index'])->name('articles');
 
+//Contact
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+
 
 require __DIR__.'/auth.php';
