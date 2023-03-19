@@ -11,14 +11,12 @@
     <link rel="stylesheet" href="{{ asset('css/navbar/style.css') }}">
 </head>
 <body>
-    <div class="background"></div>
     <header>
+        <img class="logo" src="{{ asset('images/logo_arttech_Transparent_bg.png') }}" alt="arttech logo">
         <nav>
-            <img class="logo" src="{{ asset('images/logo_arttech_Transparent_bg.png') }}" alt="arttech logo">
-
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/home') }}">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -27,7 +25,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/reservation') }}">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -36,7 +34,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/activities') }}">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -45,7 +43,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/actualities') }}">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -54,7 +52,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/contact') }}">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -63,11 +61,10 @@
                     </a>
                 </li>
             </ul>
-
-            <a class="button" href="#">
-                Connexion
-            </a>
         </nav>
+        <a class="button" href="{{ url('/admin') }}">
+            Connexion
+        </a>
     </header>
-</body>
+    </body>
 </html>

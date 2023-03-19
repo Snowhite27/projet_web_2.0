@@ -3,38 +3,26 @@
     margin: 0;
 }
 
-.background{
-    z-index: -1;
-    position: fixed;
-    width: 100vw;
-    height: 190px;
-    background-color: $dkpurp;
-    opacity: 80%;
-    filter: blur(5px);
-}
-
 body{
     font-family: 'Roboto', sans-serif;
     color: $lgblue;
     header{
+        height: 15vh;
+        background-color: rgba(10, 4, 33, 0.65);
+        backdrop-filter: blur(5px);
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
+        .logo{
+            margin-left: 50px;
+            width: 20%;
+        }
         nav{
-            display: flex;
-            gap: 400px;
-            margin-top: 65px;
-            .logo{
-                width: 300px;
-            }
             ul {
+                padding: 0;
                 display: flex;
-                justify-content: space-between;
                 align-items: center;
-                height: 100%;
-                padding: 0 50px;
                 li {
-                    height: 100%;
                     display: flex;
                     align-items: center;
                     a {
@@ -42,14 +30,20 @@ body{
                         text-decoration: none;
                         font-size: 20px;
                         font-weight: bold;
-                        margin-right: 20px;
                     }
                 }
             }
         }
+        .button{
+            margin-right: 45px;
+            width: 125px;
+            height: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
-
 
 //ANIMATION HOVER
 a {
@@ -61,7 +55,7 @@ a {
     color: $lgblue;
 }
 
-a.button{
+a.button {
     border: 3px solid $lgpurp;
     border-radius: 12px;
     text-decoration: none;

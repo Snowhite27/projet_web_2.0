@@ -27,6 +27,7 @@ Route::get('/navbar', function () {
     return view('navbar');
 });
 
+
 /*
 |--------------------------------------------------------------------------
 | Admin section
