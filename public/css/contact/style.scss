@@ -1,0 +1,121 @@
+// 0a0421
+// 143057
+// 2b6388
+// 2c2159
+// 9d4ab2
+// f9b96f
+// e5f0ff
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0a0421;
+    color: #e5f0ff;
+    font-family: roboto;
+}
+
+h1 {
+    font-size: 24px;
+    font-family: sofachrome;
+}
+
+.navbar {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .contact_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 70%;
+        height: 100vh;
+        margin: auto;
+        z-index: 1;
+
+        .background_image_container {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            background-image: url('../../images/general/Vue_festival.png');
+            background-size: cover;
+            opacity: 10%;
+        }
+
+        .divider {
+            height: 50%;
+            width: 1px;
+            background-color: #f9b96f;
+            opacity: 25%;
+            margin: 0 30px;
+        }
+
+        .information,
+        .message,
+        .contact {
+            width: calc(100% / 3);
+            z-index: 1;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .message {
+
+            input {
+                border-radius: 8px;
+                height: 38px;
+                opacity: 28%;
+                width: 100%;
+            }
+
+            textarea {
+                border-radius: 8px;
+                height: 152px;
+                width: 100%;
+                opacity: 28%;
+            }
+
+            .message_button {
+                opacity: 100%;
+                width: 50%;
+                margin: 0 auto;
+            }
+
+        }
+
+        .contact {
+            .numero {
+                font-family: sofachrome;
+                color: #f9b96f;
+            }
+        }
+    }
+
+    .map_container {
+        width: 100%;
+        height: 75vh;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+
+        .map {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
