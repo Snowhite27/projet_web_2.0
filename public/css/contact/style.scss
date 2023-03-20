@@ -35,13 +35,10 @@ h1 {
     flex-direction: column;
     width: 100%;
 
-    .contact_container {
+    .main_contact {
         display: flex;
-        flex-direction: row;
         justify-content: space-evenly;
-        align-items: center;
         width: 70%;
-        height: 100vh;
         margin: auto;
         z-index: 1;
 
@@ -55,53 +52,117 @@ h1 {
             opacity: 10%;
         }
 
-        .divider {
-            height: 50%;
-            width: 1px;
-            background-color: #f9b96f;
-            opacity: 25%;
-            margin: 0 30px;
-        }
-
-        .information,
-        .message,
-        .contact {
-            width: calc(100% / 3);
-            z-index: 1;
-            height: 50%;
+        .contact_container {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+            flex-direction: row;
+            align-items: center;
+            min-height: 100vh;
+            max-height: fit;
 
-        .message {
-
-            input {
-                border-radius: 8px;
-                height: 38px;
-                opacity: 28%;
-                width: 100%;
+            .divider {
+                height: 50%;
+                width: 1px;
+                background-color: #f9b96f;
+                opacity: 25%;
+                margin: 0 30px;
             }
 
-            textarea {
-                border-radius: 8px;
-                height: 152px;
-                width: 100%;
-                opacity: 28%;
+            .information,
+            .message,
+            .contact {
+                width: calc(100% / 3);
+                z-index: 1;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                // height: 100vh;
             }
 
-            .message_button {
-                opacity: 100%;
-                width: 50%;
-                margin: 0 auto;
+            .information > * {
+                font-size: 20px;
+                margin-bottom: 20px;
             }
 
-        }
+            .message {
+                font-size: 20px;
+                justify-content: space-between;
 
-        .contact {
-            .numero {
-                font-family: sofachrome;
-                color: #f9b96f;
+                input {
+                    border-radius: 8px;
+                    height: 38px;
+                    opacity: 28%;
+                    width: 100%;
+                }
+
+                textarea {
+                    border-radius: 8px;
+                    height: 152px;
+                    width: 100%;
+                    opacity: 28%;
+                }
+
+                .message_button {
+                    opacity: 100%;
+                    width: 150px;
+                    margin: 0 auto;
+                }
+            }
+
+            .contact {
+                font-size: 20px;
+                &>* {margin-bottom: 50px;}
+                .numero_container {
+                    display: flex;
+                    flex-direction: row;
+
+                    .numero_image {
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 20px;
+                    }
+
+                    .numero {
+                        font-family: sofachrome;
+                        color: #f9b96f;
+                    }
+                }
+
+                .email_container {
+                    display: flex;
+                    flex-direction: row;
+
+                    .email_image {
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 20px;
+                    }
+                }
+
+                .location_container {
+                    display: flex;
+                    flex-direction: row;
+
+                    .location_image {
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 20px;
+                    }
+                }
+                .divider {
+                    margin: auto 0;
+                    height: 1px;
+                    width: 60%;
+                }
+
+                .social {
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: auto;
+                    &>* {
+                        width: 30px;
+                        margin-right: 20px;
+                    }
+                }
             }
         }
     }
@@ -117,5 +178,38 @@ h1 {
             height: 100%;
             width: 100%;
         }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .main>.main_contact>.contact_container {
+        flex-direction: column;
+        height: fit-content;
+    }
+    .main > .main_contact > .background_image_container {
+        background-image: none;
+    }
+
+    .main > .main_contact > .contact_container > .message {
+        input,
+        textarea {
+            margin-bottom: 20px;
+        }
+    }
+    .main > .main_contact > .contact_container > .information,
+    .main > .main_contact > .contact_container > .message,
+    .main > .main_contact > .contact_container > .contact {
+        width: 100%;
+        margin-bottom: 30px;
+        align-items: center;
+        &>.social {
+            justify-content: center;
+        }
+        &>.divider {
+            display: none;
+        }
+    }
+    .main > .main_contact > .contact_container > .message {
+        align-items: baseline;
     }
 }
