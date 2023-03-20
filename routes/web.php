@@ -73,6 +73,8 @@ Route::get('articles', [ArticleController::class, 'index'])->name('articles');
 
 // Reservations
 Route::get('/reservations', [ReservationsController::class, 'index'])->name('reservations');
+Route::get('/packages/{id}', [ReservationsController::class, 'get'])->name('packages');
+Route::get('/calendar/{month}/{year}', [ReservationsController::class, 'getCalendar'])->name('calendar');
 
 
 require __DIR__ . '/auth.php';

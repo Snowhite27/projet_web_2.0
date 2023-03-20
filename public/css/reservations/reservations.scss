@@ -199,7 +199,8 @@
             }
 
         }
-        .validation{
+
+        .validation {
 
             h2{
                 font-family: "sofachrome", sans-serif;
@@ -207,6 +208,80 @@
                 font-style: normal;
                 font-size: 22px;
             }
+            .validation_package{
+                h3 {
+                    margin: 0;
+                    margin-top: 15px;
+                    font-family: "sofachrome", sans-serif;
+                    font-weight: 300;
+                    font-style: normal;
+                    font-size: 20px;
+                }
+
+                .validation_prices{
+                    display: flex;
+                    gap: 15px;
+                    align-items: baseline;
+
+                    .validation_price{
+                        margin: 0;
+                        font-size: 40px;
+                    }
+                    .day{
+                        opacity: 50%;
+                    }
+
+                }
+                // .line{
+                //     margin-top: 20px;
+                //     height: 2px;
+                //     width: 100%;
+                //     background-color: $blue;
+                //     opacity: 50%;
+                // }
+                .validation_details{
+
+                    .validation_title{
+                        font-weight: bold ;
+                    }
+
+                    ul li{
+                        opacity: 50%;
+                    }
+
+                }
+
+                .validation_includes{
+
+                    .validation_title{
+                        font-weight: bold ;
+                    }
+
+
+                        ul {
+                             list-style-type: none;
+                             padding-left: 10px;
+
+                             .validation_include{
+
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+
+                                li {
+                                    opacity: 50%;
+                                }
+
+                        }
+                    }
+
+                }
+
+
+            }
+
+
         }
+
    }
 

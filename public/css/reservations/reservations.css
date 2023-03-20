@@ -117,4 +117,45 @@ body .validation h2 {
   font-weight: 300;
   font-style: normal;
   font-size: 22px;
+}
+body .validation .validation_package h3 {
+  margin: 0;
+  margin-top: 15px;
+  font-family: "sofachrome", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+}
+body .validation .validation_package .validation_prices {
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+}
+body .validation .validation_package .validation_prices .validation_price {
+  margin: 0;
+  font-size: 40px;
+}
+body .validation .validation_package .validation_prices .day {
+  opacity: 50%;
+}
+body .validation .validation_package .validation_details .validation_title {
+  font-weight: bold;
+}
+body .validation .validation_package .validation_details ul li {
+  opacity: 50%;
+}
+body .validation .validation_package .validation_includes .validation_title {
+  font-weight: bold;
+}
+body .validation .validation_package .validation_includes ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+body .validation .validation_package .validation_includes ul .validation_include {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+body .validation .validation_package .validation_includes ul .validation_include li {
+  opacity: 50%;
 }/*# sourceMappingURL=reservations.css.map */
