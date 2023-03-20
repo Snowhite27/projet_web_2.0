@@ -8,27 +8,34 @@ use Illuminate\Support\Facades\DB;
 
 class PackageController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('admin.packages');
     }
 
-    public function add() {
+    public function add()
+    {
         return view('admin.packages.add');
     }
 
-    public function addSubmit(Request $input) {
+    public function addSubmit(Request $input)
+    {
         $input->validate([
             'name' => ['required', 'string', 'max:255'],
+            'duration' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
+            'includes' => ['required', 'string'],
             'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        $imageName = time().'.'.$input->picture->extension();
+        $imageName = time() . '.' . $input->picture->extension();
         $input->picture->move(public_path('images/packages/'), $imageName);
 
         Package::create([
             'name' => $input->name,
+            'duration' => $input->duration,
             'description' => $input->description,
+            'includes' => $input->includes,
             'picture' => $imageName,
             'price' => $input->price
         ]);
@@ -36,7 +43,8 @@ class PackageController extends Controller
         return redirect()->route('admin.packages');
     }
 
-    public function edit($id, $alerts = null) {
+    public function edit($id, $alerts = null)
+    {
         $package = DB::table('packages')->where('id', $id)->get()->first();
 
         return view('admin.packages.edit')->with([
@@ -45,16 +53,19 @@ class PackageController extends Controller
         ]);
     }
 
-    public function editSubmit($id, Request $input) {
+    public function editSubmit($id, Request $input)
+    {
         $package = Package::find($id);
         $package->name = $input->name;
+        $package->duration = $input->duration;
         $package->description = $input->description;
+        $package->includes = $input->includes;
         $package->price = $input->price;
 
         if ($input->picture) {
             $input->validate(['picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048']);
 
-            $imageName = time().'.'.$input->picture->extension();
+            $imageName = time() . '.' . $input->picture->extension();
             $input->picture->move(public_path('images/packages/'), $imageName);
             $package->picture = $imageName;
         }
@@ -68,7 +79,8 @@ class PackageController extends Controller
         return redirect()->route('admin.packages');
     }
 
-    public function remove($id, Package $package) {
+    public function remove($id, Package $package)
+    {
         $package = Package::find($id);
         $package->delete();
         return redirect()->route('admin.packages');
