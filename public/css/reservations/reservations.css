@@ -1,0 +1,161 @@
+/***********************************************************
+                        VARIABLES
+
+***********************************************************/
+/********************|  BORDER  |*******************/
+/*  sm- = small
+b-  = big  */
+/********************|  COLOR  |********************/
+/*  d-  = dark
+    sd- = semi-dark  */
+/********************|  FONT  |*********************/
+/* <link rel="stylesheet" href="https://use.typekit.net/vko1nol.css"> */
+/*SOFACHROME regular*/
+/*SOFACHROME light*/
+/*<link rel="stylesheet" href="https://use.typekit.net/vko1nol.css">*/
+/*ROBOTO regular*/
+/*ROBOTO bold*/
+/**********H1***********/
+/**********H2***********/
+/**********H3***********/
+/**********p***********/
+body {
+  margin: 0 auto;
+  background-color: #0A0421;
+  color: #E5F0FF;
+  font-family: "roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+body h1 {
+  font-family: "sofachrome", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+}
+body h2 {
+  font-family: "sofachrome", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 22px;
+}
+body .packages {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+body .packages .package {
+  padding: 25px;
+  box-sizing: border-box;
+  width: 350px;
+  height: 650px;
+  border-radius: 20px;
+  backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  background: rgba(229, 240, 255, 0.5);
+  background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
+}
+body .packages .package.lord {
+  border: 3px rgba(249, 185, 111, 0.7) solid;
+  backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  background: rgba(229, 240, 255, 0.5);
+  background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
+}
+body .packages .package h3 {
+  margin: 0;
+  margin-top: 15px;
+  font-family: "sofachrome", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+}
+body .packages .package .prices {
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+}
+body .packages .package .prices .price {
+  margin: 0;
+  font-size: 40px;
+}
+body .packages .package .prices .day {
+  opacity: 50%;
+}
+body .packages .package .line {
+  margin-top: 20px;
+  height: 2px;
+  width: 100%;
+  background-color: #2B6388;
+  opacity: 50%;
+}
+body .packages .package .details .title {
+  font-weight: bold;
+}
+body .packages .package .details ul li {
+  opacity: 50%;
+}
+body .packages .package .includes .title {
+  font-weight: bold;
+}
+body .packages .package .includes ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+body .packages .package .includes ul .include {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+body .packages .package .includes ul .include li {
+  opacity: 50%;
+}
+body .validation h2 {
+  font-family: "sofachrome", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 22px;
+}
+body .validation .validation_package h3 {
+  margin: 0;
+  margin-top: 15px;
+  font-family: "sofachrome", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+}
+body .validation .validation_package .validation_prices {
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+}
+body .validation .validation_package .validation_prices .validation_price {
+  margin: 0;
+  font-size: 40px;
+}
+body .validation .validation_package .validation_prices .day {
+  opacity: 50%;
+}
+body .validation .validation_package .validation_details .validation_title {
+  font-weight: bold;
+}
+body .validation .validation_package .validation_details ul li {
+  opacity: 50%;
+}
+body .validation .validation_package .validation_includes .validation_title {
+  font-weight: bold;
+}
+body .validation .validation_package .validation_includes ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+body .validation .validation_package .validation_includes ul .validation_include {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+body .validation .validation_package .validation_includes ul .validation_include li {
+  opacity: 50%;
+}/*# sourceMappingURL=reservations.css.map */
