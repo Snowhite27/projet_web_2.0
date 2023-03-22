@@ -1,0 +1,20 @@
+/****** INDUSTRY STANDARDS -> for reference only ******/
+
+// Mobile portrait SM(up to 480px)
+// Mobile landscape MD(481px to 767px)
+// Tablet portrait LG(768px to 991px)
+// Tablet landscape XL(992px to 1199px)
+// Desktop XXL(1200px and above)
+
+//////////////////////////////////////////////
+
+/** MAX-WIDTH */
+$breakpoint-sm: 480px;
+$breakpoint-md: 767px;
+$breakpoint-lg: 991px;
+$breakpoint-xl: 1199px;
+
+//// Custom Breakpoints -> HERO SECTION ////
+
+/* 955px */
+$hero-lg: $breakpoint-lg - 36px;
