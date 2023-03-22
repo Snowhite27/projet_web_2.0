@@ -27,17 +27,14 @@ h1 {
   flex-direction: column;
   width: 100%;
 }
-.main .contact_container {
+.main .main_contact {
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
   width: 70%;
-  height: 100vh;
   margin: auto;
   z-index: 1;
 }
-.main .contact_container .background_image_container {
+.main .main_contact .background_image_container {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -46,43 +43,104 @@ h1 {
   background-size: cover;
   opacity: 10%;
 }
-.main .contact_container .divider {
+.main .main_contact .contact_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 100vh;
+  max-height: fit;
+}
+.main .main_contact .contact_container .divider {
   height: 50%;
   width: 1px;
   background-color: #f9b96f;
   opacity: 25%;
   margin: 0 30px;
 }
-.main .contact_container .information,
-.main .contact_container .message,
-.main .contact_container .contact {
+.main .main_contact .contact_container .information,
+.main .main_contact .contact_container .message,
+.main .main_contact .contact_container .contact {
   width: 33.3333333333%;
   z-index: 1;
   height: 50%;
   display: flex;
   flex-direction: column;
+}
+.main .main_contact .contact_container .information > * {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.main .main_contact .contact_container .message {
+  font-size: 20px;
   justify-content: space-between;
 }
-.main .contact_container .message input {
+.main .main_contact .contact_container .message input {
   border-radius: 8px;
   height: 38px;
   opacity: 28%;
   width: 100%;
 }
-.main .contact_container .message textarea {
+.main .main_contact .contact_container .message textarea {
   border-radius: 8px;
   height: 152px;
   width: 100%;
   opacity: 28%;
 }
-.main .contact_container .message .message_button {
+.main .main_contact .contact_container .message .message_button {
   opacity: 100%;
-  width: 50%;
+  width: 150px;
   margin: 0 auto;
 }
-.main .contact_container .contact .numero {
+.main .main_contact .contact_container .contact {
+  font-size: 20px;
+}
+.main .main_contact .contact_container .contact > * {
+  margin-bottom: 50px;
+}
+.main .main_contact .contact_container .contact .numero_container {
+  display: flex;
+  flex-direction: row;
+}
+.main .main_contact .contact_container .contact .numero_container .numero_image {
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+}
+.main .main_contact .contact_container .contact .numero_container .numero {
   font-family: sofachrome;
   color: #f9b96f;
+}
+.main .main_contact .contact_container .contact .email_container {
+  display: flex;
+  flex-direction: row;
+}
+.main .main_contact .contact_container .contact .email_container .email_image {
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+}
+.main .main_contact .contact_container .contact .location_container {
+  display: flex;
+  flex-direction: row;
+}
+.main .main_contact .contact_container .contact .location_container .location_image {
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+}
+.main .main_contact .contact_container .contact .divider {
+  margin: auto 0;
+  height: 1px;
+  width: 60%;
+}
+.main .main_contact .contact_container .contact .social {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+}
+.main .main_contact .contact_container .contact .social > * {
+  width: 30px;
+  margin-right: 20px;
 }
 .main .map_container {
   width: 100%;
@@ -94,4 +152,39 @@ h1 {
 .main .map_container .map {
   height: 100%;
   width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .main > .main_contact > .contact_container {
+    flex-direction: column;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .main > .main_contact > .background_image_container {
+    background-image: none;
+  }
+  .main > .main_contact > .contact_container > .message input,
+  .main > .main_contact > .contact_container > .message textarea {
+    margin-bottom: 20px;
+  }
+  .main > .main_contact > .contact_container > .information,
+  .main > .main_contact > .contact_container > .message,
+  .main > .main_contact > .contact_container > .contact {
+    width: 100%;
+    margin-bottom: 30px;
+    align-items: center;
+  }
+  .main > .main_contact > .contact_container > .information > .social,
+  .main > .main_contact > .contact_container > .message > .social,
+  .main > .main_contact > .contact_container > .contact > .social {
+    justify-content: center;
+  }
+  .main > .main_contact > .contact_container > .information > .divider,
+  .main > .main_contact > .contact_container > .message > .divider,
+  .main > .main_contact > .contact_container > .contact > .divider {
+    display: none;
+  }
+  .main > .main_contact > .contact_container > .message {
+    align-items: baseline;
+  }
 }/*# sourceMappingURL=style.css.map */

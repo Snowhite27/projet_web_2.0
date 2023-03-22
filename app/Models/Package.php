@@ -11,12 +11,15 @@ class Package extends Model
 
     protected $fillable = [
         'name',
+        'duration',
         'description',
+        'includes',
         'picture',
         'price'
     ];
 
-    public function reservations() {
+    public function reservations()
+    {
         return $this->belongsTo(Reservation::class);
     }
 }
