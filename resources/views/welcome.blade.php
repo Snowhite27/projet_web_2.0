@@ -78,7 +78,7 @@
             </x-button>
          </div>
          <div class="news-image-container">
-            <img class="news-image" src="/images/arttech_imgs/homepage_imgs/section_actualite/cercle_actualite_img.png" alt="world map immersive wall projection">
+            <img class="news" src="/images/arttech_imgs/homepage_imgs/section_actualite/cercle_actualite_img.png" alt="world map immersive wall projection">
          </div>
          <div class="half-circle-gradient-box-left">
             <img class="half-circle-left" src="/images/arttech_imgs/custom_shapes/half-circle-gradient.png" alt="half circle shape">

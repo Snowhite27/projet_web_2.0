@@ -18,6 +18,8 @@ body {
     background-position: center center;
     background-size: cover;
     height: 100vh;
+    @media (max-width: $hero-lg) {
+    }
     video {
         position: absolute;
         left: 50%;
