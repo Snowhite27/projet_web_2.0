@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="{{ url('/home') }}">
+                    <a href="{{ url('/') }}">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('/reservation') }}">
+                    <a href="{{ url('/reservations') }}">
                         <span></span>
                         <span></span>
                         <span></span>

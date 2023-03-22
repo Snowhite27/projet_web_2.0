@@ -17,7 +17,7 @@
     $sd-blue: #143057;
     $blue: #2B6388;
     $d-purple: #2C2159;
-    $purple: #2C2159;
+    $purple: #9D4AB2;
     $gold: #F9B96F;
     $white: #E5F0FF;
 
@@ -76,6 +76,11 @@
 
 
    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
         margin: 0 auto;
         background-color: $d-blue;
         color: $white;
@@ -86,12 +91,15 @@
 
 
 
+
         h1{
             font-family: "sofachrome", sans-serif;
             font-weight: 400;
             font-style: normal;
             font-size: 24px;
         }
+        #app{
+            width:1500px;
 
         h2{
             font-family: "sofachrome", sans-serif;
@@ -102,10 +110,14 @@
 
         .packages {
 
-            height: 100vh;
+            height: 100%;
+            width:100%;
             display: flex;
+            justify-content: space-between;
             flex-wrap: wrap;
-            gap: 10px;
+
+
+
 
             .package {
                 padding: 25px;
@@ -126,6 +138,11 @@
                 background: rgba(229, 240, 255, 0.5);
                 background: linear-gradient(317deg,rgba(229,240,255,0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
             }
+            &.banner{
+                clip-path: polygon(39.25% 25%, 75% 60.5%, 75% 75%, 25% 25%);
+                background-color: $gold;
+            }
+
 
                 h3{
                     margin: 0;
@@ -200,6 +217,7 @@
 
         }
 
+
         .validation {
 
             h2{
@@ -207,15 +225,131 @@
                 font-weight: 300;
                 font-style: normal;
                 font-size: 22px;
+                margin-top: 10%;
+            }
+            .calendar{
+                max-width: 100%;
+                border-radius: $b-border;
+                padding: 40px;
+                display: flex;
+                justify-content: space-between;
+                backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+                -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+                background: rgba(229, 240, 255, 0.5);
+                background: linear-gradient(317deg, rgba(229,240,255,0.01) 0%, rgba(229,240,255,0.2) 100%);
+
+                    .days_container{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+
+                        h3 {
+                            margin: 0;
+                            padding-bottom: 40px;
+                            font-family: "sofachrome", sans-serif;
+                            font-weight: 300;
+                            font-style: normal;
+                            font-size: 20px;
+                        }
+
+                        .week{
+                            display: flex;
+                            flex-wrap: wrap;
+                            width: 90px * 8;
+                            gap: 10px;
+
+                            .week_day{
+                                box-sizing: border-box;
+                                width: 90px;
+                                height: 40px;
+                                background-color: $purple;
+                                border-radius: $sm-border;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 18px;
+                                font-weight: 300;
+                            }
+
+                        }
+                        .days{
+                            margin-top: 10px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            width: 90px * 8;
+                            gap: 10px;
+
+                            .b_day{
+                                box-sizing: border-box;
+                                width: 90px;
+                                height: 70px;
+                                border: 2px solid #555;
+                                border-radius: $sm-border;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 18px;
+                                font-weight: 300;
+                            }
+
+                            .day{
+                                backdrop-filter: blur(16px) saturate(180%) opacity(1%);
+                                -webkit-backdrop-filter: blur(16px) saturate(180%);
+                                background: rgba(229, 240, 255, 0.3);
+                                background: linear-gradient(317deg, rgba(229,240,255,0.01) 0%, rgba(229,240,255,0.2) 100%);
+                                box-sizing: border-box;
+                                width: 90px;
+                                height: 70px;
+                                border: 2px solid #555;
+                                border-radius: $sm-border;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 18px;
+                                font-weight: 300;
+                            }
+                            .day:hover{
+                                border: 2px solid $gold;
+                            }
+                            .selected{
+                                border: 3px rgba(249, 185, 111, 0.7) solid;
+                                backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+                                -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+                                background: rgba(229, 240, 255, 0.5);
+                                background: linear-gradient(317deg,rgba(229,240,255,0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
+                            }
+
+                        }
+
+                    }
+
+                    .user_infos{
+                        margin-top: 95px;
+                        border-left: 1px solid $blue ;
+                        border-right: 1px solid $blue ;
+                        padding: 0px 20px 0px 20px;
+                        box-sizing: border-box;
+                        width:300px;
+
+                        .reservation_date{
+                            .gold{
+                                color: $gold;
+                            }
+                        }
+
+                    }
             }
             .validation_package{
+                margin-top: 95px;
                 h3 {
-                    margin: 0;
-                    margin-top: 15px;
+
                     font-family: "sofachrome", sans-serif;
                     font-weight: 300;
                     font-style: normal;
                     font-size: 20px;
+                    width:350px;
+
                 }
 
                 .validation_prices{
@@ -232,13 +366,14 @@
                     }
 
                 }
-                // .line{
-                //     margin-top: 20px;
-                //     height: 2px;
-                //     width: 100%;
-                //     background-color: $blue;
-                //     opacity: 50%;
-                // }
+                .validation_line{
+
+                    height: 2px;
+                    width: 100%;
+                    background-color: $blue;
+                    opacity: 50%;
+
+                }
                 .validation_details{
 
                     .validation_title{
@@ -285,3 +420,4 @@
 
    }
 
+}
