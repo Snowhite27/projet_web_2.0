@@ -7,6 +7,36 @@ const month = ref("")
 const year = ref("")
 const month_array = ref("")
 const calendar = ref([])
+const selected = ref(null)
+const select_date = ref("")
+
+/**
+ * Prendre un id d'un forfait et affiche ses infos spécifiques
+ * Créer un array pour les details et les inclusions
+ * @param {objet} object du forfait
+ */
+function showPackage(package_infos){
+    const id = package_infos.id
+
+    /**
+     * Infos sur le forfait sélectionné
+     */
+    fetch("/packages/" + id).then(reply => reply.json()).then(data=> {
+    select_package.value = data
+    })
+
+    details.value = splitLine(package_infos.description)
+    inclusions.value = splitLine(package_infos.includes)
+
+    getDateUnix()
+
+    /**
+    * Ressort les journées du mois
+    */
+    fetch("/calendar/" + (month.value +1) + "/" + year.value).then(reply => reply.json()).then(data=> {
+    calendar.value = data
+    })
+}
 
 /**
  * Donne la date du calendrier
@@ -39,27 +69,10 @@ function splitLine(string){
  */
 function strUcFirst(a){return (a+'').charAt(0).toUpperCase()+a.substr(1)}
 
-/**
- * Prendre un id d'un forfait et affiche ses infos spécifiques
- * Créer un array pour les details et les inclusions
- * @param {objet} object du forfait
- */
-function showPackage(package_infos){
-    const id = package_infos.id
-fetch("/packages/" + id).then(reply => reply.json()).then(data=> {
-    select_package.value = data
-})
-details.value = splitLine(package_infos.description)
-inclusions.value = splitLine(package_infos.includes)
-getDateUnix()
-
-/**
- * Ressort les journées du mois
- */
-
-fetch("/calendar/" + (month.value +1) + "/" + year.value).then(reply => reply.json()).then(data=> {
-calendar.value = data
-})
+function selectDate(date){
+    // class scss
+    selected.value = date
+    select_date.value = selected.value + " " + month_array.value +" "+ year.value
 }
 
 
@@ -77,11 +90,14 @@ const root = {
         year,
         month_array,
         calendar,
+        selected,
+        select_date,
 
 
         showPackage,
         splitLine,
         strUcFirst,
+        selectDate,
        }
    }
 }
