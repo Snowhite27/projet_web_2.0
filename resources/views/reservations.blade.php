@@ -29,8 +29,13 @@
                     </div>
 
                     <div id="page" class="site">
-                        <a href="{{ route('packages', $package->id) }}"
-                            @click.prevent="showPackage({{ $package }})" class="button"><span>PW2_Button</span></a>
+                        @if (!isset(Auth::user()->first_name))
+                            <a href="{{ route('login', $package->id) }}" class="button"><span>PW2_Button</span></a>
+                        @else
+                            <a href="{{ route('packages', $package->id) }}"
+                                @click.prevent="showPackage({{ $package }}, {{ Auth::user()->id }})"
+                                class="button"><span>PW2_Button</span></a>
+                        @endif
                     </div>
 
                     <div class="line"></div>
@@ -62,7 +67,7 @@
 
         </section>
 
-        <section class="validation">
+        <section class="validation" v-if="Object.keys(select_package).length != 0">
             <h2>Validation</h2>
             <p>Validez votre date et confirmez votre réservation.</p>
             {{-- *********************** CALENDAR ************************** --}}
@@ -104,7 +109,7 @@
 
                     <div class="username">
                         <p><strong>Nom</strong></p>
-                        <p>$auth()->$user()</p>
+                        <p>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</p>
                     </div>
 
                     <div class="reservation_date">
@@ -153,12 +158,17 @@
                     </div>
 
                     <div id="page" class="site">
-                        <a href="#" class="button"><span>PW2_Button</span></a>
+                        <a href="#" @click.prevent="saveReservation(select_package.id , user_id, select_date )"
+                            class="button"><span>PW2_Button</span></a>
                     </div>
+
 
                 </div>
 
             </div>
+        </section>
+        <section class="list">
+            {{-- @dd($reservations) --}}
         </section>
     </div>
 
