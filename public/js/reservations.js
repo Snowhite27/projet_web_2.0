@@ -9,14 +9,16 @@ const month_array = ref("")
 const calendar = ref([])
 const selected = ref(null)
 const select_date = ref("")
+const user_id = ref()
 
 /**
  * Prendre un id d'un forfait et affiche ses infos spécifiques
  * Créer un array pour les details et les inclusions
  * @param {objet} object du forfait
  */
-function showPackage(package_infos){
+function showPackage(package_infos, user){
     const id = package_infos.id
+    user_id.value = user
 
     /**
      * Infos sur le forfait sélectionné
@@ -39,14 +41,40 @@ function showPackage(package_infos){
 }
 
 /**
+ * Envoie les infos vers l'api pour enregistrer dans la bdd
+ * @param {int} package_id
+ * @param {int} user_id
+ * @param {int} date
+ */
+function saveReservation(package_id, user_id, date){
+
+    const post = new FormData()
+    post.set("package_id", package_id)
+    post.set("user_id", user_id)
+    post.set("event_date", date)
+
+    const options = {
+        method: "post",
+        body: post,
+    }
+
+    fetch("/reservations/", options).then(resp => resp.text()).then(data=> {
+
+    })
+    window.location.href = "/reservations"
+}
+
+/**
  * Donne la date du calendrier
  */
 function getDateUnix(){
-const dates = new Date(Date.now())
-month.value = dates.getMonth();
-year.value = dates.getFullYear();
-const options = {month:"long"}
- month_array.value = new Intl.DateTimeFormat("fr-CA", options).format(dates)
+    const dates = new Date(Date.now())
+    console.log(dates)
+    const options = {month:"long"}
+    month.value = dates.getMonth();
+    year.value = dates.getFullYear();
+    month_array.value = new Intl.DateTimeFormat("fr-CA", options).format(dates)
+    console.log(month_array.value)
 }
 
 /**
@@ -69,10 +97,15 @@ function splitLine(string){
  */
 function strUcFirst(a){return (a+'').charAt(0).toUpperCase()+a.substr(1)}
 
+/**
+ * Combine les valeurs pour les jour / mois/ annee
+ * @param {int} date / jour
+ */
 function selectDate(date){
     // class scss
     selected.value = date
     select_date.value = selected.value + " " + month_array.value +" "+ year.value
+
 }
 
 
@@ -92,12 +125,14 @@ const root = {
         calendar,
         selected,
         select_date,
+        user_id,
 
 
         showPackage,
         splitLine,
         strUcFirst,
         selectDate,
+        saveReservation,
        }
    }
 }

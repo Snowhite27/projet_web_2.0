@@ -80,6 +80,8 @@ Route::get('articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/reservations', [ReservationsController::class, 'index'])->name('reservations');
 Route::get('/packages/{id}', [ReservationsController::class, 'get'])->name('packages');
 Route::get('/calendar/{month}/{year}', [ReservationsController::class, 'getCalendar'])->name('calendar');
+Route::post('/reservations', [ReservationsController::class, 'save'])->name('reservation.save');
+
 //Contact
 Route::get('/contact', function () {
     return view('contact');
