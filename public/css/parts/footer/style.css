@@ -1,0 +1,124 @@
+/**H1**/
+/**H2**/
+/**H3**/
+/**p**/
+body {
+  font-family: roboto;
+}
+body a {
+  text-decoration: none;
+}
+body h3 {
+  font-family: sofachrome;
+  color: #F9B96F;
+}
+body h4 {
+  color: #9D4AB2;
+}
+
+.footer {
+  width: 100vw;
+  height: 1000px;
+  background-color: #0A0421;
+  color: #E5F0FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer img {
+  margin: 3% 0;
+  width: 25%;
+}
+.footer .sections {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+}
+.footer .sections a {
+  padding: 0;
+}
+.footer .sections .section {
+  width: 20%;
+  margin: 0;
+  text-align: start;
+}
+.footer .action {
+  margin: 3% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.footer .action p {
+  font-size: larger;
+  font-weight: 800;
+}
+.footer .socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 3%;
+}
+.footer .socials a {
+  padding: 10px;
+}
+.footer .socials a img {
+  margin: 0;
+}
+.footer .socials .icons .icon {
+  width: 37px;
+  height: 37px;
+}
+.footer .socials .icons .icon img {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+}
+.footer .politics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+.footer .copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+  font-size: 16px;
+}
+.footer .copyright a {
+  padding: 0;
+}
+
+.button {
+  margin-right: 45px;
+  width: 125px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  overflow: hidden;
+  transition: 0.2s;
+  color: #E5F0FF;
+}
+
+a.button {
+  border: 3px solid #9D4AB2;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+a.button:hover {
+  color: #E5F0FF;
+  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}/*# sourceMappingURL=style.css.map */

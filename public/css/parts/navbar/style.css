@@ -2,51 +2,101 @@
 /**H2**/
 /**H3**/
 /**p**/
-* {
-  margin: 0;
+header {
+  position: absolute;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  color: #E5F0FF;
-}
-body header {
+.nav_menu {
+  position: fixed;
+  top: 0px;
+  z-index: 111;
   height: 15vh;
+  width: 100%;
   background-color: rgba(10, 4, 33, 0.65);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-body header .logo {
+.nav_menu .logo {
   margin-left: 50px;
   width: 20%;
 }
-body header nav ul {
+.nav_menu .toggle-menu {
+  display: none;
+  font-size: 24px;
+  color: #E5F0FF;
+  margin-right: 45px;
+}
+.nav_menu nav ul {
   padding: 0;
   display: flex;
   align-items: center;
 }
-body header nav ul li {
+.nav_menu nav ul li {
   display: flex;
   align-items: center;
+  margin-right: 30px;
 }
-body header nav ul li a {
+.nav_menu nav ul li a {
   color: #E5F0FF;
   text-decoration: none;
   font-size: 20px;
-  font-weight: bold;
 }
-body header .button {
-  margin-right: 45px;
+.nav_menu .button {
   width: 125px;
   height: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 45px;
 }
 
+@media (max-width: 1237px) {
+  .nav_menu {
+    flex-direction: column;
+    height: auto;
+  }
+  .nav_menu .logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    width: 60%;
+    text-align: center;
+  }
+  .nav_menu .toggle-menu {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .nav_menu nav {
+    display: none;
+    width: 100%;
+  }
+  .nav_menu nav.show-menu {
+    display: block;
+  }
+  .nav_menu nav ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  .nav_menu nav ul li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .nav_menu nav ul li a {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .nav_menu .button {
+    display: none;
+  }
+}
 a {
   position: relative;
   display: inline-block;

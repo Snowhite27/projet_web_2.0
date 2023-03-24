@@ -18,12 +18,23 @@ class ReservationsController extends Controller
     {
 
         $packages = Package::all();
-        $reservations = Reservation::all()->where("id", "=", auth()->user()->id);
+        if (isset(auth()->user()->id)) {
+            $user = auth()->user();
+            $reservations = $user->reservations;
+            // dd($reservations);
+            // $reservation_packages = $reservations->reservationPackages;
+            // $reservations = Reservation::all()->where("id", "=", auth()->user()->id);
+            return view("reservations", [
+                "packages" => $packages,
+                // "reservation_packages" => $reservation_packages,
+                "reservations" => $reservations
+            ]);
+        }
         return view("reservations", [
-            "packages" => $packages,
-            "reservations" => $reservations
+            "packages" => $packages
         ]);
     }
+
 
     /**
      * Api qui recupère un forfait spécifique
@@ -37,6 +48,7 @@ class ReservationsController extends Controller
 
         return response()->json([
             'id' => $package->id,
+            'reservation_id' => $package->reservation_id,
             'name' => $package->name,
             'duration' => $package->duration,
             'description' => $package->description,

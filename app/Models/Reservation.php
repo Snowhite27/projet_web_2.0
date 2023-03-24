@@ -14,4 +14,9 @@ class Reservation extends Model
         'user_id',
         'event_date'
     ];
+
+    public function reservationPackages()
+    {
+        return $this->hasMany(Package::class);
+    }
 }
