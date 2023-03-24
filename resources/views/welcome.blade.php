@@ -30,8 +30,6 @@
          <div class="story-content">
             <h2>LOREM IPSUM proident <span style="color: #F9B96F;">Cupid larborum</span></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            <br>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
          </div>
          <div class="deco-dots-container">
             <img class="circle-dots" src="/images/arttech_imgs/custom_shapes/colored_dots.png" alt="decorative colorful dots aligned on top of each other">
@@ -139,5 +137,6 @@
          </div>
       </section>
    <script src="{{ asset('js/custom.js') }}"></script>
+   <script src="{{ asset('js/toggle_nav.js') }}"></script>
 
 @endsection
