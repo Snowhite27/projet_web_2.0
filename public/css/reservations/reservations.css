@@ -28,10 +28,6 @@ body {
   margin: 0 auto;
   background-color: #0A0421;
   color: #E5F0FF;
-  font-family: "roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
 }
 body h1 {
   font-family: "sofachrome", sans-serif;
@@ -54,6 +50,10 @@ body #app .packages {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  font-family: "roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
 }
 body #app .packages .package {
   padding: 25px;
@@ -125,6 +125,12 @@ body #app .packages .package .includes ul .include {
 }
 body #app .packages .package .includes ul .include li {
   opacity: 50%;
+}
+body #app .validation {
+  font-family: "roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
 }
 body #app .validation h2 {
   font-family: "sofachrome", sans-serif;

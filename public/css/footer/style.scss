@@ -1,0 +1,132 @@
+@import '../variablesScss.scss';
+
+body{
+
+    font-family: roboto;
+    a{
+        text-decoration: none;
+    }
+    h3{
+        font-family: sofachrome;
+        color: $yellow;
+    }
+    h4{
+        color: $lgpurp;
+    }
+}
+
+.footer{
+    width: 100vw;
+    height: 1000px;
+    background-color: $dkpurp;
+    color: $lgblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    img{
+        margin: 3% 0;
+        width: 25%;
+    }
+    .sections{
+        display: flex;
+        justify-content: center;
+        gap: 3%;
+        a{
+            padding: 0;
+        }
+        .section{
+            width: 20%;
+            margin: 0;
+            text-align: start;
+        }
+
+    }
+    .action{
+        margin: 3% 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        p{
+            font-size: larger;
+            font-weight: 800;
+        }
+    }
+    .socials{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 3%;
+
+        a{
+            padding: 10px;
+            img{
+                margin: 0;
+            }
+        }
+
+        .icons{
+
+            .icon{
+                width: 37px;
+                height: 37px;
+                img{
+                    width: fit-content;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .politics{
+        display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 100px;
+    }
+
+    .copyright{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3%;
+        font-size: 16px;
+        a{
+            padding: 0;
+        }
+    }
+}
+
+
+//Propriétés du bouton
+.button{
+        margin-right: 45px;
+        width: 125px;
+        height: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    overflow: hidden;
+    transition: 0.2s;
+    color: $lgblue;
+}
+
+a.button {
+    border: 3px solid $lgpurp;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+a.button:hover {
+    color: $lgblue;
+    background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsla(33, 94%, 57%, 1) 100%);
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}

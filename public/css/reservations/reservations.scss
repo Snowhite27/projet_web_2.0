@@ -84,12 +84,6 @@
         margin: 0 auto;
         background-color: $d-blue;
         color: $white;
-        font-family: "roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 20px;
-
-
 
 
         h1{
@@ -115,6 +109,10 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            font-family: "roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
 
 
 
@@ -219,6 +217,10 @@
 
 
         .validation {
+            font-family: "roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
 
             h2{
                 font-family: "sofachrome", sans-serif;
