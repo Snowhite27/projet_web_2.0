@@ -18,3 +18,54 @@ $breakpoint-xl: 1199px;
 
 /* 955px */
 $hero-lg: $breakpoint-lg - 36px;
+/* 642px */
+$hero-md: $breakpoint-md - 125px;
+
+//// Custom Breakpoints -> STORY SECTION ////
+
+/* 1460px */
+$story-xxl: 1460px;
+/* 1098px */
+$story-xl: $breakpoint-xl - 101px;
+/* 660px */
+$story-md: $breakpoint-md - 107px;
+/* 524px */
+$story-mds: $breakpoint-md - 243px;
+
+//// Custom Breakpoints -> ACTIVITIES SECTION ////
+
+/* 1180px */
+$activity-xl: $breakpoint-xl - 19px;
+/* 716px */
+$activity-md: $breakpoint-md - 51px;
+/* 509px */
+$activity-mds: $breakpoint-md - 258px;
+
+//// Custom Breakpoints -> NEWS SECTION ////
+
+/* 1478px */
+$news-xxl: 1478px;
+/* 1237px */
+$news-xxlc: 1237px;
+/* 883px */
+$news-lg: $breakpoint-lg - 8px;
+/* 674px */
+$news-md: $breakpoint-md - 93px;
+
+//// Custom Breakpoints -> SPONSORS SECTION ////
+
+/* 1476px */
+$sponsors-xxl: 1476px;
+/* 1237px */
+$sponsors-xxlc: 1237px;
+/* 983px */
+$sponsors-lg: $breakpoint-lg - 8px;
+/* 656px */
+$sponsors-md: $breakpoint-md - 111px;
+/* 558px */
+$sponsors-mds: 558px;
+
+//// Custom Breakpoints -> REVIEWS SECTION ////
+
+/* 558px */
+$reviews-mds: 558px;
