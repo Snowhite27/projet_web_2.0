@@ -54,46 +54,46 @@ header {
 }
 
 @media (max-width: 1237px) {
-  header {
+  .nav_menu {
     flex-direction: column;
     height: auto;
   }
-  header .logo {
+  .nav_menu .logo {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 0;
     width: 60%;
     text-align: center;
   }
-  header .toggle-menu {
+  .nav_menu .toggle-menu {
     display: block;
     margin-right: 0;
     margin-bottom: 10px;
     text-align: center;
   }
-  header nav {
+  .nav_menu nav {
     display: none;
     width: 100%;
   }
-  header nav.show-menu {
+  .nav_menu nav.show-menu {
     display: block;
   }
-  header nav ul {
+  .nav_menu nav ul {
     flex-direction: column;
     margin: 0;
     padding: 0;
   }
-  header nav ul li {
+  .nav_menu nav ul li {
     margin: 10px 0;
     display: flex;
     justify-content: center;
   }
-  header nav ul li a {
+  .nav_menu nav ul li a {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
   }
-  header .button {
+  .nav_menu .button {
     display: none;
   }
 }

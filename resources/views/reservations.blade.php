@@ -109,27 +109,28 @@
                     </div>
 
                     {{-- *********************** USER_INFOS ************************** --}}
-                    <div class="user_infos">
+                    @if (isset(auth()->user()->id))
+                        <div class="user_infos">
 
-                        <div class="username">
-                            <p><strong>Nom</strong></p>
-                            <p>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</p>
+                            <div class="username">
+                                <p><strong>Nom</strong></p>
+                                <p>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</p>
+                            </div>
+
+                            <div class="reservation_date">
+                                <p><strong>Date de réservation</strong></p>
+                                <p class="gold">@{{ select_date }}</p>
+                            </div>
+
+                            <div class="address">
+                                <p><strong>Adresse</strong></p>
+                                <p>7812 Richmond Street,
+                                    Quebec, ON,
+                                    Canada</p>
+                            </div>
+
                         </div>
-
-                        <div class="reservation_date">
-                            <p><strong>Date de réservation</strong></p>
-                            <p class="gold">@{{ select_date }}</p>
-                        </div>
-
-                        <div class="address">
-                            <p><strong>Adresse</strong></p>
-                            <p>7812 Richmond Street,
-                                Quebec, ON,
-                                Canada</p>
-                        </div>
-
-                    </div>
-
+                    @endif
                     <div class="line"></div>
                     {{-- *********************** PACKAGES ************************** --}}
                     <div class="validation_package">
@@ -167,13 +168,18 @@
                                 class="button"><span>PW2_Button</span></a>
                         </div>
 
-
                     </div>
 
                 </div>
             </section>
             <section class="list">
-                {{-- @dd($reservations) --}}
+                {{-- @if (isset($user_packages))
+                    @foreach ($user_packages as $reservation)
+                        <div>
+                            <p>{{ $reservation }}</p>
+                        </div>
+                    @endforeach
+                @endif --}}
             </section>
         </div>
 

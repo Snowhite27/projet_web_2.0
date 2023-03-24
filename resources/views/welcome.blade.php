@@ -2,7 +2,6 @@
 
 @section('title', 'Accueil | Arttech')
 
-@include('navbar')
 
 <x-links></x-links>
 

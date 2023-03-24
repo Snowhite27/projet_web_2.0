@@ -82,6 +82,7 @@ Route::get('/packages/{id}', [ReservationsController::class, 'get'])->name('pack
 Route::get('/calendar/{month}/{year}', [ReservationsController::class, 'getCalendar'])->name('calendar');
 Route::post('/reservations', [ReservationsController::class, 'save'])->name('reservation.save');
 
+
 //Contact
 Route::get('/contact', function () {
     return view('contact');
