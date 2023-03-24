@@ -1,3 +1,5 @@
+<x-links></x-links>
+<x-parts>
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -14,26 +16,26 @@
 
             <!-- First name -->
             <div class="w-full">
-                <x-label for="name" :value="__('First name')" />
+                <x-label class="text-[#e5f0ff]" for="name" :value="__('First name')" />
                 <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus />
             </div>
 
             {{-- Last name --}}
             <div class="mt-4 w-full">
-                <x-label for="name" :value="__('Last name')" />
+                <x-label class="text-[#e5f0ff]" for="name" :value="__('Last name')" />
                 <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required />
             </div>
 
             <!-- Email Address -->
             <div class="mt-4 w-full">
-                <x-label for="email" :value="__('Email')" />
+                <x-label class="text-[#e5f0ff]" for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
             <!-- Password -->
             <div class="mt-4 w-full">
-                <x-label for="password" :value="__('Password')" />
+                <x-label class="text-[#e5f0ff]" for="password" :value="__('Password')" />
 
                 <x-input id="password" class="block mt-1 w-full"
                                 type="password"
@@ -43,7 +45,7 @@
 
             <!-- Confirm Password -->
             <div class="mt-4 w-full">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+                <x-label class="text-[#e5f0ff]" for="password_confirmation" :value="__('Confirm Password')" />
 
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
@@ -52,9 +54,9 @@
 
             {{-- Profile picture --}}
             <div class="mt-4 w-full my-2rounded w-full flex flex-col">
-                <x-label for="profile_picture" :value="__('Profile Picture')" />
+                <x-label class="text-[#e5f0ff]" for="profile_picture" :value="__('Profile Picture')" />
                 <x-input id="profile_picture"
-                    class="file:cursor-pointer block mt-1 w-full border-2 rounded file:border-0 file:p-2"
+                    class="file:cursor-pointer block mt-1 w-full border-2 rounded file:border-0 file:p-2 text-[#e5f0ff]"
                     type="file"
                     name="profile_picture"
                     :value="old('profile_picture')"
@@ -63,7 +65,7 @@
 
             <!-- User type -->
             <div class="mt-4 w-full">
-                <x-label for="user_type" :value="__('User type')" />
+                <x-label class="text-[#e5f0ff]" for="user_type" :value="__('User type')" />
                 <select class="rounded mb-4 w-full" name="user_type" id="user_type">
                   <option value="1">Administrator</option>
                   <option value="2" selected>Standard</option>
@@ -83,3 +85,4 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+</x-parts>
