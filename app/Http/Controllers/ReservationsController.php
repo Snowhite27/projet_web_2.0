@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReservationsController extends Controller
 {
@@ -17,8 +18,10 @@ class ReservationsController extends Controller
     {
 
         $packages = Package::all();
+        $reservations = Reservation::all()->where("id", "=", auth()->user()->id);
         return view("reservations", [
-            "packages" => $packages
+            "packages" => $packages,
+            "reservations" => $reservations
         ]);
     }
 
@@ -33,6 +36,7 @@ class ReservationsController extends Controller
         $package = Package::find($id);
 
         return response()->json([
+            'id' => $package->id,
             'name' => $package->name,
             'duration' => $package->duration,
             'description' => $package->description,
@@ -73,5 +77,31 @@ class ReservationsController extends Controller
         ];
 
         echo json_encode($output, JSON_PRETTY_PRINT);
+    }
+
+    /**
+     * Api qui envoie les infos de la reservation
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function save(Request $request)
+    {
+        // Valider
+        $request->validate([
+            'package_id' => 'required',
+            'user_id' => 'required',
+            'event_date' => 'required',
+        ], [
+            'package_id.required' => 'Troubles niveau forfait',
+            'user_id.required' => 'Trouble niveau user',
+            'event_date.required' => 'Trouble niveau de la date',
+        ]);
+
+        Reservation::create([
+            'package_id' => $request->package_id,
+            'user_id' => $request->user_id,
+            'event_date' => $request->event_date
+        ]);
     }
 }
