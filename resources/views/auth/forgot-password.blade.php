@@ -1,14 +1,12 @@
-<x-links></x-links>
-<x-parts>
 <x-guest-layout>
     <x-auth-card>
-        {{-- <x-slot name="logo">
+        <x-slot name="logo">
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
-        </x-slot> --}}
+        </x-slot>
 
-        <div class="mb-4 text-sm text-[#e5f0ff]">
+        <div class="mb-4 text-sm text-gray-600">
             {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
         </div>
 
@@ -36,4 +34,3 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
-</x-parts>
