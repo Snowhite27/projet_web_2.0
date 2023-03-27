@@ -1,0 +1,64 @@
+/**H1**/
+/**H2**/
+/**H3**/
+/**p**/
+.button1 {
+  width: 130px;
+  height: 25px;
+  font-family: roboto;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #E5F0FF;
+  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
+  border-radius: 12px;
+}
+
+a.button1:hover {
+  background: transparent;
+  outline: solid 3px #9D4AB2;
+  outline-offset: -3px;
+  box-shadow: 0 0 10px #9D4AB2, 0 0 40px #9D4AB2, 0 0 80px #9D4AB2;
+}
+
+.button2 {
+  width: 125px;
+  height: 20px;
+  font-family: roboto;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #9D4AB2;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #E5F0FF;
+}
+
+a.button2:hover {
+  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}
+
+.button3 {
+  width: 83px;
+  height: 13px;
+  font-family: roboto;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #E5F0FF;
+  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
+  border-radius: 12px;
+}
+
+a.button3:hover {
+  background: transparent;
+  outline: solid 3px #9D4AB2;
+  outline-offset: -3px;
+  box-shadow: 0 0 10px #9D4AB2, 0 0 40px #9D4AB2, 0 0 80px #9D4AB2;
+}/*# sourceMappingURL=buttons.css.map */

@@ -1,0 +1,88 @@
+/**H1**/
+/**H2**/
+/**H3**/
+/**p**/
+@import '../buttons/buttons.css';
+body {
+  font-family: Roboto;
+}
+body a {
+  text-decoration: none;
+}
+body h3 {
+  font-family: sofachrome;
+  color: #F9B96F;
+  margin-bottom: 10px;
+}
+body h4 {
+  color: #9D4AB2;
+}
+
+.footer {
+  width: 100vw;
+  height: 1150px;
+  background-color: #0A0421;
+  color: #E5F0FF;
+  text-align: center;
+}
+.footer img {
+  margin: 3% 0;
+  width: 25%;
+}
+.footer .sections {
+  display: flex;
+  justify-content: space-around;
+}
+.footer .sections a {
+  padding: 0;
+}
+.footer .sections .section {
+  width: 15%;
+  margin: 0;
+  text-align: start;
+}
+.footer .packages {
+  margin: 3% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.footer .packages p {
+  font-size: larger;
+  font-weight: 800;
+}
+.footer .socials {
+  margin-bottom: 3%;
+}
+.footer .socials a {
+  padding: 10px;
+}
+.footer .socials a img {
+  margin: 0;
+}
+.footer .socials .icons {
+  display: flex;
+  justify-content: center;
+}
+.footer .socials .icons .icon {
+  width: 37px;
+  height: 37px;
+}
+.footer .socials .icons .icon img {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+}
+.footer span {
+  margin: 3%;
+}
+.footer .copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+}
+.footer .copyright a {
+  padding: 0;
+}/*# sourceMappingURL=footer.css.map */

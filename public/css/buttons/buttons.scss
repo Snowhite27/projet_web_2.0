@@ -1,0 +1,79 @@
+@import "../variablesScss.scss";
+
+//Bouton 1 - Plein, dégradé. Vide au hover
+.button1 {
+    width: 130px;
+    height: 25px;
+    font-family: roboto;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $lgblue;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgb(190, 48, 255) 0%,
+        hsla(33, 94%, 57%, 1) 100%
+    );
+    border-radius: 12px;
+}
+
+a.button1:hover {
+    background: transparent;
+    outline: solid 3px $lgpurp;
+    outline-offset: -3px;
+    box-shadow: 0 0 10px $lgpurp, 0 0 40px $lgpurp, 0 0 80px $lgpurp;
+}
+
+
+//Bouton 2 - Vide, contour. Plein dégradé au hover
+.button2 {
+    width: 125px;
+    height: 20px;
+    font-family: roboto;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid $lgpurp;
+    border-radius: 12px;
+    text-decoration: none;
+    color: $lgblue;
+}
+
+a.button2:hover {
+    background: repeating-linear-gradient(
+        -45deg,
+        rgb(190, 48, 255) 0%,
+        hsla(33, 94%, 57%, 1) 100%
+    );
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}
+
+
+//Bouton 3 - Identique au bouton1, 33% plus petit
+.button3 {
+    width: 83px;
+    height: 13px;
+    font-family: roboto;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $lgblue;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgb(190, 48, 255) 0%,
+        hsla(33, 94%, 57%, 1) 100%
+    );
+    border-radius: 12px;
+}
+
+a.button3:hover {
+    background: transparent;
+    outline: solid 3px $lgpurp;
+    outline-offset: -3px;
+    box-shadow: 0 0 10px $lgpurp, 0 0 40px $lgpurp, 0 0 80px $lgpurp;
+}
