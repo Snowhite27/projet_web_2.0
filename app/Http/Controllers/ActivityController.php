@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\DB;
 class ActivityController extends Controller
 {
     public function index() {
-        return view('admin.activities');
+        return view('activities', [
+            "activities" => Activity::all()
+        ]);
     }
 
     public function add() {

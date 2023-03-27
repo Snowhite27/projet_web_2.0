@@ -2,13 +2,13 @@
 /**H2**/
 /**H3**/
 /**p**/
-header {
-  position: absolute;
+body {
+  font-family: "Roboto", sans-serif;
+  color: #E5F0FF;
 }
 
-.nav_menu {
+header {
   position: fixed;
-  top: 0px;
   z-index: 111;
   height: 15vh;
   width: 100%;
@@ -19,38 +19,34 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-.nav_menu .logo {
+header .logo {
   margin-left: 50px;
   width: 20%;
 }
-.nav_menu .toggle-menu {
+header .toggle-menu {
   display: none;
   font-size: 24px;
   color: #E5F0FF;
   margin-right: 45px;
 }
-.nav_menu nav ul {
+header nav ul {
   padding: 0;
   display: flex;
   align-items: center;
 }
-.nav_menu nav ul li {
+header nav ul li {
   display: flex;
   align-items: center;
   margin-right: 30px;
 }
-.nav_menu nav ul li a {
+header nav ul li a {
   color: #E5F0FF;
   text-decoration: none;
   font-size: 20px;
+  font-weight: bold;
 }
-.nav_menu .button {
-  width: 125px;
-  height: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 45px;
+header .button1 {
+  margin-right: 50px;
 }
 
 @media (max-width: 1237px) {
@@ -89,7 +85,7 @@ header {
     justify-content: center;
   }
   header nav ul li a {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     text-align: center;
   }
@@ -104,18 +100,6 @@ a {
   overflow: hidden;
   transition: 0.2s;
   color: #E5F0FF;
-}
-
-a.button {
-  border: 3px solid #9D4AB2;
-  border-radius: 12px;
-  text-decoration: none;
-}
-
-a.button:hover {
-  color: #E5F0FF;
-  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
-  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
 }
 
 a span {
@@ -176,4 +160,4 @@ a:hover span:nth-child(4) {
   bottom: 100%;
   transition: 1s;
   transition-delay: 0.75s;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=navbar.css.map */
