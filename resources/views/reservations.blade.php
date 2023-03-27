@@ -161,6 +161,7 @@
             </div>
         </section>
     </div>
+    x-footer
 
     <script src="{{ asset('js/reservations.js') }}" type="module"></script>
 </body>

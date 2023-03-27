@@ -10,13 +10,7 @@
     <title>Contact</title>
 </head>
 <body>
-    <div class="navbar">
-        <span>element 1</span>
-        <span>element 2</span>
-        <span>element 3</span>
-        <span>element 4</span>
-    </div>
-
+    <x-navbar></x-navbar>
     <div class="main">
         <div class="main_contact">
             <div class="background_image_container"></div>
@@ -70,13 +64,6 @@
         </div>
 
     </div>
-
-    <div class="footer">
-        <span>element 1</span>
-        <span>element 2</span>
-        <span>element 3</span>
-        <span>element 4</span>
-    </div>
-
+    <x-footer></x-footer>
 </body>
 </html>

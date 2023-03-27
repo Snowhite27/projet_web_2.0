@@ -10,8 +10,12 @@ body {
   font-family: "Roboto", sans-serif;
   color: #E5F0FF;
 }
-body header {
+
+header {
+  position: fixed;
+  z-index: 111;
   height: 15vh;
+  width: 100%;
   background-color: rgba(10, 4, 33, 0.65);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -19,34 +23,80 @@ body header {
   align-items: center;
   justify-content: space-between;
 }
-body header .logo {
+header .logo {
   margin-left: 50px;
   width: 20%;
 }
-body header nav ul {
+header .toggle-menu {
+  display: none;
+  font-size: 24px;
+  color: #E5F0FF;
+  margin-right: 45px;
+}
+header nav ul {
   padding: 0;
   display: flex;
   align-items: center;
 }
-body header nav ul li {
+header nav ul li {
   display: flex;
   align-items: center;
+  margin-right: 30px;
 }
-body header nav ul li a {
+header nav ul li a {
   color: #E5F0FF;
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
 }
-body header .button {
-  margin-right: 45px;
-  width: 125px;
-  height: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+header .button1 {
+  margin-right: 50px;
 }
 
+@media (max-width: 1237px) {
+  header {
+    flex-direction: column;
+    height: auto;
+  }
+  header .logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    width: 60%;
+    text-align: center;
+  }
+  header .toggle-menu {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  header nav {
+    display: none;
+    width: 100%;
+  }
+  header nav.show-menu {
+    display: block;
+  }
+  header nav ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  header nav ul li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  header nav ul li a {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  header .button {
+    display: none;
+  }
+}
 a {
   position: relative;
   display: inline-block;
@@ -54,18 +104,6 @@ a {
   overflow: hidden;
   transition: 0.2s;
   color: #E5F0FF;
-}
-
-a.button {
-  border: 3px solid #9D4AB2;
-  border-radius: 12px;
-  text-decoration: none;
-}
-
-a.button:hover {
-  color: #E5F0FF;
-  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
-  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
 }
 
 a span {
@@ -126,4 +164,4 @@ a:hover span:nth-child(4) {
   bottom: 100%;
   transition: 1s;
   transition-delay: 0.75s;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=navbar.css.map */

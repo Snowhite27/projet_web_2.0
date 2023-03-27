@@ -2,7 +2,7 @@
 
 @section('title', 'Accueil | Arttech')
 
-@include('navbar')
+<x-navbar></x-navbar>
 
 @section('content')
 
