@@ -19,7 +19,11 @@ b-  = big  */
 /**********H2***********/
 /**********H3***********/
 /**********p***********/
-body {
+html, body {
+  margin-top: 0;
+}
+
+main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,20 +32,21 @@ body {
   margin: 0 auto;
   background-color: #0A0421;
   color: #E5F0FF;
+  width: 100%;
 }
-body h1 {
+main h1 {
   font-family: "sofachrome", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 24px;
 }
-body #app h2 {
+main #app h2 {
   font-family: "sofachrome", sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 22px;
 }
-body #app .packages {
+main #app .packages {
   height: 100%;
   width: 100%;
   display: flex;
@@ -52,7 +57,7 @@ body #app .packages {
   font-style: normal;
   font-size: 20px;
 }
-body #app .packages .package {
+main #app .packages .package {
   padding: 25px;
   box-sizing: border-box;
   width: 350px;
@@ -63,19 +68,19 @@ body #app .packages .package {
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
 }
-body #app .packages .package.lord {
+main #app .packages .package.lord {
   border: 3px rgba(249, 185, 111, 0.7) solid;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
 }
-body #app .packages .package.banner {
+main #app .packages .package.banner {
   -webkit-clip-path: polygon(39.25% 25%, 75% 60.5%, 75% 75%, 25% 25%);
           clip-path: polygon(39.25% 25%, 75% 60.5%, 75% 75%, 25% 25%);
   background-color: #F9B96F;
 }
-body #app .packages .package h3 {
+main #app .packages .package h3 {
   margin: 0;
   margin-top: 15px;
   font-family: "sofachrome", sans-serif;
@@ -83,60 +88,60 @@ body #app .packages .package h3 {
   font-style: normal;
   font-size: 20px;
 }
-body #app .packages .package .prices {
+main #app .packages .package .prices {
   display: flex;
   gap: 15px;
   align-items: baseline;
 }
-body #app .packages .package .prices .price {
+main #app .packages .package .prices .price {
   margin: 0;
   font-size: 40px;
 }
-body #app .packages .package .prices .day {
+main #app .packages .package .prices .day {
   opacity: 50%;
 }
-body #app .packages .package .line {
+main #app .packages .package .line {
   margin-top: 20px;
   height: 2px;
   width: 100%;
   background-color: #2B6388;
   opacity: 50%;
 }
-body #app .packages .package .details .title {
+main #app .packages .package .details .title {
   font-weight: bold;
 }
-body #app .packages .package .details ul li {
+main #app .packages .package .details ul li {
   opacity: 50%;
 }
-body #app .packages .package .includes .title {
+main #app .packages .package .includes .title {
   font-weight: bold;
 }
-body #app .packages .package .includes ul {
+main #app .packages .package .includes ul {
   list-style-type: none;
   padding-left: 10px;
 }
-body #app .packages .package .includes ul .include {
+main #app .packages .package .includes ul .include {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-body #app .packages .package .includes ul .include li {
+main #app .packages .package .includes ul .include li {
   opacity: 50%;
 }
-body #app .validation {
+main #app .validation {
   font-family: "roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
 }
-body #app .validation h2 {
+main #app .validation h2 {
   font-family: "sofachrome", sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 22px;
   margin-top: 10%;
 }
-body #app .validation .calendar {
+main #app .validation .calendar {
   max-width: 100%;
   border-radius: 20px;
   padding: 40px;
@@ -147,13 +152,13 @@ body #app .validation .calendar {
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
 }
-body #app .validation .calendar .days_container {
+main #app .validation .calendar .days_container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-body #app .validation .calendar .days_container h3 {
+main #app .validation .calendar .days_container h3 {
   margin: 0;
   padding-bottom: 40px;
   font-family: "sofachrome", sans-serif;
@@ -161,13 +166,13 @@ body #app .validation .calendar .days_container h3 {
   font-style: normal;
   font-size: 20px;
 }
-body #app .validation .calendar .days_container .week {
+main #app .validation .calendar .days_container .week {
   display: flex;
   flex-wrap: wrap;
   width: 720px;
   gap: 10px;
 }
-body #app .validation .calendar .days_container .week .week_day {
+main #app .validation .calendar .days_container .week .week_day {
   box-sizing: border-box;
   width: 90px;
   height: 40px;
@@ -179,14 +184,14 @@ body #app .validation .calendar .days_container .week .week_day {
   font-size: 18px;
   font-weight: 300;
 }
-body #app .validation .calendar .days_container .days {
+main #app .validation .calendar .days_container .days {
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   width: 720px;
   gap: 10px;
 }
-body #app .validation .calendar .days_container .days .b_day {
+main #app .validation .calendar .days_container .days .b_day {
   box-sizing: border-box;
   width: 90px;
   height: 70px;
@@ -198,7 +203,7 @@ body #app .validation .calendar .days_container .days .b_day {
   font-size: 18px;
   font-weight: 300;
 }
-body #app .validation .calendar .days_container .days .day {
+main #app .validation .calendar .days_container .days .day {
   backdrop-filter: blur(16px) saturate(180%) opacity(1%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background: rgba(229, 240, 255, 0.3);
@@ -214,17 +219,17 @@ body #app .validation .calendar .days_container .days .day {
   font-size: 18px;
   font-weight: 300;
 }
-body #app .validation .calendar .days_container .days .day:hover {
+main #app .validation .calendar .days_container .days .day:hover {
   border: 2px solid #F9B96F;
 }
-body #app .validation .calendar .days_container .days .selected {
+main #app .validation .calendar .days_container .days .selected {
   border: 3px rgba(249, 185, 111, 0.7) solid;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
 }
-body #app .validation .calendar .user_infos {
+main #app .validation .calendar .user_infos {
   margin-top: 95px;
   border-left: 1px solid #2B6388;
   border-right: 1px solid #2B6388;
@@ -232,55 +237,55 @@ body #app .validation .calendar .user_infos {
   box-sizing: border-box;
   width: 300px;
 }
-body #app .validation .calendar .user_infos .reservation_date .gold {
+main #app .validation .calendar .user_infos .reservation_date .gold {
   color: #F9B96F;
 }
-body #app .validation .validation_package {
+main #app .validation .validation_package {
   margin-top: 95px;
 }
-body #app .validation .validation_package h3 {
+main #app .validation .validation_package h3 {
   font-family: "sofachrome", sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 20px;
   width: 350px;
 }
-body #app .validation .validation_package .validation_prices {
+main #app .validation .validation_package .validation_prices {
   display: flex;
   gap: 15px;
   align-items: baseline;
 }
-body #app .validation .validation_package .validation_prices .validation_price {
+main #app .validation .validation_package .validation_prices .validation_price {
   margin: 0;
   font-size: 40px;
 }
-body #app .validation .validation_package .validation_prices .day {
+main #app .validation .validation_package .validation_prices .day {
   opacity: 50%;
 }
-body #app .validation .validation_package .validation_line {
+main #app .validation .validation_package .validation_line {
   height: 2px;
   width: 100%;
   background-color: #2B6388;
   opacity: 50%;
 }
-body #app .validation .validation_package .validation_details .validation_title {
+main #app .validation .validation_package .validation_details .validation_title {
   font-weight: bold;
 }
-body #app .validation .validation_package .validation_details ul li {
+main #app .validation .validation_package .validation_details ul li {
   opacity: 50%;
 }
-body #app .validation .validation_package .validation_includes .validation_title {
+main #app .validation .validation_package .validation_includes .validation_title {
   font-weight: bold;
 }
-body #app .validation .validation_package .validation_includes ul {
+main #app .validation .validation_package .validation_includes ul {
   list-style-type: none;
   padding-left: 10px;
 }
-body #app .validation .validation_package .validation_includes ul .validation_include {
+main #app .validation .validation_package .validation_includes ul .validation_include {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-body #app .validation .validation_package .validation_includes ul .validation_include li {
+main #app .validation .validation_package .validation_includes ul .validation_include li {
   opacity: 50%;
 }/*# sourceMappingURL=reservations.css.map */

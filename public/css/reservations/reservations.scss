@@ -73,9 +73,12 @@
     // font-style: normal;
     // font-size: 20px;
     // color: $white;
+    html, body{
+        margin-top: 0;
+    }
 
 
-   body{
+   main{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -84,6 +87,9 @@
         margin: 0 auto;
         background-color: $d-blue;
         color: $white;
+
+        width: 100%;
+
 
 
         h1{
