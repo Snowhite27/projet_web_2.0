@@ -1,0 +1,92 @@
+@import '../variablesScss.scss';
+@import '../buttons/buttons.css';
+
+
+body{
+    font-family: Roboto;
+    a{
+        text-decoration: none;
+    }
+    h3{
+        font-family: sofachrome;
+        color: $yellow;
+        margin-bottom: 10px;
+    }
+    h4{
+        color: $lgpurp;
+    }
+}
+
+.footer{
+    width: 100vw;
+    height: 1150px;
+    background-color: $dkpurp;
+    color: $lgblue;
+    text-align: center;
+    img{
+        margin: 3% 0;
+        width: 25%;
+    }
+    .sections{
+        display: flex;
+        justify-content: space-around;
+        a{
+            padding: 0;
+        }
+        .section{
+            width: 15%;
+            margin: 0;
+            text-align: start;
+        }
+        // .meteo{
+        //     img{
+        //         margin: 0;
+        //     }
+        // }
+    }
+    .packages{
+        margin: 3% 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        p{
+            font-size: larger;
+            font-weight: 800;
+        }
+    }
+    .socials{
+        margin-bottom: 3%;
+        a{
+            padding: 10px;
+            img{
+                margin: 0;
+            }
+        }
+        .icons{
+            display: flex;
+            justify-content: center;
+            .icon{
+                width: 37px;
+                height: 37px;
+                img{
+                    width: fit-content;
+                    height: auto;
+                }
+            }
+        }
+    }
+    span{
+        margin: 3%;
+    }
+    .copyright{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3%;
+        a{
+            padding: 0;
+        }
+    }
+}
+

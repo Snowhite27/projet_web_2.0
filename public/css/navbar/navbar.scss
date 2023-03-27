@@ -1,13 +1,4 @@
 @import "../variablesScss.scss";
-<<<<<<< HEAD:public/css/parts/navbar/style.scss
-header{
-    position: absolute;
-}
-
-.nav_menu {
-    position: fixed;
-    top: 0px;
-=======
 
 * {
     margin: 0;
@@ -20,16 +11,11 @@ body {
 
 header {
     position: fixed;
->>>>>>> DevMoeSb:public/css/navbar/style.scss
     z-index: 111;
     height: 15vh;
     width: 100%;
     background-color: rgba(10, 4, 33, 0.65);
-<<<<<<< HEAD:public/css/parts/navbar/style.scss
-    backdrop-filter: blur(20px);
-=======
     backdrop-filter: blur(5px);
->>>>>>> DevMoeSb:public/css/navbar/style.scss
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -60,31 +46,19 @@ header {
                     color: $lgblue;
                     text-decoration: none;
                     font-size: 20px;
-<<<<<<< HEAD:public/css/parts/navbar/style.scss
-=======
                     font-weight: bold;
->>>>>>> DevMoeSb:public/css/navbar/style.scss
                 }
             }
         }
     }
 
-    .button {
-        width: 125px;
-        height: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 45px;
+    .button1{
+        margin-right: 50px;
     }
 }
 
 @media (max-width: 1237px) {
-<<<<<<< HEAD:public/css/parts/navbar/style.scss
-   .nav_menu{
-=======
     header {
->>>>>>> DevMoeSb:public/css/navbar/style.scss
         flex-direction: column;
         height: auto;
 
@@ -121,11 +95,7 @@ header {
                     justify-content: center;
 
                     a {
-<<<<<<< HEAD:public/css/parts/navbar/style.scss
-                        font-size: 20px;
-=======
                         font-size: 24px;
->>>>>>> DevMoeSb:public/css/navbar/style.scss
                         font-weight: bold;
                         text-align: center;
                     }
@@ -139,6 +109,7 @@ header {
     }
 }
 
+
 //ANIMATION HOVER
 a {
     position: relative;
@@ -147,22 +118,6 @@ a {
     overflow: hidden;
     transition: 0.2s;
     color: $lgblue;
-}
-
-a.button {
-    border: 3px solid $lgpurp;
-    border-radius: 12px;
-    text-decoration: none;
-}
-
-a.button:hover {
-    color: $lgblue;
-    background: repeating-linear-gradient(
-        -45deg,
-        rgb(190, 48, 255) 0%,
-        hsla(33, 94%, 57%, 1) 100%
-    );
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
 }
 
 a span {

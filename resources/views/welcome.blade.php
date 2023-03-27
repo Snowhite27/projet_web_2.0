@@ -2,6 +2,7 @@
 
 @section('title', 'Accueil | Arttech')
 
+<x-navbar></x-navbar>
 
 <x-links></x-links>
 
@@ -165,4 +166,4 @@
    <script src="{{ asset('js/custom.js') }}"></script>
    <script src="{{ asset('js/toggle_nav.js') }}"></script>
 
-</x-parts>
+@endsection

@@ -25,10 +25,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/navbar', function () {
-    return view('navbar');
-});
-
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +69,20 @@ Route::delete('/admin/activities/remove/{id}', [ActivityController::class, 'remo
 | Client section
 |--------------------------------------------------------------------------
 */
+
+//Header
+Route::get('/navbar', function () {
+    return view('navbar');
+});
+
+//Footer
+Route::get('/footer', function () {
+    return view('footer');
+});
+
+//Activities
+Route::get('/activities', [ActivityController::class, 'index'])->name('activities');
+
 //Articles
 Route::get('articles', [ArticleController::class, 'index'])->name('articles');
 
@@ -90,3 +100,7 @@ Route::get('/contact', function () {
 
 
 require __DIR__ . '/auth.php';
+
+
+
+require __DIR__.'/auth.php';

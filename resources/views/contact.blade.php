@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="{{ asset('css/contact/style.css') }}">
     <title>Contact</title>
 </head>
-<x-parts>
-
-    <body>
+<body>
+    <x-navbar></x-navbar>
+    <div class="main">
+        <div class="main_contact">
+            <div class="background_image_container"></div>
 
         <div class="main">
             <div class="main_contact">
@@ -78,7 +80,7 @@
 
         </div>
 
-</x-parts>
+    </div>
+    <x-footer></x-footer>
 </body>
-
 </html>
