@@ -11,7 +11,6 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link rel="stylesheet" href="{{ asset('css/navbar/navbar.css') }}">
    </head>
-   <body>
       <header>
         <img class="logo" src="{{ asset('images/logo_arttech_Transparent_bg.png') }}" alt="arttech logo">
         <a class="toggle-menu" href="#"><i class="fa-solid fa-bars"></i></a>
@@ -64,5 +63,4 @@
         </a>
       </header>
       <script src="{{ asset('js/togglenav.js') }}"></script>
-   </body>
 </html>
