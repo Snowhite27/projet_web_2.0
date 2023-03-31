@@ -15,8 +15,13 @@ class Reservation extends Model
         'event_date'
     ];
 
-    public function reservationPackages()
+    public function package()
     {
-        return $this->hasMany(Package::class);
+        return $this->belongsTo(Package::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
