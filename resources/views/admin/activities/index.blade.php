@@ -13,7 +13,7 @@
             <div class="bg-[#181a1b] text-[#e5f0ff] overflow-hidden shadow-sm sm:rounded-lg flex flex-row justify-between lg:px-8 h-fit">
                 <div class="flex flex-row max-w-[75%]">
                     <div class="aspect-square h-full flex flex-col items-start justify-center items-center">
-                        <img class="object-contain h-48 p-4" src="{{ asset('images/activities/' . ($activity->picture)) }}" alt="">
+                        <img class="object-cover h-48 p-4 aspect-square" src="{{ asset('images/activities/' . ($activity->picture)) }}" alt="">
                     </div>
                     <div class="p-6 flex flex-col justify-evenly items-start">
                         <p class="font-extrabold">{{ $activity->name }}</p>

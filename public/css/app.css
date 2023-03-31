@@ -777,6 +777,10 @@ select {
 .h-64 {
   height: 16rem;
 }
+.max-h-fit {
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -824,6 +828,9 @@ select {
 }
 .w-12 {
   width: 3rem;
+}
+.w-64 {
+  width: 16rem;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -919,6 +926,9 @@ select {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+.overflow-auto {
+  overflow: auto;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1051,6 +1061,14 @@ select {
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.object-fill {
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 .p-2 {
   padding: 0.5rem;
