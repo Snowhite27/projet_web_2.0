@@ -42,7 +42,7 @@
                   Activités</a>
                </li>
                <li>
-                  <a href="{{ url('/actualities') }}">
+                  <a href="{{ url('/actualites') }}">
                   <span></span>
                   <span></span>
                   <span></span>

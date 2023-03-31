@@ -25,6 +25,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/actualites', function () {
+    return view('actualites');
+});
+
 Route::get('/navbar', function () {
     return view('navbar');
 });

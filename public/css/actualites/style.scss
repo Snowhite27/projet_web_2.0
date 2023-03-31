@@ -1,0 +1,250 @@
+@import "variables";
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Set default line height */
+body {
+    line-height: 1.4;
+}
+
+/* Remove default link styles */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $d-blue;
+}
+
+section.actualites {
+    display: block;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    .section-header-content {
+        display: flex;
+        position: absolute;
+        text-align: center;
+        top: 24%;
+        flex-direction: column;
+        align-items: center;
+        width: 41em;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h1 {
+            font-family: "sofachrome", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 24px;
+            color: $gold;
+            margin-bottom: 8px;
+        }
+        p {
+            font-family: "roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 18px;
+            color: $white;
+        }
+    }
+
+    .container-actualites {
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        .actualite-card {
+            position: relative;
+            width: 352px;
+            height: 476px;
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background: rgb(229, 240, 255);
+            background: linear-gradient(
+                317deg,
+                rgba(229, 240, 255, 0.4) 0%,
+                rgba(229, 240, 255, 0.05) 100%
+            );
+            border-radius: 25px;
+            border: 1px solid rgba(229, 240, 255, 0.125);
+            margin-right: 23px;
+            margin-top: 40px;
+
+            .actualite-image-box {
+                position: relative;
+                width: 350px;
+                height: 297px;
+            }
+
+            .card-content {
+                position: relative;
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                .title {
+                    position: absolute;
+                    font-family: "sofachrome", sans-serif;
+                    font-weight: bolder;
+                    font-style: normal;
+                    font-size: 18px;
+                    color: $gold;
+                }
+                .content {
+                    position: absolute;
+                    font-family: "roboto", sans-serif;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 16px;
+                    color: $white;
+                    top: 28px;
+                    text-align: center;
+                }
+
+                .date {
+                    position: absolute;
+                    top: 130px;
+                    left: 11px;
+                    font-family: "roboto", sans-serif;
+                    font-weight: 100;
+                    font-style: italic;
+                    color: $white;
+                }
+
+                .lire-plus {
+                    position: absolute;
+                    top: 108px;
+                    left: 59%;
+                    font-family: "roboto", sans-serif;
+                    color: $gold;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    button {
+        position: absolute;
+        bottom: 6%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+section.next-event {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .immersion-box {
+        position: absolute;
+        height: 38%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        left: 0;
+        top: 33%;
+        background: rgba(0, 0, 0, 0.35);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.8px);
+        -webkit-backdrop-filter: blur(6.8px);
+        .event-content {
+            position: absolute;
+            text-align: center;
+            top: 7%;
+
+            h2 {
+                font-family: "sofachrome", sans-serif;
+                font-weight: bolder;
+                font-style: normal;
+                font-size: 22px;
+                color: $gold;
+            }
+            p {
+                font-family: "roboto", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 18px;
+                color: $white;
+            }
+        }
+    }
+    .countdown-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 51%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+
+        .countdown-square {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .countdown-time {
+            font-size: 72px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .countdown-abbr {
+            font-size: 18px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+    }
+    button {
+        position: absolute;
+        bottom: 34%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
