@@ -25,8 +25,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/actualites', function () {
-    return view('actualites');
+Route::get('/actualities', function () {
+    return view('actualities');
 });
 
 Route::get('/navbar', function () {
@@ -110,4 +110,4 @@ require __DIR__ . '/auth.php';
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
