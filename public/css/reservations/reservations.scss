@@ -73,39 +73,37 @@
     // font-style: normal;
     // font-size: 20px;
     // color: $white;
+    @import'../buttons/buttons.css';
 
-
-   body{
+   main{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         flex-wrap: wrap;
-        margin: 0 auto;
         background-color: $d-blue;
         color: $white;
-        font-family: "roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 20px;
+        width: 100%;
 
-
-
+        #app{
+            margin-top:12%;
 
         h1{
             font-family: "sofachrome", sans-serif;
             font-weight: 400;
             font-style: normal;
             font-size: 24px;
+            text-align: center;
         }
-        #app{
-            width:1500px;
+
 
         h2{
             font-family: "sofachrome", sans-serif;
             font-weight: 300;
             font-style: normal;
             font-size: 22px;
+            padding-bottom: 1%;
+            margin-top: 3%;
         }
 
         .packages {
@@ -115,6 +113,12 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            font-family: "roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            gap: 15px;
+            margin-top: 3%;
 
 
 
@@ -122,8 +126,8 @@
             .package {
                 padding: 25px;
                 box-sizing: border-box;
-                width: 350px;
-                height: 650px;
+                width: 300px;
+                height: 550px;
                 border-radius: $b-border;
                 backdrop-filter: blur(16px) saturate(180%) opacity(50%);
                 -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
@@ -151,6 +155,7 @@
                     font-weight: 300;
                     font-style: normal;
                     font-size: 20px;
+                    margin-top: 1%;
                 }
 
                 .prices{
@@ -159,12 +164,16 @@
                     align-items: baseline;
 
                     .price{
-                        margin: 0;
                         font-size: 40px;
+                        margin-bottom: 3%;
                     }
                     .day{
                         opacity: 50%;
                     }
+                }
+
+                .button1{
+                    width:100%;
                 }
 
                 .line{
@@ -176,6 +185,7 @@
                 }
 
                 .details{
+                    margin-top: 5%;
 
                     .title{
                         font-weight: bold ;
@@ -183,12 +193,13 @@
 
                     ul li{
                         opacity: 50%;
+                        margin-top: 3%;
                     }
 
                 }
 
                 .includes{
-
+                    margin-top: 5%;
                     .title{
                         font-weight: bold ;
                     }
@@ -197,6 +208,7 @@
                         ul {
                              list-style-type: none;
                              padding-left: 10px;
+                             margin-top: 3%;
 
                              .include{
 
@@ -219,6 +231,11 @@
 
 
         .validation {
+            font-family: "roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            margin-top:15%;
 
             h2{
                 font-family: "sofachrome", sans-serif;
@@ -332,9 +349,40 @@
                         box-sizing: border-box;
                         width:300px;
 
+                        .username{
+                            .opacity{
+                                opacity: 50%;
+                            }
+                            p{
+                                margin: 3% 0%;
+                            }
+
+                        }
+
                         .reservation_date{
+                            p{
+                                margin: 3% 0%;
+                            }
+                             .gold{
+                                color: $gold;
+                            }
+                        }
+
+                        .reservation_date_end{
+                            p{
+                                margin: 3% 0%;
+                            }
                             .gold{
                                 color: $gold;
+                            }
+                        }
+
+                        .address{
+                            p{
+                                margin: 3% 0%;
+                            }
+                            .opacity{
+                                opacity: 50%;
                             }
                         }
 
@@ -391,8 +439,6 @@
                     .validation_title{
                         font-weight: bold ;
                     }
-
-
                         ul {
                              list-style-type: none;
                              padding-left: 10px;
@@ -412,12 +458,46 @@
 
                 }
 
-
             }
 
 
         }
+        .list{
+            margin-top:15%;
 
+        .container_list{
+            border: 1px solid $blue;
+            border-radius: $b-border;
+
+
+            .reservation_title{
+                backdrop-filter: blur(16px) saturate(180%) opacity(1%);
+                -webkit-backdrop-filter: blur(16px) saturate(180%);
+                background: rgba(229, 240, 255, 0.3);
+                background: linear-gradient(317deg, rgba(229,240,255,0.01) 0%, rgba(229,240,255,0.2) 100%);
+                border-radius: 20px 20px 0px 0px;
+
+            display: flex;
+            align-items: center;
+
+            .width{
+                width: 25%;
+            }
+
+            }
+            .reservation_list{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                border-top: 1px solid $blue;
+
+
+                .width{
+                    width: 25%;
+                }
+            }
+        }
+    }
    }
 
 }
