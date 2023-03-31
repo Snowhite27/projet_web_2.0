@@ -1,27 +1,27 @@
 <x-app-layout>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200 flex flex-col justify-center items-center">
+            <div class="overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-[#181a1b] flex flex-col justify-center items-center">
                     <form class="flex justify-start items-center w-full flex-col" action="{{ route('admin.activities.add.submit') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <!-- Title -->
                         <div class="w-full">
-                            <x-label for="name" :value="__('Title')" />
-                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" required />
+                            <x-label class="text-white" for="name" :value="__('Title')" />
+                            <x-input id="name" class="bg-[#464849] text-white border-none block mt-1 w-full" type="text" name="name" required />
                         </div>
 
                         {{-- Description --}}
                         <div class="mt-4 w-full">
-                            <x-label for="name" :value="__('Description')" />
-                            <textarea name="description" rows="10" class="block mt-1 w-full rounded" required></textarea>
+                            <x-label class="text-white" for="name" :value="__('Description')" />
+                            <textarea name="description" rows="10" class="bg-[#464849] text-white border-none block mt-1 w-full rounded" required></textarea>
                         </div>
 
                         {{-- Image --}}
                         <div class="mt-4 w-full my-2rounded w-full flex flex-col mb-5">
-                            <x-label for="picture" :value="__('Image')" />
-                            <x-input id="picture" class="file:cursor-pointer block mt-1 w-full border-2 rounded file:border-0 file:p-2" type="file" name="picture" :value="old('profile_picture')"/>
+                            <x-label class="text-white" for="picture" :value="__('Image')" />
+                            <x-input id="picture" class="bg-[#464849] text-white border-none file:cursor-pointer block mt-1 w-full border-2 rounded file:border-0 file:p-2" type="file" name="picture" :value="old('profile_picture')"/>
                         </div>
 
                         {{-- Submit --}}

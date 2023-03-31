@@ -26,14 +26,6 @@ h1 {
     font-family: sofachrome;
 }
 
-.navbar {
-    height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .main {
     display: flex;
     flex-direction: column;
@@ -42,8 +34,8 @@ h1 {
     .main_contact {
         display: flex;
         justify-content: space-evenly;
-        width: 70%;
-        margin: auto;
+        width: 80%;
+        margin: 0 auto;
         z-index: 1;
 
         .background_image_container {
@@ -189,6 +181,7 @@ h1 {
     .main>.main_contact>.contact_container {
         flex-direction: column;
         height: fit-content;
+        margin-top: 250px;
     }
     .main > .main_contact > .background_image_container {
         background-image: none;
