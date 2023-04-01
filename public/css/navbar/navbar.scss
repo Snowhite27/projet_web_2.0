@@ -1,10 +1,13 @@
 @import "../variablesScss.scss";
 
-
-body {
-    font-family: "Roboto", sans-serif;
-    color: $lgblue;
+*{
+    margin: 0;
 }
+
+// body {
+//     font-family: "Roboto", sans-serif;
+//     color: $lgblue;
+// }
 
 header {
     position: fixed;

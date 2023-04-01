@@ -22,7 +22,7 @@
 
             <map name="image-map">
                 {{-- <area target="" alt="Sitemap" title="Sitemap" href="" coords="413,80,1213,215,1099,863,920,903,776,976,678,998,649,886,596,780,492,400,355,429" shape="poly"> --}}
-                <area class="mapping" target="" alt="Mapping video" title="MappingVideo" href="{{ url('/activities') }}" coords="412,82,627,116,596,384,355,425" shape="poly">
+                <area class="mapping" target="" alt="Mapping video" title="MappingVideo" href="{{ url('/activities') }}" coords="412,82,627,116,596,384,355,425" shape="poly" @mouseover="highlightArea(1)" @mouseout="resetHighlight">
                 <area target="" alt="Conferences" title="Conferences" href="" coords="594,386,797,357,738,136,628,116" shape="poly">
                 <area target="" alt="Rest area" title="RestArea" href="" coords="738,136,1213,216,1099,861,945,896,912,793,977,757,1027,403,796,357" shape="poly">
                 <area target="" alt="Escape games" title="EscapeGames" href="" coords="709,576,552,619,490,400,756,363" shape="poly">
@@ -33,4 +33,5 @@
         </div>
     </div>
     <x-footer></x-footer>
+    <script src="{{ asset('js/activities.js') }}" type="module"></script>
 </body>

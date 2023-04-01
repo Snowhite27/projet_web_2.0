@@ -1,12 +1,10 @@
-<x-navbar></x-navbar>
 <link rel="stylesheet" href="{{ asset('css/reservations/reservations.css') }}">
 
-
-<h1>Réservations</h1>
-
 <body>
+    <x-navbar></x-navbar>
     <main>
         <div id="app">
+            <h1>Réservations</h1>
             <h2>Forfaits</h2>
             <p>Sélectionnez un forfaits qui vous convient</p>
             <section class="packages">
@@ -23,11 +21,11 @@
 
                         <div id="page" class="site">
                             @if (!isset(Auth::user()->first_name))
-                                <a href="{{ route('login', $package->id) }}" class="button"><span>PW2_Button</span></a>
+                                <a href="{{ route('login', $package->id) }}" class="button2">Réservez</a>
                             @else
                                 <a href="{{ route('packages', $package->id) }}"
                                     @click.prevent="showPackage({{ $package }}, {{ Auth::user()->id }})"
-                                    class="button"><span>PW2_Button</span></a>
+                                    class="button2">Réservez</a>
                             @endif
                         </div>
 
@@ -61,6 +59,7 @@
             </section>
 
             <section class="validation" v-if="Object.keys(select_package).length != 0">
+
                 <h2>Validation</h2>
                 <p>Validez votre date et confirmez votre réservation.</p>
                 {{-- *********************** CALENDAR ************************** --}}
@@ -85,8 +84,9 @@
                                 @{{ date.blank_starting_days }}
                             </div>
 
-                            <div class="day" v-for="date of calendar.days" @click.prevent="selectDate( date.date )"
-                                :class="{ 'selected': selected == date.date }">
+                            <div class="day" v-for="date of calendar.days"
+                                @click.prevent="selectDate(date.date_unix_time, select_package)"
+                                :class="{ 'selected': selected == date.date_unix_time }">
                                 @{{ date.date }}
                             </div>
 
@@ -103,19 +103,25 @@
 
                             <div class="username">
                                 <p><strong>Nom</strong></p>
-                                <p>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</p>
+                                <p class="opacity">{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</p>
                             </div>
 
                             <div class="reservation_date">
-                                <p><strong>Date de réservation</strong></p>
+                                <p><strong>Date de l'évènement</strong></p>
                                 <p class="gold">@{{ select_date }}</p>
+                            </div>
+
+                            <div class="reservation_date_end">
+                                <p><strong>Date de fin d'évènement</strong></p>
+                                <p class="gold">@{{ select_date_end }}</p>
                             </div>
 
                             <div class="address">
                                 <p><strong>Adresse</strong></p>
-                                <p>7812 Richmond Street,
+                                <p class="opacity">7812 Richmond Street,
                                     Quebec, ON,
-                                    Canada</p>
+                                    Canada
+                                </p>
                             </div>
 
                         </div>
@@ -154,7 +160,7 @@
                         <div id="page" class="site">
                             <a href="#"
                                 @click.prevent="saveReservation(select_package.id , user_id, select_date )"
-                                class="button"><span>PW2_Button</span></a>
+                                class="button2">Commander</a>
                         </div>
 
                     </div>
@@ -162,16 +168,47 @@
                 </div>
             </section>
             <section class="list">
-                {{-- @if (isset($user_packages))
-                    @foreach ($user_packages as $reservation)
-                        <div>
-                            <p>{{ $reservation }}</p>
-                        </div>
-                    @endforeach
-                @endif --}}
-            </section>
-        </div>
 
+                <h2>Vos réservations</h2>
+                <p>Voici votre liste des réservations de vos forfaits. Si vous deviez supprimer un forfait, il vous est
+                    possible si cela ne dépasse pas 24h avant l'évènement.</p>
+                {{-- @if (isset($user_packages)) --}}
+                <div class="container_list">
+                    <div class="reservation_title">
+                        <div class="width">
+                            Date de création
+                        </div>
+                        <div class="width">
+                            Forfait
+                        </div>
+                        <div class="width">
+                            Date de réservation
+                        </div>
+                        <div class="width">
+
+                        </div>
+                    </div>
+
+                    <div class="reservation_container">
+                        @foreach ($reservations as $reservation)
+                            <div class="reservation_list">
+                                <div class="width">
+                                    {{ $reservation->created_at }}
+                                </div>
+                                <div class="width">
+                                    <p>{{ $reservation->package->name }}</p>
+                                </div>
+                                <div class="width">
+                                    <p>{{ $reservation->event_date }}</p>
+                                </div>
+                                <a href="{{ route('delete', $reservation->id) }}">Supprimer</a>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+        </div>
+        {{-- @endif --}}
+        </section>
         <script src="{{ asset('js/reservations.js') }}" type="module"></script>
         </main­­­>
 </body>

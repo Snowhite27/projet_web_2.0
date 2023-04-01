@@ -6,27 +6,43 @@ use App\Models\Package;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ReservationsController extends Controller
 {
+    // ================================================================================
+    // Admin
+    // ================================================================================
+
+    public function index()
+    {
+        return view('admin.reservations');
+    }
+
+    public function remove($id)
+    {
+        $reservation = Reservation::find($id);
+        $reservation->delete();
+        return redirect()->route('admin.reservations');
+    }
+
+    // ================================================================================
+    // Customer Site
+    // ================================================================================
+
     /**
      * Affiche la vue de la page réservation
      *
      * @return void
      */
-    public function index()
+    public function customerIndex()
     {
-
         $packages = Package::all();
         if (isset(auth()->user()->id)) {
-            $user = auth()->user();
-            $reservations = $user->reservations;
-            // dd($reservations);
-            // $reservation_packages = $reservations->reservationPackages;
-            // $reservations = Reservation::all()->where("id", "=", auth()->user()->id);
+            $reservations = Reservation::all()->where('user_id', '=', auth()->user()->id);
+
             return view("reservations", [
                 "packages" => $packages,
-                // "reservation_packages" => $reservation_packages,
                 "reservations" => $reservations
             ]);
         }
@@ -115,5 +131,18 @@ class ReservationsController extends Controller
             'user_id' => $request->user_id,
             'event_date' => $request->event_date
         ]);
+    }
+
+    /**
+     * Supprime une reservation spécifique
+     *
+     * @param int $reservation_id
+     * @return void
+     */
+    public function delete($reservation_id)
+    {
+        $reservation = Reservation::findOrFail($reservation_id);
+        $reservation->delete();
+        return redirect('/reservations')->with('success', 'Votre réservation est retirée avec succès');
     }
 }

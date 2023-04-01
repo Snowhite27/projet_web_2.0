@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Package;
+use App\Models\Reservation;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $user = auth()->user();
         $user_list = DB::table('users')
             ->join('types', 'users.user_type', '=', 'types.id')
@@ -20,7 +24,8 @@ class AdminController extends Controller
         ]);
     }
 
-    public function showArticles() {
+    public function showArticles()
+    {
         $articles = DB::table('articles')->get()->sortByDesc('updated_at');
 
         return view('admin.articles.index')->with([
@@ -28,7 +33,8 @@ class AdminController extends Controller
         ]);
     }
 
-    public function showPackages() {
+    public function showPackages()
+    {
         $packages = DB::table('packages')->get()->sortBy('price');
 
         return view('admin.packages.index')->with([
@@ -36,11 +42,25 @@ class AdminController extends Controller
         ]);
     }
 
-    public function showActivities() {
+    public function showActivities()
+    {
         $activities = DB::table('activities')->get();
 
         return view('admin.activities.index')->with([
             'activities' => $activities
+        ]);
+    }
+
+    public function showReservations()
+    {
+        $packages = Package::all();
+        $reservations = Reservation::all();
+        $users = User::all();
+
+        return view('admin.reservations.index')->with([
+            'reservations' => $reservations,
+            'packages' => $packages,
+            'users' => $users
         ]);
     }
 }

@@ -2,11 +2,6 @@
 /**H2**/
 /**H3**/
 /**p**/
-body {
-  font-family: "Roboto", sans-serif;
-  color: #E5F0FF;
-}
-
 header {
   position: fixed;
   z-index: 111;
