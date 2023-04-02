@@ -1,6 +1,5 @@
 @extends('layouts.news')
 @section('title', 'Actualités | Arttech')
-
 @section('content')
     <x-navbar></x-navbar>
     <main>
@@ -10,45 +9,23 @@
                 <p>"Envie de rester à jour sur les dernières tendances technologiques ? Découvrez nos articles passionnants
                     et soyez au courant des dernières avancées."</p>
             </div>
-            <div class="container-actualites">
-                <div class="actualite-card">
-                    <div class="actualite-image-box">
-                        <img src="/images/actualites/dummy_image.png" alt="dummy image">
+            @foreach ($articles as $article)
+                <div class="container-actualites">
+                    <div class="actualite-card">
+                        <div class="actualite-image-box">
+                            <img src="{{ asset('images/articles/' . $article->picture) }}"
+                                alt="Image d'un articles (actualité de arttech)">
+                        </div>
+                        <div class="card-content">
+                            <span class="title">{{ $article->name }}</span>
+                            <span class="content">{{ $article->description }}</span>
+                            <span class="date">{{ $article->created_at }}</span>
+                            <span class="lire-plus"><a href="#">Lire plus &#8594;</a></span>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <span class="title">LOREM IPSUM</span>
-                        <span class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod...</span>
-                        <span class="date">10 mars 2023</span>
-                        <span class="lire-plus"><a href="#">Lire plus &#8594;</a></span>
-                    </div>
-                </div>
-                <div class="actualite-card">
-                    <div class="actualite-image-box">
-                        <img src="/images/actualites/dummy_image.png" alt="dummy image">
-                    </div>
-                    <div class="card-content">
-                        <span class="title">LOREM IPSUM</span>
-                        <span class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod...</span>
-                        <span class="date">10 mars 2023</span>
-                        <span class="lire-plus"><a href="#">Lire plus &#8594;</a></span>
-                    </div>
-                </div>
-                <div class="actualite-card">
-                    <div class="actualite-image-box">
-                        <img src="/images/actualites/dummy_image.png" alt="dummy image">
-                    </div>
-                    <div class="card-content">
-                        <span class="title">LOREM IPSUM</span>
-                        <span class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod...</span>
-                        <span class="date">10 mars 2023</span>
-                        <span class="lire-plus"><a href="#">Lire plus &#8594;</a></span>
-                    </div>
-                </div>
+            @endforeach
             </div>
-            <a href="" class="button1">button</a>
+            {{-- <a href="" class="button1">button</a> --}}
         </section>
         <section class="next-event">
             <video autoplay loop muted>
@@ -79,9 +56,9 @@
                     <span class="countdown-abbr">SECONDS</span>
                 </div>
             </div>
-            <x-button>
-                Reserver Maintenant
-            </x-button>
+            <a href="button1">Réservez maintenant!</a>
+
+
         </section>
     </main>
     <x-footer></x-footer>

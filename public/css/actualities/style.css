@@ -239,6 +239,12 @@ section.actualites .container-actualites .actualite-card .actualite-image-box {
   width: 350px;
   height: 297px;
 }
+section.actualites .container-actualites .actualite-card .actualite-image-box img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px 20px 0px 0px;
+}
 section.actualites .container-actualites .actualite-card .card-content {
   position: relative;
   width: 100%;
