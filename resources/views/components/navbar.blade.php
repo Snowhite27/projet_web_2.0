@@ -44,7 +44,7 @@
                   Contact</a>
                </li>
                <li>
-                  <a class='button' href="{{ url('/admin') }}">Connexion</a>
+                  <a class='button1' href="{{ url('/admin') }}">Connexion</a>
                </li>
             </ul>
          </nav>
