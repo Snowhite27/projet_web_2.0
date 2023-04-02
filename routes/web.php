@@ -25,6 +25,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/actualities', function () {
+    return view('actualities');
+});
+
+Route::get('/navbar', function () {
+    return view('navbar');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +70,9 @@ Route::get('admin/activities/edit/{id}', [ActivityController::class, 'edit'])->m
 Route::post('admin/activities/edit/submit/{id}', [ActivityController::class, 'editSubmit'])->middleware(['auth'])->name('admin.activities.edit.submit');
 Route::delete('/admin/activities/remove/{id}', [ActivityController::class, 'remove'])->middleware(['auth'])->name('admin.activities.remove');
 
+// Reservations
+Route::get('admin/reservations/', [AdminController::class, 'showReservations'])->middleware(['auth'])->name('admin.reservations');
+Route::delete('/admin/reservations/remove/{id}', [ReservationsController::class, 'remove'])->middleware(['auth'])->name('admin.reservations.remove');
 
 /*
 |--------------------------------------------------------------------------
@@ -87,9 +97,13 @@ Route::get('/activities', [ActivityController::class, 'index'])->name('activitie
 Route::get('articles', [ArticleController::class, 'index'])->name('articles');
 
 // Reservations
-Route::get('/reservations', [ReservationsController::class, 'index'])->name('reservations');
+Route::get('/reservations', [ReservationsController::class, 'customerIndex'])->name('reservations');
 Route::get('/packages/{id}', [ReservationsController::class, 'get'])->name('packages');
 Route::get('/calendar/{month}/{year}', [ReservationsController::class, 'getCalendar'])->name('calendar');
+Route::post('/reservations', [ReservationsController::class, 'save'])->name('reservation.save');
+Route::get('/delete/{id}', [ReservationsController::class, 'delete'])->name('delete');
+
+
 //Contact
 Route::get('/contact', function () {
     return view('contact');
@@ -100,4 +114,4 @@ require __DIR__ . '/auth.php';
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
