@@ -72,16 +72,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/navbar', function () {
-    return view('navbar');
+Route::get('/actualities', function () {
+    return view('actualities');
 });
 
-
-//Header
-Route::get('/navbar', function () {
-    return view('navbar');
-});
 
 //Footer
 Route::get('/footer', function () {
