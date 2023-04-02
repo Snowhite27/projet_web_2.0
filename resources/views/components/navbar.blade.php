@@ -43,10 +43,9 @@
                   <span></span> 
                   Contact</a>
                </li>
-               <li>
+            
                   <a class='button1' href="{{ url('/admin') }}">Connexion</a>
-               </li>
-            </ul>
+               </ul>
          </nav>
       </header>
       <script src="{{ asset('js/togglenav.js') }}"></script>

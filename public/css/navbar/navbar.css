@@ -159,8 +159,10 @@ header .button1 {
     font-weight: bold;
     text-align: center;
   }
-  header .button1 {
-    display: none;
+  header nav ul .button1 {
+    margin-right: 0;
+    margin-bottom: 15px;
+    margin-top: 10px;
   }
 }
 a {
