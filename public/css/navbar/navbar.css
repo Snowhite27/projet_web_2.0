@@ -2,8 +2,9 @@
 /**H2**/
 /**H3**/
 /**p**/
-* {
-  margin: 0;
+body {
+  font-family: "Roboto", sans-serif;
+  color: #E5F0FF;
 }
 
 header {
@@ -12,8 +13,8 @@ header {
   height: 15vh;
   width: 100%;
   background-color: rgba(10, 4, 33, 0.65);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,7 +46,12 @@ header nav ul li a {
   font-weight: bold;
 }
 header .button1 {
-  margin-right: 50px;
+  width: 125px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 45px;
 }
 
 @media (max-width: 1237px) {
@@ -88,7 +94,7 @@ header .button1 {
     font-weight: bold;
     text-align: center;
   }
-  header .button {
+  header .button1 {
     display: none;
   }
 }
@@ -99,6 +105,18 @@ a {
   overflow: hidden;
   transition: 0.2s;
   color: #E5F0FF;
+}
+
+a.button {
+  border: 3px solid #9D4AB2;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+a.button:hover {
+  color: #E5F0FF;
+  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
 }
 
 a span {
