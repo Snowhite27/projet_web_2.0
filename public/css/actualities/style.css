@@ -147,15 +147,30 @@ section.actualites .section-header-content p {
   color: #e5f0ff;
 }
 section.actualites .container-actualites {
-  position: absolute;
+  position: relative;
   top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  width: 100%;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
 }
-section.actualites .container-actualites .actualite-card {
+section.actualites .container-actualites .carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 1106px;
+  margin: 0 auto;
+}
+section.actualites .container-actualites .carousel-container .carousel {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
+}
+section.actualites .container-actualites .carousel-container .carousel .actualite-card {
   position: relative;
   width: 352px;
   height: 476px;
@@ -168,19 +183,19 @@ section.actualites .container-actualites .actualite-card {
   margin-right: 23px;
   margin-top: 40px;
 }
-section.actualites .container-actualites .actualite-card .actualite-image-box {
+section.actualites .container-actualites .carousel-container .carousel .actualite-card .actualite-image-box {
   position: relative;
   width: 350px;
   height: 297px;
 }
-section.actualites .container-actualites .actualite-card .card-content {
+section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content {
   position: relative;
   width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
 }
-section.actualites .container-actualites .actualite-card .card-content .title {
+section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .title {
   position: absolute;
   font-family: "sofachrome", sans-serif;
   font-weight: bolder;
@@ -188,7 +203,7 @@ section.actualites .container-actualites .actualite-card .card-content .title {
   font-size: 18px;
   color: #f9b96f;
 }
-section.actualites .container-actualites .actualite-card .card-content .content {
+section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .content {
   position: absolute;
   font-family: "roboto", sans-serif;
   font-weight: 400;
@@ -198,7 +213,7 @@ section.actualites .container-actualites .actualite-card .card-content .content 
   top: 28px;
   text-align: center;
 }
-section.actualites .container-actualites .actualite-card .card-content .date {
+section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .date {
   position: absolute;
   top: 130px;
   left: 11px;
@@ -207,13 +222,36 @@ section.actualites .container-actualites .actualite-card .card-content .date {
   font-style: italic;
   color: #e5f0ff;
 }
-section.actualites .container-actualites .actualite-card .card-content .lire-plus {
+section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .lire-plus {
   position: absolute;
   top: 108px;
   left: 59%;
   font-family: "roboto", sans-serif;
   color: #f9b96f;
   font-weight: bold;
+}
+section.actualites .container-actualites .chevron-left,
+section.actualites .container-actualites .chevron-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #0a0421;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #e5f0ff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+section.actualites .container-actualites .chevron-left {
+  left: 0;
+}
+section.actualites .container-actualites .chevron-right {
+  right: 0;
 }
 section.actualites button {
   position: absolute;
