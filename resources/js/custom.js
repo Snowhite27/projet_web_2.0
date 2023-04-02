@@ -42,6 +42,16 @@ function updateActiveItem() {
     });
 }
 
+function updateSlideWidth() {
+    slideWidth = sliderItems[0].clientWidth + 20;
+    sliderTrack.style.transform = "translateX(-".concat(
+        slideWidth * currentIndex,
+        "px)"
+    );
+}
+
+window.addEventListener("resize", updateSlideWidth);
+
 // Autoplay function
 function startAutoplay() {
     setInterval(() => {

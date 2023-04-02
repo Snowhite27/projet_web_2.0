@@ -1,6 +1,21 @@
 @import '../variablesScss.scss';
 @import '../buttons/buttons.css';
 
+
+.highlight {
+    outline: 2px solid red;
+  }
+
+  img {
+    filter: brightness(100%);
+    transition: filter 0.5s ease-in-out;
+  }
+
+  img:hover {
+    filter: brightness(50%);
+  }
+
+
 body{
     background-color: $dkpurp;
     color: $lgblue;
