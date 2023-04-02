@@ -94,6 +94,7 @@
             font-style: normal;
             font-size: 24px;
             text-align: center;
+            color: $gold;
         }
 
 
@@ -104,6 +105,7 @@
             font-size: 22px;
             padding-bottom: 1%;
             margin-top: 3%;
+            color: $gold;
         }
 
         .packages {
@@ -243,6 +245,8 @@
                 font-style: normal;
                 font-size: 22px;
                 margin-top: 10%;
+                color: $gold;
+
             }
             .calendar{
                 max-width: 100%;
@@ -254,7 +258,8 @@
                 -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
                 background: rgba(229, 240, 255, 0.5);
                 background: linear-gradient(317deg, rgba(229,240,255,0.01) 0%, rgba(229,240,255,0.2) 100%);
-
+                padding-bottom: 1%;
+                margin-top: 3%;
                     .days_container{
                         display: flex;
                         justify-content: center;
@@ -404,6 +409,7 @@
                     display: flex;
                     gap: 15px;
                     align-items: baseline;
+                    padding-bottom: 3%;
 
                     .validation_price{
                         margin: 0;
@@ -420,16 +426,19 @@
                     width: 100%;
                     background-color: $blue;
                     opacity: 50%;
+                    margin-bottom: 3%;
 
                 }
                 .validation_details{
 
                     .validation_title{
-                        font-weight: bold ;
+                        font-weight: bold;
+                        padding-bottom: 3%;
                     }
 
                     ul li{
                         opacity: 50%;
+                        margin-top: 1%;
                     }
 
                 }
@@ -438,6 +447,7 @@
 
                     .validation_title{
                         font-weight: bold ;
+                        padding-bottom: 3%;
                     }
                         ul {
                              list-style-type: none;
@@ -451,6 +461,7 @@
 
                                 li {
                                     opacity: 50%;
+                                    margin-top: 1%;
                                 }
 
                         }
