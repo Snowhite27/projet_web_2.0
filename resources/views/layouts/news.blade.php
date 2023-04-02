@@ -22,6 +22,7 @@
 
     @yield('content')
 
+    <script src="{{ asset('js/modal-news.js') }}"></script>
     <script src="{{ asset('js/carousel-news.js') }}"></script>
     <script src="{{ asset('js/scroll-top.js') }}"></script>
     <script src="{{ asset('js/countdown.js') }}"></script>

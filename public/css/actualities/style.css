@@ -260,6 +260,55 @@ section.actualites button {
   transform: translate(-50%, -50%);
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modal .modal-content {
+  position: relative;
+  background-color: #0a0421;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  text-align: center;
+  width: 45vw;
+  height: 76vh;
+}
+.modal .modal-content h2 {
+  margin-top: 43px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f9b96f;
+  font-family: "sofachrome", sans-serif;
+}
+.modal .modal-content p {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #e5f0ff;
+  font-family: "roboto", sans-serif;
+}
+.modal .modal-content .modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 44px;
+  color: #f9b96f;
+  cursor: pointer;
+  margin-right: 9px;
+}
+
 section.next-event {
   display: flex;
   justify-content: center;
