@@ -1,6 +1,47 @@
 /**
  * VARIABLES
  */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set default line height */
+body {
+  line-height: 1.4;
+}
+
+/* Remove default link styles */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /****** INDUSTRY STANDARDS -> for reference only ******/
 /** MAX-WIDTH */
 /* 955px */
@@ -85,12 +126,6 @@ a.button3:hover {
   outline: solid 3px #9D4AB2;
   outline-offset: -3px;
   box-shadow: 0 0 10px #9D4AB2, 0 0 40px #9D4AB2, 0 0 80px #9D4AB2;
-}
-
-/* Remove default link styles */
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 body {

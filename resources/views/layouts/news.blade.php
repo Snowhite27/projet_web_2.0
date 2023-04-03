@@ -8,12 +8,22 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="https://use.typekit.net/vko1nol.css%22%3E">
     <link rel="stylesheet" href="{{ asset('css/actualities/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar/navbar.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <head>
         <link rel="shortcut icon" href="{{ asset('/images/arttech_imgs/favicon/favicon_32x32.png') }}">
+           <!-- Google tag (gtag.js) -->
+           <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5966C28VG"></script>
+         <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'G-X5966C28VG');
+         </script>
     </head>
     <button class="scroll-top"> <i class="fa-solid fa-chevron-up"></i></button>
 
@@ -21,6 +31,8 @@
 
     @yield('content')
 
+    <script src="{{ asset('js/modal-news.js') }}"></script>
+    <script src="{{ asset('js/carousel-news.js') }}"></script>
     <script src="{{ asset('js/scroll-top.js') }}"></script>
     <script src="{{ asset('js/countdown.js') }}"></script>
     <script src="{{ asset('js/toggle_nav.js') }}"></script>
