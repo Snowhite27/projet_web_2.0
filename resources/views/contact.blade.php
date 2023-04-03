@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="https://use.typekit.net/vko1nol.css">
     <link rel="stylesheet" href="{{ asset('css/contact/style.css') }}">
     <title>Contact</title>
+       <!-- Google tag (gtag.js) -->
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5966C28VG"></script>
+         <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'G-X5966C28VG');
+         </script>
 </head>
 <x-navbar></x-navbar>
 <body>
