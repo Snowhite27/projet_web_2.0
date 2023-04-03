@@ -34,6 +34,7 @@ Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth'])->n
 //Accounts
 Route::get('/account/{id?}', [UserController::class, 'account'])->middleware(['auth'])->name('account');
 Route::match(['get', 'post'], '/account/modify/{id?}', [UserController::class, 'modify'])->middleware(['auth'])->name('user.modify');
+Route::delete('/account/remove/{id}', [UserController::class, 'remove'])->middleware(['auth'])->name('user.remove');
 
 //Articles
 Route::get('admin/articles/', [AdminController::class, 'showArticles'])->middleware(['auth'])->name('admin.articles');
