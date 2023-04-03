@@ -64,7 +64,7 @@
             <span class="countdown-abbr">SECONDS</span>
          </div>
       </div>
-      <a href="button1">Réservez maintenant!</a>
+      <a class="button1" href="{{ url('/reservations') }}">Réservez maintenant!</a>
    </section>
 </main>
 <x-footer></x-footer>
