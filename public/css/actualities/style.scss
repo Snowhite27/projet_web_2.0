@@ -1,5 +1,4 @@
 @import "variables";
-@import "../buttons/buttons";
 
 /* Box sizing rules */
 *,
@@ -166,87 +165,184 @@ section.actualites {
     }
 
     .container-actualites {
-        position: absolute;
+        position: relative;
         top: 58%;
         left: 50%;
         transform: translate(-50%, -50%);
         display: flex;
-        width: 100%;
         justify-content: center;
-        .actualite-card {
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+
+        .carousel-container {
             position: relative;
-            width: 352px;
-            height: 476px;
-            backdrop-filter: blur(16px) saturate(180%);
-            -webkit-backdrop-filter: blur(16px) saturate(180%);
-            background: rgb(229, 240, 255);
-            background: linear-gradient(
-                317deg,
-                rgba(229, 240, 255, 0.4) 0%,
-                rgba(229, 240, 255, 0.05) 100%
-            );
-            border-radius: 25px;
-            border: 1px solid rgba(229, 240, 255, 0.125);
-            margin-right: 23px;
-            margin-top: 40px;
+            overflow: hidden;
+            width: 1106px;
+            margin: 0 auto;
 
-            .actualite-image-box {
-                position: relative;
-                width: 350px;
-                height: 297px;
-            }
-
-            .card-content {
-                position: relative;
-                width: 100%;
-                margin: 0 auto;
+            .carousel {
                 display: flex;
-                justify-content: center;
-                .title {
-                    position: absolute;
-                    font-family: "sofachrome", sans-serif;
-                    font-weight: bolder;
-                    font-style: normal;
-                    font-size: 18px;
-                    color: $gold;
-                }
-                .content {
-                    position: absolute;
-                    font-family: "roboto", sans-serif;
-                    font-weight: 400;
-                    font-style: normal;
-                    font-size: 16px;
-                    color: $white;
-                    top: 28px;
-                    text-align: center;
-                }
+                width: fit-content;
+                transition: transform 0.5s ease-in-out;
+                transform: translateX(0);
 
-                .date {
-                    position: absolute;
-                    top: 130px;
-                    left: 11px;
-                    font-family: "roboto", sans-serif;
-                    font-weight: 100;
-                    font-style: italic;
-                    color: $white;
-                }
+                .actualite-card {
+                    position: relative;
+                    width: 352px;
+                    height: 476px;
+                    backdrop-filter: blur(16px) saturate(180%);
+                    -webkit-backdrop-filter: blur(16px) saturate(180%);
+                    background: rgb(229, 240, 255);
+                    background: linear-gradient(
+                        317deg,
+                        rgba(229, 240, 255, 0.4) 0%,
+                        rgba(229, 240, 255, 0.05) 100%
+                    );
+                    border-radius: 25px;
+                    border: 1px solid rgba(229, 240, 255, 0.125);
+                    margin-right: 23px;
+                    margin-top: 40px;
 
-                .lire-plus {
-                    position: absolute;
-                    top: 108px;
-                    left: 59%;
-                    font-family: "roboto", sans-serif;
-                    color: $gold;
-                    font-weight: bold;
+                    .actualite-image-box {
+                        position: relative;
+                        width: 350px;
+                        height: 297px;
+                    }
+
+                    .card-content {
+                        position: relative;
+                        width: 100%;
+                        margin: 0 auto;
+                        display: flex;
+                        justify-content: center;
+                        .title {
+                            position: absolute;
+                            font-family: "sofachrome", sans-serif;
+                            font-weight: bolder;
+                            font-style: normal;
+                            font-size: 18px;
+                            color: $gold;
+                        }
+                        .content {
+                            position: absolute;
+                            font-family: "roboto", sans-serif;
+                            font-weight: 400;
+                            font-style: normal;
+                            font-size: 16px;
+                            color: $white;
+                            top: 28px;
+                            text-align: center;
+                        }
+
+                        .date {
+                            position: absolute;
+                            top: 130px;
+                            left: 11px;
+                            font-family: "roboto", sans-serif;
+                            font-weight: 100;
+                            font-style: italic;
+                            color: $white;
+                        }
+
+                        .lire-plus {
+                            position: absolute;
+                            top: 108px;
+                            left: 59%;
+                            font-family: "roboto", sans-serif;
+                            color: $gold;
+                            font-weight: bold;
+                        }
+                    }
                 }
             }
         }
+        .chevron-left,
+        .chevron-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: $d-blue;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: $white;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .chevron-left {
+            left: 0;
+        }
+
+        .chevron-right {
+            right: 0;
+        }
     }
+
     button {
         position: absolute;
         bottom: 6%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+}
+
+//Custom Modal for Actualities
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+
+    .modal-content {
+        position: relative;
+        background-color: $d-blue;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto;
+        text-align: center;
+        width: 45vw;
+        height: 76vh;
+
+        h2 {
+            margin-top: 43px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #f9b96f;
+            font-family: "sofachrome", sans-serif;
+        }
+
+        p {
+            margin-bottom: 0;
+            font-size: 18px;
+            font-weight: 400;
+            color: $white;
+            font-family: "roboto", sans-serif;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 44px;
+            color: $gold;
+            cursor: pointer;
+            margin-right: 9px;
+        }
     }
 }
 
