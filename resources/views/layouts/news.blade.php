@@ -15,6 +15,15 @@
 
     <head>
         <link rel="shortcut icon" href="{{ asset('/images/arttech_imgs/favicon/favicon_32x32.png') }}">
+           <!-- Google tag (gtag.js) -->
+           <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5966C28VG"></script>
+         <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'G-X5966C28VG');
+         </script>
     </head>
     <button class="scroll-top"> <i class="fa-solid fa-chevron-up"></i></button>
 
