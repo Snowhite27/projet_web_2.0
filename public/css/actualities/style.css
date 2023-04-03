@@ -335,9 +335,9 @@ section.next-event .immersion-box {
   left: 0;
   top: 33%;
   background: rgba(0, 0, 0, 0.35);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.8px);
   -webkit-backdrop-filter: blur(6.8px);
+          backdrop-filter: blur(6.8px);
+  box-shadow: 0px 0px 28px 6px rgba(249, 185, 111, 0.5);
 }
 section.next-event .immersion-box .event-content {
   position: absolute;
