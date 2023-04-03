@@ -4,7 +4,7 @@
 ***********************************************************/
 /********************|  BORDER  |*******************/
 /*  sm- = small
-b-  = big  */
+    b-  = big  */
 /********************|  COLOR  |********************/
 /*  d-  = dark
     sd- = semi-dark  */
@@ -19,15 +19,21 @@ b-  = big  */
 /**********H2***********/
 /**********H3***********/
 /**********p***********/
-@import '../buttons/buttons.css';
+@import "../buttons/buttons.css";
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
 main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: #0A0421;
-  color: #E5F0FF;
+  background-color: #0a0421;
+  color: #e5f0ff;
   width: 100%;
 }
 main #app {
@@ -82,7 +88,7 @@ main #app .packages .package.lord {
 main #app .packages .package.banner {
   -webkit-clip-path: polygon(39.25% 25%, 75% 60.5%, 75% 75%, 25% 25%);
           clip-path: polygon(39.25% 25%, 75% 60.5%, 75% 75%, 25% 25%);
-  background-color: #F9B96F;
+  background-color: #f9b96f;
 }
 main #app .packages .package h3 {
   margin: 0;
@@ -112,7 +118,7 @@ main #app .packages .package .line {
   margin-top: 20px;
   height: 2px;
   width: 100%;
-  background-color: #2B6388;
+  background-color: #2b6388;
   opacity: 50%;
 }
 main #app .packages .package .details {
@@ -193,7 +199,7 @@ main #app .validation .calendar .days_container .week .week_day {
   box-sizing: border-box;
   width: 90px;
   height: 40px;
-  background-color: #9D4AB2;
+  background-color: #9d4ab2;
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -237,7 +243,7 @@ main #app .validation .calendar .days_container .days .day {
   font-weight: 300;
 }
 main #app .validation .calendar .days_container .days .day:hover {
-  border: 2px solid #F9B96F;
+  border: 2px solid #f9b96f;
 }
 main #app .validation .calendar .days_container .days .selected {
   border: 3px rgba(249, 185, 111, 0.7) solid;
@@ -248,8 +254,8 @@ main #app .validation .calendar .days_container .days .selected {
 }
 main #app .validation .calendar .user_infos {
   margin-top: 95px;
-  border-left: 1px solid #2B6388;
-  border-right: 1px solid #2B6388;
+  border-left: 1px solid #2b6388;
+  border-right: 1px solid #2b6388;
   padding: 0px 20px 0px 20px;
   box-sizing: border-box;
   width: 300px;
@@ -264,13 +270,13 @@ main #app .validation .calendar .user_infos .reservation_date p {
   margin: 3% 0%;
 }
 main #app .validation .calendar .user_infos .reservation_date .gold {
-  color: #F9B96F;
+  color: #f9b96f;
 }
 main #app .validation .calendar .user_infos .reservation_date_end p {
   margin: 3% 0%;
 }
 main #app .validation .calendar .user_infos .reservation_date_end .gold {
-  color: #F9B96F;
+  color: #f9b96f;
 }
 main #app .validation .calendar .user_infos .address p {
   margin: 3% 0%;
@@ -303,7 +309,7 @@ main #app .validation .validation_package .validation_prices .day {
 main #app .validation .validation_package .validation_line {
   height: 2px;
   width: 100%;
-  background-color: #2B6388;
+  background-color: #2b6388;
   opacity: 50%;
 }
 main #app .validation .validation_package .validation_details .validation_title {
@@ -331,7 +337,7 @@ main #app .list {
   margin-top: 15%;
 }
 main #app .list .container_list {
-  border: 1px solid #2B6388;
+  border: 1px solid #2b6388;
   border-radius: 20px;
 }
 main #app .list .container_list .reservation_title {
@@ -350,7 +356,7 @@ main #app .list .container_list .reservation_list {
   display: flex;
   align-items: center;
   width: 100%;
-  border-top: 1px solid #2B6388;
+  border-top: 1px solid #2b6388;
 }
 main #app .list .container_list .reservation_list .width {
   width: 25%;
