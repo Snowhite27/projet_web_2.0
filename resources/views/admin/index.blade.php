@@ -1,5 +1,10 @@
 <x-app-layout>
     <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex justify-center">
+            <div class="border border-[#181a1b] hover:border-[#f9b96f] bg-[#181a1b] text-[#e5f0ff] overflow-hidden shadow-sm sm:rounded-lg w-[25%]">
+                <a class="p-6 flex flex-col justify-center items-center" href="{{ route('user.add') }}">Ajouter un administrateur</a>
+            </div>
+        </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             @foreach ($user_list as $single_user)
             @if ($single_user->user_type == 1)

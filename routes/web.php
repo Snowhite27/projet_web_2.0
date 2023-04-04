@@ -32,6 +32,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth'])->name('admin');
 
 //Accounts
+Route::get('/account/add', [UserController::class, 'add'])->middleware(['auth'])->name('user.add');
+Route::post('/account/add/submit', [UserController::class, 'addSubmit'])->middleware(['auth'])->name('user.add.submit');
 Route::get('/account/{id?}', [UserController::class, 'account'])->middleware(['auth'])->name('account');
 Route::match(['get', 'post'], '/account/modify/{id?}', [UserController::class, 'modify'])->middleware(['auth'])->name('user.modify');
 Route::delete('/account/remove/{id}', [UserController::class, 'remove'])->middleware(['auth'])->name('user.remove');

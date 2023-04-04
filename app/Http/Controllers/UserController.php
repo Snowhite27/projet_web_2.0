@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -14,21 +15,49 @@ class UserController extends Controller
     public function account($id, $alerts = null) {
         if ($id != null && auth()->user()->user_type == 1) {
             $user = User::findOrFail($id);
-            return view('admin.account')->with([
+            return view('admin.account.edit')->with([
                 'user' => $user,
                 'alerts' => $alerts
             ]);
         }
         $user = auth()->user();
-        return view('admin.account')->with([
+        return view('admin.account.edit')->with([
             'user' => $user,
             'alerts' => $alerts
         ]);
     }
 
+    public function add() {
+        return view('admin.account.add');
+    }
+
+    public function addSubmit(Request $request) {
+        $request->validate([
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images/user_profile/'), $imageName);
+
+        User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'profile_picture' => $imageName,
+            'user_type' => 1
+        ]);
+
+        return redirect()->route('admin');
+    }
+
     public function modify($id, Request $input) {
         if ($input->isMethod('GET')) {
-            return redirect()->route('admin.account');
+            return redirect()->route('admin.account.edit');
         }
 
         $id != null ? $user_id = $id : $user_id = auth()->user()->id;
