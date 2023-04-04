@@ -21,7 +21,7 @@
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            
+
             gtag('config', 'G-X5966C28VG');
          </script>
     </head>
