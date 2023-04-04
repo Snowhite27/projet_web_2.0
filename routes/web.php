@@ -87,7 +87,6 @@ Route::get('/footer', function () {
 Route::get('/activities', [ActivityController::class, 'index'])->name('activities');
 
 //Articles
-Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/actualities', [ArticleController::class, 'customerIndex'])->name('actualities');
 // Reservations
 Route::get('/reservations', [ReservationsController::class, 'customerIndex'])->name('reservations');
@@ -101,10 +100,6 @@ Route::get('/delete/{id}', [ReservationsController::class, 'delete'])->name('del
 Route::get('/contact', function () {
     return view('contact');
 });
-
-
-require __DIR__ . '/auth.php';
-
 
 
 require __DIR__ . '/auth.php';

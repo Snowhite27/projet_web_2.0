@@ -61,16 +61,6 @@
                     required/>
             </div>
 
-            <!-- User type -->
-            <div class="mt-4 w-full">
-                <x-label for="user_type" :value="__('User type')" />
-                <select class="rounded mb-4 w-full" name="user_type" id="user_type">
-                  <option value="1">Administrator</option>
-                  <option value="2" selected>Standard</option>
-                  {{-- <option value="3">Customer</option> --}}
-                </select>
-            </div>
-
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
