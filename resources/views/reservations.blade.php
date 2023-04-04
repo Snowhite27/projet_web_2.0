@@ -1,18 +1,24 @@
 <link rel="stylesheet" href="{{ asset('css/reservations/reservations.css') }}">
 <link rel="stylesheet" href="{{ asset('css/navbar/navbar.css') }}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <head>
-         <link rel="shortcut icon" href="{{ asset('/images/arttech_imgs/favicon/favicon_32x32.png') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<head>
+    <link rel="shortcut icon" href="{{ asset('/images/arttech_imgs/favicon/favicon_32x32.png') }}">
     <title>Contact</title>
-       <!-- Google tag (gtag.js) -->
-       <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5966C28VG"></script>
-         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            
-            gtag('config', 'G-X5966C28VG');
-         </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5966C28VG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-X5966C28VG');
+    </script>
 
 <body>
     <x-navbar></x-navbar>
@@ -122,12 +128,12 @@
 
                             <div class="reservation_date">
                                 <p><strong>Date de l'évènement</strong></p>
-                                <p class="gold">@{{ select_date }}</p>
+                                <p class="gold">@{{ convert_date_string }}</p>
                             </div>
 
                             <div class="reservation_date_end">
                                 <p><strong>Date de fin d'évènement</strong></p>
-                                <p class="gold">@{{ select_date_end }}</p>
+                                <p class="gold">@{{ convert_date_string_end }}</p>
                             </div>
 
                             <div class="address">
@@ -190,16 +196,16 @@
                 <div class="container_list">
                     <div class="reservation_title">
                         <div class="width">
-                            Date de création
+                            <strong>Date de création</strong>
                         </div>
                         <div class="width">
-                            Forfait
+                            <strong>Forfait</strong>
                         </div>
                         <div class="width">
-                            Date de réservation
+                            <strong>Date de réservation</strong>
                         </div>
                         <div class="width">
-
+                            &nbsp;
                         </div>
                     </div>
 

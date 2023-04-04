@@ -12,6 +12,8 @@ const select_date = ref("")
 const user_id = ref()
 const date_time = ref('')
 const select_date_end = ref()
+const convert_date_string = ref('')
+const convert_date_string_end = ref('')
 
 /**
  * Affiche en string la date du calendrier
@@ -54,20 +56,29 @@ function showPackage(package_infos, user){
  * @param {int} date / jour
  */
 function selectDate(date, user_package){
+
     // class scss
     selected.value = date
-    select_date.value = selected.value
-
+    select_date.value = selected.value * 1000
     if(user_package.duration = 'festival'){
-        select_date_end.value = select_date.value + (24 *60*60)*10
+        select_date_end.value = select_date.value + ((86400*1000)*10)
     }else{
-        select_date_end.value = select_date.value + (24 *60*60)
+        select_date_end.value = select_date.value + (86400*1000)
     }
+   console.log(select_date)
+   console.log(select_date_end)
 }
 
-function convertDate(unix){
-    const convert_date = new Date()
-    console.log(convert_date)
+function convertDate(select_date, select_date_end){
+    if(select_date != null){
+        const convert_date = new Date(select_date).getDay()
+        convert_date_string.value = convert_date + " " + month_array.value+" "+ year.value
+
+        const convert_date_end = new Date(select_date_end).getDay()
+        console.log(convert_date_end)
+        convert_date_string_end.value = convert_date_end + " " + month_array.value+" "+ year.value
+    }
+
 }
 
 /**
@@ -126,6 +137,8 @@ const root = {
         user_id,
         date_time,
         select_date_end,
+        convert_date_string,
+        convert_date_string_end,
 
         showPackage,
         splitLine,

@@ -38,16 +38,13 @@ class ReservationsController extends Controller
     public function customerIndex()
     {
         $packages = Package::all();
+        $reservations = [];
         if (isset(auth()->user()->id)) {
             $reservations = Reservation::all()->where('user_id', '=', auth()->user()->id);
-
-            return view("reservations", [
-                "packages" => $packages,
-                "reservations" => $reservations
-            ]);
         }
         return view("reservations", [
-            "packages" => $packages
+            "packages" => $packages,
+            "reservations" => $reservations
         ]);
     }
 
