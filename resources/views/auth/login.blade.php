@@ -1,8 +1,9 @@
+<x-head></x-head>
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                {{-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> --}}
             </a>
         </x-slot>
 
@@ -17,14 +18,14 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
+                <x-label class="text-white" for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                <x-label class="text-white" for="password" :value="__('Password')" />
 
                 <x-input id="password" class="block mt-1 w-full"
                                 type="password"
@@ -36,12 +37,12 @@
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ml-2 text-sm text-white">{{ __('Remember me') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                <a class="underline text-sm text-white" href="{{ route('register') }}">
                     {{ __('Register') }}
                 </a>
 
@@ -52,3 +53,4 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+<x-footer></x-footer>
