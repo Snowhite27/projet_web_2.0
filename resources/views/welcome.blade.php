@@ -1,20 +1,15 @@
 @extends('layouts.homepage')
 
-@section('title', 'Accueil | Arttech')
-
 @section('content')
-    <x-navbar></x-navbar>
     <section class="hero-section">
         <video autoplay loop muted>
             <source src="/video/arttech_intro.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-content">
-            <h1>LOREM IPSUM CALIBRI DOS</h1>
-            <p>*Limited Tickets Available</p>
-            <x-button>
-                SOLD OUT
-            </x-button>
+            <h1>Festival des technologies immersives</h1>
+            <p>*Billets en quantité limitée</p>
+            <a href="#" class="button2">Réservez</a>
         </div>
     </section>
     <section class="story-section">
@@ -99,7 +94,7 @@
         <div class="small-gradient-circle"></div>
     </section>
     <section class="sponsors-section">
-        <h2>Lorem Ipsum Ragazi</h2>
+        <h2>Commanditaires</h2>
         <div class="sponsors-container">
             <div class="sponsor-one">
                 <img class="future-tech" src="/images/arttech_imgs/logo_sponsors/logo_futureTech.png"
@@ -161,5 +156,4 @@
             </div>
         </div>
     </section>
- 
 @endsection
