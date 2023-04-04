@@ -2,6 +2,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             @foreach ($user_list as $single_user)
+            @if ($single_user->user_type == 1)
             <div class="pt-10">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-[#181a1b] text-[#e5f0ff] overflow-hidden shadow-sm sm:rounded-lg flex flex-row justify-between lg:px-8 h-fit">
@@ -30,6 +31,7 @@
                     </div>
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
     </div>
