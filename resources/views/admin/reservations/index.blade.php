@@ -1,33 +1,4 @@
 <x-app-layout>
-    <form action="">
-        @csrf
-        <!-- Mois -->
-        <div class="mt-4 w-full">
-            <x-label for="month" :value="__('Mois')" />
-            <select class="rounded mb-4 w-full" name="month" id="month">
-                <option value="1">janvier</option>
-                <option value="2">février</option>
-                <option value="3">mars</option>
-                <option value="4">avril</option>
-                <option value="5">mai</option>
-                <option value="6">juin</option>
-                <option value="7">juillet</option>
-                <option value="8">août</option>
-                <option value="9">septembre</option>
-                <option value="10">octobre</option>
-                <option value="11">novembre</option>
-                <option value="12">décembre</option>
-            </select>
-        </div>
-
-        {{-- Submit --}}
-        <div class="flex flex-row justify-evenly w-full">
-            <a class="text-white bg-gray-800 rounded px-5 h-10 text-center cursor-pointer my-2 flex items-center"
-                href="{{ route('admin.reservations') }}">Cancel</a>
-            <input type="submit" value="Apply"
-                class="text-white bg-blue-500 rounded px-5 h-10 text-center cursor-pointer my-2">
-        </div>
-    </form>
 
     @foreach ($reservations as $reservation)
         <div class="pt-10">

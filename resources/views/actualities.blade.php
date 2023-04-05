@@ -19,7 +19,8 @@
                   </div>
                   <div class="card-content">
                      <span class="title">{{ $article->name }}</span>
-                     <span class="content">{{ $article->description }}</span>
+                     <span class="short_description">{{ Str::limit($article->description, 150) }}</span>
+                     <span class="content" hidden>{{ $article->description }}</span>
                      <span class="date">{{ $article->created_at }}</span>
                      <span class="lire-plus"><a href="#">Lire plus &#8594;</a></span>
                   </div>

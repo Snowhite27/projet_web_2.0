@@ -78,45 +78,58 @@ body h3 {
 body #app .container {
   padding-top: 15vh;
   display: flex;
+  justify-content: space-around;
 }
-body #app .list .activity {
+body #app .container .list {
+  width: 50vw;
+}
+body #app .container .list .activity {
+  border-radius: 12px;
   height: 25vh;
   display: flex;
   align-items: center;
+  margin-bottom: 12px;
 }
-body #app .list .activity .picture {
+body #app .container .list .activity .picture {
   height: 25vh;
 }
-body #app .list .activity .picture img {
+body #app .container .list .activity .picture img {
   width: 20vw;
   max-width: 22vh;
   padding: 3vh;
 }
-body #app .list .activity .text {
+body #app .container .list .activity .text {
   height: 20vh;
   margin-bottom: 4vh;
   padding-top: 2vh;
   overflow: hidden;
 }
-body #app .list .activity .text p {
+body #app .container .list .activity .text h3 {
+  font-family: Sofachrome light;
+  color: #E5F0FF;
+}
+body #app .container .list .activity .text p {
   padding-right: 2vh;
 }
-body #app .list .activity:nth-child(1) {
+body #app .container .list .activity:nth-child(1) {
   background: linear-gradient(-45deg, #2B6388 0%, #9D4AB2 100%);
 }
-body #app .list .activity:nth-child(2) {
+body #app .container .list .activity:nth-child(2) {
   background: linear-gradient(-45deg, #0A0421 0%, #2B6388 100%);
 }
-body #app .list .activity:nth-child(3) {
+body #app .container .list .activity:nth-child(3) {
   background: linear-gradient(-45deg, #2C2159 0%, #0A0421 100%);
 }
-body #app .list .activity:nth-child(4) {
+body #app .container .list .activity:nth-child(4) {
   background: linear-gradient(-45deg, #2B6388 0%, #E5F0FF 100%);
 }
-body #app .list .activity:nth-child(n+5) {
+body #app .container .list .activity:nth-child(n+5) {
   background: linear-gradient(-45deg, #2B6388 0%, #9D4AB2 100%);
 }
-body #app #pic h2 {
+body #app .container #pic img {
+  border-radius: 12px;
+}
+body #app .container #pic h2 {
   font-family: Sofachrome light;
   text-align: center;
   padding-top: 25px;

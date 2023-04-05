@@ -3,26 +3,31 @@ import { createApp,ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 const select_package = ref({})
 const details = ref()
 const inclusions = ref()
-const month = ref("")
+const month = ref("11")
 const year = ref("")
-const month_array = ref("")
+const month_string = ref("")
 const calendar = ref([])
 const selected = ref(null)
 const select_date = ref("")
 const user_id = ref()
-const date_time = ref('')
 const select_date_end = ref()
+const set_date_string = ref('')
+const set_date_string_end = ref('')
+const actual_date = ref()
+const event_convert_date = ref()
+
 
 /**
- * Affiche en string la date du calendrier
+ * Actualise les dates à chaque 60 secondes
  */
-function showDate(){
-    const dates = new Date(Date.now())
-    const options = {month:"long"}
-    month.value = dates.getMonth();
-    year.value = dates.getFullYear();
-    month_array.value = new Intl.DateTimeFormat("fr-CA", options).format(dates)
-}
+    setInterval(e=> {
+        const dates = new Date(Date.now())
+        actual_date.value = dates.getUTCDate()
+        console.log(dates)
+    },60000)
+
+console.log('time',actual_date)
+
 
 /**
  * Prendre un id d'un forfait et affiche ses infos spécifiques
@@ -40,7 +45,12 @@ function showPackage(package_infos, user){
     })
     details.value = splitLine(package_infos.description)
     inclusions.value = splitLine(package_infos.includes)
-    showDate()
+
+    const dates = new Date(Date.now())
+    const options = {month:"long"}
+    month.value = dates.getMonth();
+    year.value = dates.getFullYear();
+    month_string.value = new Intl.DateTimeFormat("fr-CA", options).format(dates)
     /**
     * Ressort les journées du mois
     */
@@ -56,18 +66,44 @@ function showPackage(package_infos, user){
 function selectDate(date, user_package){
     // class scss
     selected.value = date
-    select_date.value = selected.value
+    select_date.value = selected.value * 1000
 
-    if(user_package.duration = 'festival'){
-        select_date_end.value = select_date.value + (24 *60*60)*10
+    if(user_package.duration == 'festival'){
+        select_date_end.value = select_date.value + ((86400*1000)*7)
     }else{
-        select_date_end.value = select_date.value + (24 *60*60)
+        select_date_end.value = select_date.value + (86400*1000)
     }
+
+    setDate(select_date.value, select_date_end.value)
 }
 
-function convertDate(unix){
-    const convert_date = new Date()
-    console.log(convert_date)
+function setDate(select_date, select_date_end){
+    if(select_date != null){
+        const set_date = new Date(select_date).getUTCDate()
+        const set_date_month = new Date(select_date).getUTCMonth()
+        const set_month_string = new Date(Date.UTC(2000, set_date_month +1)).toLocaleString('fr-CA', { month: 'long' });
+        set_date_string.value = set_date + " " + set_month_string+" "+ year.value
+
+        const set_date_end = new Date(select_date_end).getUTCDate()
+        const set_date_month_end = new Date(select_date_end).getUTCMonth()
+        const set_month_string_end = new Date(Date.UTC(2000, set_date_month_end +1)).toLocaleString('fr-CA', { month: 'long' });
+
+        if(set_month_string_end != "avril"){
+            set_date_string_end.value = '30' + " " + set_month_string+" "+ year.value
+        }else{
+            set_date_string_end.value = set_date_end + " " + set_month_string_end+" "+ year.value
+        }
+
+    }
+
+}
+
+function convertDate(date){
+    const convert_date = new Date(date).getUTCDate()
+    event_convert_date.value = convert_date
+        const convert_date_month = new Date(date).getUTCMonth()
+        const convert_month_string = new Date(Date.UTC(2000, convert_date_month +1)).toLocaleString('fr-CA', { month: 'long' });
+        return convert_date + " " + convert_month_string+" "+ year.value
 }
 
 /**
@@ -76,11 +112,13 @@ function convertDate(unix){
  * @param {int} user_id
  * @param {int} date
  */
-function saveReservation(package_id, user_id, date){
+function saveReservation(package_id, user_id, date, date_end){
     const post = new FormData()
     post.set("package_id", package_id)
     post.set("user_id", user_id)
     post.set("event_date", date)
+    post.set("event_date_end", date_end)
+
     const options = {
         method: "post",
         body: post,
@@ -88,8 +126,9 @@ function saveReservation(package_id, user_id, date){
     fetch("/reservations/", options).then(resp => resp.text()).then(data=> {
 console.log(data)
     })
-    window.location.href = "/reservations"
+    window.location.reload();
 }
+
 
 /**
  *
@@ -119,20 +158,24 @@ const root = {
         inclusions,
         month,
         year,
-        month_array,
+        month_string,
         calendar,
         selected,
         select_date,
         user_id,
-        date_time,
         select_date_end,
+        set_date_string,
+        set_date_string_end,
+        actual_date,
+        event_convert_date,
+
 
         showPackage,
         splitLine,
         strUcFirst,
         selectDate,
         saveReservation,
-        showDate,
+        setDate,
         convertDate,
        }
    }
