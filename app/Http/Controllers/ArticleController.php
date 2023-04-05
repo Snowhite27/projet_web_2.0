@@ -73,12 +73,9 @@ class ArticleController extends Controller
         return redirect()->route('admin.articles');
     }
 
-    public function remove($id, Article $article)
+    public function remove($id)
     {
-        $article = Article::find($id);
-        if (Auth::user()->id == $article->user_id || Auth::user()->id == 1) {
-            $article->delete();
-        }
+        Article::find($id)->delete();
         return redirect()->route('admin.articles');
     }
     /**==========================================================

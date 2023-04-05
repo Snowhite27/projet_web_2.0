@@ -1,51 +1,44 @@
-<link rel="stylesheet" href="{{ asset('css/activities/activities.css') }}">
-<link rel="stylesheet" href="{{ asset('css/navbar/navbar.css') }}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <head>
-         <link rel="shortcut icon" href="{{ asset('/images/arttech_imgs/favicon/favicon_32x32.png') }}">
-    <title>Contact</title>
-       <!-- Google tag (gtag.js) -->
-       <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5966C28VG"></script>
-         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            
-            gtag('config', 'G-X5966C28VG');
-         </script>
+<x-head></x-head>
+<title>ArtTech Fest || Activités</title>
 <body>
-<x-navbar></x-navbar>
-{{-- @dd($activities) --}}
     <div id="app">
-        <div class="list">
-            @foreach ($activities as $activity)
-                <div class="activity">
-                    <div class="picture">
-                        <img src="{{ asset('images/activities/' . ($activity->picture)) }}" alt="Activité réalité virtuelle">
+        <div class="container">
+            <div class="list">
+                @foreach ($activities as $activity)
+                    <div class="activity">
+                        <div class="picture">
+                            <img src="{{ asset('images/activities/' . ($activity->picture)) }}" alt="Activité réalité virtuelle">
+                        </div>
+                        <div class="text">
+                            <h3>{{ $activity->name }}</h3><br>
+                            <p>{{ $activity->description }}</p>
+                        </div>
                     </div>
-                    <div class="text">
-                        <h3>{{ $activity->name }}</h3><br>
-                        <p>{{ $activity->description }}</p>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+                @endforeach
+            </div>
 
-        <div class="sitemap">
-            <img src="{{ asset('images/general/pw2_sitemap_01.webp') }}" usemap="#image-map">
+            <script type="text/javascript">
+                function swapPic(zone,nr){
+                var pic=document.getElementById('hovered')
+                pic.src='../images/general/' +nr+ '.png'
+                zone.onmouseout=function(){pic.src="{{ asset('images/general/pw2_sitemap_01.webp') }}"}
+                }
+            </script>
 
-            <map name="image-map">
-                {{-- <area target="" alt="Sitemap" title="Sitemap" href="" coords="413,80,1213,215,1099,863,920,903,776,976,678,998,649,886,596,780,492,400,355,429" shape="poly"> --}}
-                <area class="mapping" target="" alt="Mapping video" title="MappingVideo" href="{{ url('/activities') }}" coords="412,82,627,116,596,384,355,425" shape="poly" @mouseover="highlightArea(1)" @mouseout="resetHighlight">
-                <area target="" alt="Conferences" title="Conferences" href="" coords="594,386,797,357,738,136,628,116" shape="poly">
-                <area target="" alt="Rest area" title="RestArea" href="" coords="738,136,1213,216,1099,861,945,896,912,793,977,757,1027,403,796,357" shape="poly">
-                <area target="" alt="Escape games" title="EscapeGames" href="" coords="709,576,552,619,490,400,756,363" shape="poly">
-                <area target="" alt="Drone launching site" title="DroneSite" href="" coords="553,618,709,573,758,781,621,829" shape="poly">
-                <area target="" alt="Admin" title="Admin" href="" coords="621,829,757,781,857,811,900,911,678,996" shape="poly">
-                <area target="" alt="Parking" title="Parking" href="" coords="901,911,859,811,758,780,710,573,756,366,797,357,1026,404,976,756,912,792,947,893" shape="poly">
-            </map>
+            <div id="pic" style="height: auto; width: auto; background-image: url({{ asset('images/general/pw2_sitemap_01.webp') }}); background-repeat: no-repeat">
+                <img id="hovered" src="{{ asset('images/general/pw2_sitemap_01.webp') }}" usemap="#image-map"/>
+                <map name="image-map">
+                    <area onmouseover="swapPic(this,1)" target="" alt="mapping video" title="" href="#" coords="133,27,328,58,311,329,72,373" shape="poly">
+                    <area onmouseover="swapPic(this,2)" target="" alt="conference" title="" href="" coords="329,57,442,78,502,293,313,327" shape="poly" class="highlight" @mouseover="highlightArea(2)" @mouseout="resetHighlight">
+                    <area onmouseover="swapPic(this,3)" target="" alt="VR" title="" href="" coords="442,77,924,160,888,349,504,293" shape="poly">
+                    <area onmouseover="swapPic(this,4)" target="" alt="Escape room" title="" href="" coords="204,351,383,316,431,525,267,571" shape="poly">
+                    <area onmouseover="swapPic(this,5)" target="" alt="Drone" title="" href="" coords="431,527,490,753,347,797,305,707,267,572" shape="poly">
+                </map>
+                <h2>Plan du site</h2>
+            </div>
         </div>
     </div>
-    <x-footer></x-footer>
+
     <script src="{{ asset('js/activities.js') }}" type="module"></script>
 </body>
+<x-footer></x-footer>

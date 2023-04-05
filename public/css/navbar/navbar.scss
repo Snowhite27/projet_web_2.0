@@ -1,34 +1,35 @@
-@import "../variablesScss.scss";
+@import "../variablesScss";
 @import "../buttons/buttons";
-
-body {
-    font-family: "Roboto", sans-serif;
-    color: $lgblue;
-}
 
 header {
     position: fixed;
     z-index: 111;
     height: 15vh;
-    width: 100%;
+    width: 100vw;
     background-color: rgba(10, 4, 33, 0.65);
     backdrop-filter: blur(5px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    padding: 0 50px;
     .logo {
-        margin-left: 50px;
         width: 20%;
+        animation: fade-in 3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     }
-
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
     .toggle-menu {
         display: none;
         font-size: 24px;
         color: $lgblue;
         margin-right: 45px;
     }
-
     nav {
         ul {
             padding: 0;
@@ -38,7 +39,6 @@ header {
                 display: flex;
                 align-items: center;
                 margin-right: 30px;
-
                 a {
                     color: $lgblue;
                     text-decoration: none;
@@ -48,22 +48,12 @@ header {
             }
         }
     }
-
-    .button1 {
-        width: 125px;
-        height: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 45px;
-    }
 }
 
 @media (max-width: 1237px) {
     header {
         flex-direction: column;
         height: auto;
-
         .logo {
             margin-top: 10px;
             margin-bottom: 10px;
@@ -71,31 +61,26 @@ header {
             width: 60%;
             text-align: center;
         }
-
         .toggle-menu {
             display: block;
             margin-right: 0;
             margin-bottom: 10px;
             text-align: center;
         }
-
         nav {
             display: none;
             width: 100%;
             &.show-menu {
                 display: block;
             }
-
             ul {
                 flex-direction: column;
                 margin: 0;
                 padding: 0;
-
                 li {
                     margin: 10px 0;
                     display: flex;
                     justify-content: center;
-
                     a {
                         font-size: 24px;
                         font-weight: bold;
@@ -112,7 +97,7 @@ header {
     }
 }
 
-//ANIMATION HOVER
+//ANIMATION LINKS HOVER
 a {
     position: relative;
     display: inline-block;
@@ -121,13 +106,11 @@ a {
     transition: 0.2s;
     color: $lgblue;
 }
-
 a.button {
     border: 3px solid $lgpurp;
     border-radius: 12px;
     text-decoration: none;
 }
-
 a.button:hover {
     color: $lgblue;
     background: repeating-linear-gradient(
@@ -137,12 +120,10 @@ a.button:hover {
     );
     box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
 }
-
 a span {
     position: absolute;
     display: block;
 }
-
 a span:nth-child(1) {
     top: 0;
     left: -100%;
@@ -150,12 +131,10 @@ a span:nth-child(1) {
     height: 2px;
     background: linear-gradient(90deg, transparent, #2196f3);
 }
-
 a:hover span:nth-child(1) {
     left: 100%;
     transition: 1s;
 }
-
 a span:nth-child(3) {
     bottom: 0;
     right: -100%;
@@ -163,13 +142,11 @@ a span:nth-child(3) {
     height: 2px;
     background: linear-gradient(270deg, transparent, #2196f3);
 }
-
 a:hover span:nth-child(3) {
     right: 100%;
     transition: 1s;
     transition-delay: 0.5s;
 }
-
 a span:nth-child(2) {
     top: -100%;
     right: 0;
@@ -177,13 +154,11 @@ a span:nth-child(2) {
     height: 100%;
     background: linear-gradient(180deg, transparent, #2196f3);
 }
-
 a:hover span:nth-child(2) {
     top: 100%;
     transition: 1s;
     transition-delay: 0.25s;
 }
-
 a span:nth-child(4) {
     bottom: -100%;
     left: 0;
@@ -191,7 +166,6 @@ a span:nth-child(4) {
     height: 100%;
     background: linear-gradient(360deg, transparent, #2196f3);
 }
-
 a:hover span:nth-child(4) {
     bottom: 100%;
     transition: 1s;

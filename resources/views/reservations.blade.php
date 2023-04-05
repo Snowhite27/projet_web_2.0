@@ -1,26 +1,14 @@
-<link rel="stylesheet" href="{{ asset('css/reservations/reservations.css') }}">
-<link rel="stylesheet" href="{{ asset('css/navbar/navbar.css') }}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <head>
-         <link rel="shortcut icon" href="{{ asset('/images/arttech_imgs/favicon/favicon_32x32.png') }}">
-    <title>Contact</title>
-       <!-- Google tag (gtag.js) -->
-       <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5966C28VG"></script>
-         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            
-            gtag('config', 'G-X5966C28VG');
-         </script>
+<x-head></x-head>
+<title>ArtTech Fest || Réservations</title>
 
 <body>
-    <x-navbar></x-navbar>
     <main>
         <div id="app">
-            <h1>Réservations</h1>
-            <h2>Forfaits</h2>
-            <p>Sélectionnez un forfaits qui vous convient</p>
+            <div>
+                <h1>Réservations</h1>
+                <h2>Forfaits</h2>
+                <p class="dave">Sélectionnez un forfaits qui vous convient</p>
+            </div>
             <section class="packages">
 
                 @foreach ($packages as $package)
@@ -74,14 +62,18 @@
 
             <section class="validation" v-if="Object.keys(select_package).length != 0">
 
-                <h2>Validation</h2>
+                <h2>Calendrier</h2>
                 <p>Validez votre date et confirmez votre réservation.</p>
                 {{-- *********************** CALENDAR ************************** --}}
+
+                <div class="layout" v-if="month != 3">
+                    <p>Le festival n'est pas disponible dans ces dates</p>
+                </div>
                 <div class="calendar">
 
                     <div class="days_container">
 
-                        <h3>@{{ month_array + " " + year }}</h3>
+                        <h3>@{{ month_string + " " + year }}</h3>
 
                         <div class="week">
                             <div class="week_day">DIM</div>
@@ -100,7 +92,10 @@
 
                             <div class="day" v-for="date of calendar.days"
                                 @click.prevent="selectDate(date.date_unix_time, select_package)"
-                                :class="{ 'selected': selected == date.date_unix_time }">
+                                :class="{
+                                    'selected': selected == date.date_unix_time,
+                                    'endSelected': select_date_end >= (date.date_unix_time*1000) && selected < date.date_unix_time
+                                }">
                                 @{{ date.date }}
                             </div>
 
@@ -117,17 +112,19 @@
 
                             <div class="username">
                                 <p><strong>Nom</strong></p>
-                                <p class="opacity">{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</p>
+                                <p class="opacity">{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}
+                                </p>
                             </div>
 
                             <div class="reservation_date">
-                                <p><strong>Date de l'évènement</strong></p>
-                                <p class="gold">@{{ select_date }}</p>
+                                <p><strong>Date de début du forfait</strong></p>
+                                <p class="gold">@{{ set_date_string }}</p>
                             </div>
 
                             <div class="reservation_date_end">
-                                <p><strong>Date de fin d'évènement</strong></p>
-                                <p class="gold">@{{ select_date_end }}</p>
+                                <p><strong>Date de fin du forfait</strong></p>
+                                <p class="gold">
+                                    @{{ set_date_string_end }} </p>
                             </div>
 
                             <div class="address">
@@ -140,8 +137,9 @@
 
                         </div>
                     @endif
-                    <div class="line"></div>
+
                     {{-- *********************** PACKAGES ************************** --}}
+
                     <div class="validation_package">
 
                         <h3> @{{ strUcFirst(select_package.name || "") }}</h3>
@@ -151,7 +149,7 @@
                             <p class="day">@{{ select_package.duration }}</p>
                         </div>
 
-                        <div class="validation_line"></div>
+
 
                         <div class="validation_details">
                             <p class="validation_title">Détails du forfait</p>
@@ -172,8 +170,8 @@
                         </div>
 
                         <div id="page" class="site">
-                            <a href="#"
-                                @click.prevent="saveReservation(select_package.id , user_id, select_date )"
+                            <a href="#list"
+                                @click="saveReservation(select_package.id, user_id, select_date, select_date_end )"
                                 class="button2">Commander</a>
                         </div>
 
@@ -181,8 +179,7 @@
 
                 </div>
             </section>
-            <section class="list">
-
+            <section  id="list">
                 <h2>Vos réservations</h2>
                 <p>Voici votre liste des réservations de vos forfaits. Si vous deviez supprimer un forfait, il vous est
                     possible si cela ne dépasse pas 24h avant l'évènement.</p>
@@ -190,16 +187,19 @@
                 <div class="container_list">
                     <div class="reservation_title">
                         <div class="width">
-                            Date de création
+                            <strong>Date de création</strong>
                         </div>
                         <div class="width">
-                            Forfait
+                            <strong>Forfait</strong>
                         </div>
                         <div class="width">
-                            Date de réservation
+                            <strong>Date de début</strong>
                         </div>
                         <div class="width">
-
+                            <strong>Date de fin </strong>
+                        </div>
+                        <div class="width">
+                            &nbsp;
                         </div>
                     </div>
 
@@ -213,17 +213,24 @@
                                     <p>{{ $reservation->package->name }}</p>
                                 </div>
                                 <div class="width">
-                                    <p>{{ $reservation->event_date }}</p>
+                                    <p>@verbatim {{ convertDate( @endverbatim {{ $reservation->event_date }} @verbatim ) }} @endverbatim</p>
                                 </div>
-                                <a href="{{ route('delete', $reservation->id) }}">Supprimer</a>
+                                <div class="width">
+                                    <p>@verbatim {{ convertDate( @endverbatim {{ $reservation->event_date_end }} @verbatim ) }} @endverbatim</p>
+                                </div>
+                                <a
+                                    href="{{ route('delete', $reservation->id) }}"v-if="actual_date < {{ date('d', $reservation->event_date/1000) }} ">Supprimer
+                                </a>
                             </div>
+
                         @endforeach
                     </div>
                 </div>
         </div>
         {{-- @endif --}}
         </section>
-        <script src="{{ asset('js/reservations.js') }}" type="module"></script>
-        </main­­­>
+    </main>
+    <x-footer></x-footer>
+    </div>
+    <script src="{{ asset('js/reservations.js') }}" type="module"></script>
 </body>
-<x-footer></x-footer>

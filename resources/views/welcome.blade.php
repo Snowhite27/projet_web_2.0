@@ -1,90 +1,74 @@
 @extends('layouts.homepage')
 
-@section('title', 'Accueil | Arttech')
-
 @section('content')
-    <x-navbar></x-navbar>
     <section class="hero-section">
         <video autoplay loop muted>
             <source src="/video/arttech_intro.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-content">
-            <h1>LOREM IPSUM CALIBRI DOS</h1>
-            <p>*Limited Tickets Available</p>
-            <x-button>
-                SOLD OUT
-            </x-button>
+            <h1>Explorez l'inconnu avec Arttech</h1>
+            <p>*Nombre limité de billets</p>
+         <a class="button1" id="button-one" href="{{ url('/reservations') }}">Réservez maintenant </a>
         </div>
     </section>
-    <section class="story-section">
-        <div class="rectangle-gradient"></div>
-        <div class="half-circle-gradient-box">
+    <section class="story-section" id="section1">
+        <div class="rectangle-gradient" id="rectangle-gradient"></div>
+        <div class="half-circle-gradient-box" id="circle-gradient">
             <img class="half-circle" src="/images/arttech_imgs/custom_shapes/half-circle-gradient.png" alt="half circle shape">
         </div>
-        <div class="img-story-container">
-            <img class="arttech-expo" src="/images/arttech_imgs/homepage_imgs/section_histoire/arttech_histoire.webp"
+        <div class="img-story-container" >
+            <img class="arttech-expo" id="story-img" src="/images/arttech_imgs/homepage_imgs/section_histoire/arttech_histoire.webp"
                 alt="man wearing a vr headset in an expo">
         </div>
         <div class="story-content">
-            <h2>LOREM IPSUM proident <span style="color: #F9B96F;">Cupid larborum</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. </p>
+            <h2 id="title">Quand la technologie <span style="color: #F9B96F;">rencontre l'art</span></h2>
+            <p id="content">Découvrez comment Arttech Fest a su allier art et technologie pour créer une expérience immersive unique en son genre. Depuis sa création, Arttech Fest a su attirer un public curieux et passionné, grâce à ses activités innovantes telles que la réalité virtuelle immersive, les performances audiovisuelles en temps réel, les projections vidéo immersives et bien plus encore. Plongez dans l'univers alternatif du festival et découvrez la créativité sans limite qui s'y déploie. </p>
         </div>
         <div class="deco-dots-container">
             <img class="circle-dots" src="/images/arttech_imgs/custom_shapes/colored_dots.png"
                 alt="decorative colorful dots aligned on top of each other">
         </div>
     </section>
-    <section class="activities-section">
+    <section class="activities-section" id="section2">
         <div class="gallery-container">
             <div class="activity_one">
-                <img src="/images/arttech_imgs/homepage_imgs/section_activites/activite_audio_visuel.png"
+                <img id="activity-one" src="/images/arttech_imgs/homepage_imgs/section_activites/activite_audio_visuel.png"
                     alt="immersive audio visual">
             </div>
             <div class="activity_two">
-                <img src="/images/arttech_imgs/homepage_imgs/section_activites/activite_xtra.png"
+                <img id="activity-two" src="/images/arttech_imgs/homepage_imgs/section_activites/activite_xtra.png"
                     alt="immersive vr lightshow">
             </div>
             <div class="activity_three">
-                <img src="/images/arttech_imgs/homepage_imgs/section_activites/activite_drone.png"
+                <img id="activity-three" src="/images/arttech_imgs/homepage_imgs/section_activites/activite_drone.png"
                     alt="immersive drone show">
             </div>
             <div class="activity_four">
-                <img src="/images/arttech_imgs/homepage_imgs/section_activites/activite_vr.png"
+                <img id="activity-four" src="/images/arttech_imgs/homepage_imgs/section_activites/activite_vr.png"
                     alt="immersive vr experimented by a couple">
             </div>
             <div class="activity_five">
-                <img src="/images/arttech_imgs/homepage_imgs/section_activites/activite_projection.png"
+                <img id="activity-five" src="/images/arttech_imgs/homepage_imgs/section_activites/activite_projection.png"
                     alt="immersive light projection on walls">
             </div>
         </div>
         <div class="activities-content">
-            <h2>LOREM IPSUM proident <span style="color: #F9B96F;">Cupid larborum</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. </p>
-            <x-button>
-                RESERVE NOW
-            </x-button>
+            <h2 id="title">Vivez des aventures virtuelles  <span style="color: #F9B96F;">inoubliables</span></h2>
+            <p id="content">Plongez dans des mondes incroyables, explorez des lieux imaginaires et rencontrez des personnages fascinants grâce à notre expérience de réalité virtuelle immersive. Avec notre équipement de pointe, vous pouvez vivre une expérience inoubliable qui vous transportera dans des mondes que vous n'auriez jamais imaginés. </p>
+                <a class="button1" id="button-one" href="{{ url('/activities') }}">Consulter les activités</a>
         </div>
     </section>
-    <section class="news-section">
+    <section class="news-section" id="section3">
         <div class="news-content">
-            <h2>LOREM <span style="color: #F9B96F;">Cupid larborum</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. </p>
+            <h2 id="title">Actualités <span style="color: #F9B96F;">tech immersives</span></h2>
+            <p id="content">Les avancées technologiques récentes ont transformé l'expérience immersive, offrant de nouvelles perspectives pour la narration, la conception de jeux, la formation professionnelle et bien plus encore. </p>
             <br>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-            <x-button>
-                SAVOIR PLUS
-            </x-button>
+            <p id="content-two">Restez à jour avec les dernières actualités sur la technologie immersive à travers le monde. Cliquez pour en savoir plus.</p>
+                <a class="button2" id="button-two" href="{{ url('/actualities') }}">En savoir plus</a>
         </div>
         <div class="news-image-container">
-            <img class="news" src="/images/arttech_imgs/homepage_imgs/section_actualite/cercle_actualite_img.png"
+            <img id="news-img" src="/images/arttech_imgs/homepage_imgs/section_actualite/cercle_actualite_img.png"
                 alt="world map immersive wall projection">
         </div>
         <div class="half-circle-gradient-box-left">
@@ -95,11 +79,11 @@
             <img class="half-circle-right" src="/images/arttech_imgs/custom_shapes/half-circle-gradient.png"
                 alt="half circle shape">
         </div>
-        <div class="medium-gradient-circle"></div>
-        <div class="small-gradient-circle"></div>
+        <div class="medium-gradient-circle" id="medium-circle"></div>
+        <div class="small-gradient-circle" id="small-circle"></div>
     </section>
     <section class="sponsors-section">
-        <h2>Lorem Ipsum Ragazi</h2>
+        <h2>Nos fiers commanditaires</h2>
         <div class="sponsors-container">
             <div class="sponsor-one">
                 <img class="future-tech" src="/images/arttech_imgs/logo_sponsors/logo_futureTech.png"
@@ -115,43 +99,35 @@
         </div>
     </section>
     <section class="reviews-section">
-        <h2>Lorem ipsum dolor sit amet</h2>
+        <h2>Ce que les gens disent</h2>
         <div class="slider-container">
             <div class="slider-track">
                 <div class="slider-item active">
                     <div class="testimonial">
                         <img src="/images/arttech_imgs/review_custom_icons/male_review.png" alt="Avatar">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id purus tristique, porttitor
-                            velit sit amet, commodo justo. Pellentesque pharetra magna et orci feugiat, ut accumsan velit
-                            ornare. Suspendisse euismod."</p>
-                        <h4>John Doe</h4>
+                        <p>"J'ai été transporté dans un autre monde! Les expériences immersives d'Arttech Fest sont inoubliables!"</p>
+                        <h4>Pierre L.</h4>
                     </div>
                 </div>
                 <div class="slider-item">
                     <div class="testimonial">
                         <img src="/images/arttech_imgs/review_custom_icons/female_review.png" alt="Avatar">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id purus tristique, porttitor
-                            velit sit amet, commodo justo. Pellentesque pharetra magna et orci feugiat, ut accumsan velit
-                            ornare. Suspendisse euismod."</p>
-                        <h4>Jane Smith</h4>
+                        <p>"Arttech Fest a été l'un des moments forts de ma vie. Les activités immersives étaient tellement réalistes et passionnantes!"</p>
+                        <h4>Sophie C.</h4>
                     </div>
                 </div>
                 <div class="slider-item">
                     <div class="testimonial">
                         <img src="/images/arttech_imgs/review_custom_icons/male_review.png" alt="Avatar">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id purus tristique, porttitor
-                            velit sit amet, commodo justo. Pellentesque pharetra magna et orci feugiat, ut accumsan velit
-                            ornare. Suspendisse euismod."</p>
-                        <h4>Mike Johnson</h4>
+                        <p>"J'ai adoré chaque minute passée à Arttech Fest. L'atmosphère immersive est unique et captivante!"</p>
+                        <h4>Martin R.</h4>
                     </div>
                 </div>
                 <div class="slider-item">
                     <div class="testimonial">
                         <img src="/images/arttech_imgs/review_custom_icons/female_review.png" alt="Avatar">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id purus tristique, porttitor
-                            velit sit amet, commodo justo. Pellentesque pharetra magna et orci feugiat, ut accumsan velit
-                            ornare. Suspendisse euismod."</p>
-                        <h4>Samantha Lee</h4>
+                        <p>"Si vous voulez vivre une expérience incroyable, ne manquez pas Arttech Fest! J'ai été émerveillé par les activités immersives proposées!"</p>
+                        <h4>Isabelle V.</h4>
                     </div>
                 </div>
             </div>
@@ -161,5 +137,5 @@
             </div>
         </div>
     </section>
- 
+ <x-footer></x-footer>
 @endsection

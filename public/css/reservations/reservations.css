@@ -1,45 +1,78 @@
-/***********************************************************
-                        VARIABLES
-
-***********************************************************/
-/********************|  BORDER  |*******************/
-/*  sm- = small
-    b-  = big  */
-/********************|  COLOR  |********************/
-/*  d-  = dark
-    sd- = semi-dark  */
-/********************|  FONT  |*********************/
-/* <link rel="stylesheet" href="https://use.typekit.net/vko1nol.css"> */
-/*SOFACHROME regular*/
-/*SOFACHROME light*/
-/*<link rel="stylesheet" href="https://use.typekit.net/vko1nol.css">*/
-/*ROBOTO regular*/
-/*ROBOTO bold*/
-/**********H1***********/
-/**********H2***********/
-/**********H3***********/
-/**********p***********/
-@import "../buttons/buttons.css";
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
-main {
+/**H1**/
+/**H2**/
+/**H3**/
+/**p**/
+/**H1**/
+/**H2**/
+/**H3**/
+/**p**/
+.button1 {
+  width: 130px;
+  height: 25px;
+  font-family: roboto;
+  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  background-color: #0a0421;
-  color: #e5f0ff;
-  width: 100%;
+  text-decoration: none;
+  color: #E5F0FF;
+  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
+  border-radius: 12px;
 }
-main #app {
-  margin-top: 12%;
+
+a.button1:hover {
+  background: transparent;
+  outline: solid 3px #9D4AB2;
+  outline-offset: -3px;
+  box-shadow: 0 0 10px #9D4AB2, 0 0 40px #9D4AB2, 0 0 80px #9D4AB2;
 }
-main #app h1 {
+
+.button2 {
+  width: 125px;
+  height: 20px;
+  font-family: roboto;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #9D4AB2;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #E5F0FF;
+}
+
+a.button2:hover {
+  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}
+
+.button3 {
+  width: 83px;
+  height: 13px;
+  font-family: roboto;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #E5F0FF;
+  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
+  border-radius: 12px;
+}
+
+a.button3:hover {
+  background: transparent;
+  outline: solid 3px #9D4AB2;
+  outline-offset: -3px;
+  box-shadow: 0 0 10px #9D4AB2, 0 0 40px #9D4AB2, 0 0 80px #9D4AB2;
+}
+
+main {
+  padding-top: 20vh;
+  width: 88%;
+  margin: 0 auto;
+}
+main div h1 {
   font-family: "sofachrome", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -47,7 +80,7 @@ main #app h1 {
   text-align: center;
   color: #F9B96F;
 }
-main #app h2 {
+main div h2 {
   font-family: "sofachrome", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -56,43 +89,37 @@ main #app h2 {
   margin-top: 3%;
   color: #F9B96F;
 }
-main #app .packages {
+main .packages {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   font-family: "roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
-  gap: 15px;
+  gap: 25px;
   margin-top: 3%;
 }
-main #app .packages .package {
+main .packages .package {
   padding: 25px;
   box-sizing: border-box;
   width: 300px;
-  height: 550px;
   border-radius: 20px;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
 }
-main #app .packages .package.lord {
+main .packages .package.lord {
   border: 3px rgba(249, 185, 111, 0.7) solid;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
 }
-main #app .packages .package.banner {
-  -webkit-clip-path: polygon(39.25% 25%, 75% 60.5%, 75% 75%, 25% 25%);
-          clip-path: polygon(39.25% 25%, 75% 60.5%, 75% 75%, 25% 25%);
-  background-color: #f9b96f;
-}
-main #app .packages .package h3 {
+main .packages .package h3 {
   margin: 0;
   margin-top: 15px;
   font-family: "sofachrome", sans-serif;
@@ -101,65 +128,65 @@ main #app .packages .package h3 {
   font-size: 20px;
   margin-top: 1%;
 }
-main #app .packages .package .prices {
+main .packages .package .prices {
   display: flex;
   gap: 15px;
   align-items: baseline;
 }
-main #app .packages .package .prices .price {
+main .packages .package .prices .price {
   font-size: 40px;
   margin-bottom: 3%;
 }
-main #app .packages .package .prices .day {
+main .packages .package .prices .day {
   opacity: 50%;
 }
-main #app .packages .package .button1 {
+main .packages .package .button1 {
   width: 100%;
 }
-main #app .packages .package .line {
+main .packages .package .line {
   margin-top: 20px;
   height: 2px;
   width: 100%;
-  background-color: #2b6388;
+  background-color: #2B6388;
   opacity: 50%;
 }
-main #app .packages .package .details {
+main .packages .package .details {
   margin-top: 5%;
 }
-main #app .packages .package .details .title {
+main .packages .package .details .title {
   font-weight: bold;
+  padding: 5% 0% 1% 0%;
 }
-main #app .packages .package .details ul li {
+main .packages .package .details ul li {
   opacity: 50%;
-  margin-top: 3%;
 }
-main #app .packages .package .includes {
-  margin-top: 5%;
+main .packages .package .includes {
+  padding: 5% 0% 1% 0%;
 }
-main #app .packages .package .includes .title {
+main .packages .package .includes .title {
   font-weight: bold;
+  padding: 5% 0% 1% 0%;
 }
-main #app .packages .package .includes ul {
-  list-style-type: none;
-  padding-left: 10px;
+main .packages .package .includes ul {
   margin-top: 3%;
 }
-main #app .packages .package .includes ul .include {
+main .packages .package .includes ul .include {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-main #app .packages .package .includes ul .include li {
+main .packages .package .includes ul .include li {
   opacity: 50%;
 }
-main #app .validation {
+main .validation {
   font-family: "roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
-  margin-top: 15%;
+  margin-top: 12%;
+  max-width: 100%;
 }
-main #app .validation h2 {
+main .validation h2 {
   font-family: "sofachrome", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -167,26 +194,37 @@ main #app .validation h2 {
   margin-top: 10%;
   color: #F9B96F;
 }
-main #app .validation .calendar {
-  max-width: 100%;
+main .validation .layout {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  height: 650px;
+  width: 100%;
+  border-radius: 20px;
+  position: absolute;
+  top: 1153px;
+}
+main .validation .calendar {
+  margin-top: 3% !important;
+  width: 100%;
+  margin: auto;
   border-radius: 20px;
   padding: 40px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
-  padding-bottom: 1%;
-  margin-top: 3%;
 }
-main #app .validation .calendar .days_container {
+main .validation .calendar .days_container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 3% !important;
 }
-main #app .validation .calendar .days_container h3 {
+main .validation .calendar .days_container h3 {
   margin: 0;
   padding-bottom: 40px;
   font-family: "sofachrome", sans-serif;
@@ -194,17 +232,17 @@ main #app .validation .calendar .days_container h3 {
   font-style: normal;
   font-size: 20px;
 }
-main #app .validation .calendar .days_container .week {
+main .validation .calendar .days_container .week {
   display: flex;
   flex-wrap: wrap;
   width: 720px;
   gap: 10px;
 }
-main #app .validation .calendar .days_container .week .week_day {
+main .validation .calendar .days_container .week .week_day {
   box-sizing: border-box;
   width: 90px;
   height: 40px;
-  background-color: #9d4ab2;
+  background-color: #9D4AB2;
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -212,14 +250,14 @@ main #app .validation .calendar .days_container .week .week_day {
   font-size: 18px;
   font-weight: 300;
 }
-main #app .validation .calendar .days_container .days {
+main .validation .calendar .days_container .days {
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   width: 720px;
   gap: 10px;
 }
-main #app .validation .calendar .days_container .days .b_day {
+main .validation .calendar .days_container .days .b_day {
   box-sizing: border-box;
   width: 90px;
   height: 70px;
@@ -231,7 +269,7 @@ main #app .validation .calendar .days_container .days .b_day {
   font-size: 18px;
   font-weight: 300;
 }
-main #app .validation .calendar .days_container .days .day {
+main .validation .calendar .days_container .days .day {
   backdrop-filter: blur(16px) saturate(180%) opacity(1%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background: rgba(229, 240, 255, 0.3);
@@ -247,128 +285,145 @@ main #app .validation .calendar .days_container .days .day {
   font-size: 18px;
   font-weight: 300;
 }
-main #app .validation .calendar .days_container .days .day:hover {
-  border: 2px solid #f9b96f;
-}
-main #app .validation .calendar .days_container .days .selected {
+main .validation .calendar .days_container .days .selected {
   border: 3px rgba(249, 185, 111, 0.7) solid;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
 }
-main #app .validation .calendar .user_infos {
-  margin-top: 95px;
-  border-left: 1px solid #2b6388;
-  border-right: 1px solid #2b6388;
+main .validation .calendar .days_container .days .endSelected {
+  border: 3px rgba(249, 185, 111, 0.7) solid;
+  backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  background: rgba(229, 240, 255, 0.5);
+  background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
+}
+main .validation .calendar .user_infos {
+  margin-top: 100px;
   padding: 0px 20px 0px 20px;
   box-sizing: border-box;
+}
+main .validation .calendar .user_infos .username .opacity {
+  opacity: 50%;
+}
+main .validation .calendar .user_infos .username p {
+  margin: 3% 0%;
+}
+main .validation .calendar .user_infos .reservation_date p {
+  margin: 3% 0%;
+}
+main .validation .calendar .user_infos .reservation_date .gold {
+  color: #F9B96F;
+}
+main .validation .calendar .user_infos .reservation_date_end p {
+  margin: 3% 0%;
+}
+main .validation .calendar .user_infos .reservation_date_end .gold {
+  color: #F9B96F;
+}
+main .validation .calendar .user_infos .address p {
+  margin: 3% 0%;
+}
+main .validation .calendar .user_infos .address .opacity {
+  opacity: 50%;
+}
+main .validation .validation_package {
+  margin-left: 20px;
+  padding: 25px;
   width: 300px;
+  border-radius: 20px;
+  backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  background: rgba(229, 240, 255, 0.5);
+  background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
 }
-main #app .validation .calendar .user_infos .username .opacity {
-  opacity: 50%;
-}
-main #app .validation .calendar .user_infos .username p {
-  margin: 3% 0%;
-}
-main #app .validation .calendar .user_infos .reservation_date p {
-  margin: 3% 0%;
-}
-main #app .validation .calendar .user_infos .reservation_date .gold {
-  color: #f9b96f;
-}
-main #app .validation .calendar .user_infos .reservation_date_end p {
-  margin: 3% 0%;
-}
-main #app .validation .calendar .user_infos .reservation_date_end .gold {
-  color: #f9b96f;
-}
-main #app .validation .calendar .user_infos .address p {
-  margin: 3% 0%;
-}
-main #app .validation .calendar .user_infos .address .opacity {
-  opacity: 50%;
-}
-main #app .validation .validation_package {
-  margin-top: 95px;
-}
-main #app .validation .validation_package h3 {
+main .validation h3 {
   font-family: "sofachrome", sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 20px;
-  width: 350px;
 }
-main #app .validation .validation_package .validation_prices {
+main .validation .validation_prices {
   display: flex;
   gap: 15px;
   align-items: baseline;
   padding-bottom: 3%;
 }
-main #app .validation .validation_package .validation_prices .validation_price {
+main .validation .validation_prices .validation_price {
   margin: 0;
   font-size: 40px;
 }
-main #app .validation .validation_package .validation_prices .day {
+main .validation .validation_prices .day {
   opacity: 50%;
 }
-main #app .validation .validation_package .validation_line {
+main .validation .validation_line {
   height: 2px;
   width: 100%;
-  background-color: #2b6388;
+  background-color: #2B6388;
   opacity: 50%;
-  margin-bottom: 3%;
 }
-main #app .validation .validation_package .validation_details .validation_title {
+main .validation .validation_details {
+  padding-top: 3%;
+}
+main .validation .validation_details .validation_title {
   font-weight: bold;
-  padding-bottom: 3%;
+  padding: 5% 0% 1% 0%;
 }
-main #app .validation .validation_package .validation_details ul li {
+main .validation .validation_details ul li {
   opacity: 50%;
   margin-top: 1%;
 }
-main #app .validation .validation_package .validation_includes .validation_title {
-  font-weight: bold;
-  padding-bottom: 3%;
+main .validation .validation_includes {
+  padding-bottom: 5%;
 }
-main #app .validation .validation_package .validation_includes ul {
+main .validation .validation_includes .validation_title {
+  font-weight: bold;
+  padding: 10% 0% 1% 0%;
+}
+main .validation .validation_includes ul {
   list-style-type: none;
   padding-left: 10px;
 }
-main #app .validation .validation_package .validation_includes ul .validation_include {
+main .validation .validation_includes ul .validation_include {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-main #app .validation .validation_package .validation_includes ul .validation_include li {
+main .validation .validation_includes ul .validation_include li {
   opacity: 50%;
-  margin-top: 1%;
 }
-main #app .list {
-  margin-top: 15%;
+
+#list {
+  margin-top: 12%;
 }
-main #app .list .container_list {
-  border: 1px solid #2b6388;
+#list .container_list {
+  border: 1px solid #2B6388;
   border-radius: 20px;
+  margin-top: 3%;
 }
-main #app .list .container_list .reservation_title {
+#list .container_list .reservation_title {
   backdrop-filter: blur(16px) saturate(180%) opacity(1%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background: rgba(229, 240, 255, 0.3);
-  background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
+  background: linear-gradient(360deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
   border-radius: 20px 20px 0px 0px;
   display: flex;
   align-items: center;
+  padding: 20px;
 }
-main #app .list .container_list .reservation_title .width {
+#list .container_list .reservation_title .width {
   width: 25%;
 }
-main #app .list .container_list .reservation_list {
+#list .container_list .reservation_container {
+  margin: 0px 20px 0px 20px;
+}
+#list .container_list .reservation_list {
   display: flex;
   align-items: center;
   width: 100%;
-  border-top: 1px solid #2b6388;
+  border-top: 1px solid #2B6388;
 }
-main #app .list .container_list .reservation_list .width {
+#list .container_list .reservation_list .width {
   width: 25%;
 }/*# sourceMappingURL=reservations.css.map */
