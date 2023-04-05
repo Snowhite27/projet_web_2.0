@@ -1,6 +1,5 @@
 <x-head></x-head>
 <title>ArtTech Fest || Réservations</title>
-</script>
 
 <body>
     <main>
@@ -67,11 +66,11 @@
                 <p>Validez votre date et confirmez votre réservation.</p>
                 {{-- *********************** CALENDAR ************************** --}}
 
-
+                <div class="layout" v-if="month != 3">
+                    <p>Le festival n'est pas disponible dans ces dates</p>
+                </div>
                 <div class="calendar">
-                    <div class="layout" v-if="month == 3">
-                        <p>Le festival n'est pas disponible dans ces dates</p>
-                    </div>
+
                     <div class="days_container">
 
                         <h3>@{{ month_string + " " + year }}</h3>
@@ -179,8 +178,7 @@
 
                 </div>
             </section>
-            <section class="list" id="list">
-
+            <section  id="list">
                 <h2>Vos réservations</h2>
                 <p>Voici votre liste des réservations de vos forfaits. Si vous deviez supprimer un forfait, il vous est
                     possible si cela ne dépasse pas 24h avant l'évènement.</p>

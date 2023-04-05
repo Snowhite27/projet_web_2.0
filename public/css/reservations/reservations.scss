@@ -2,7 +2,13 @@
 @import '../buttons/buttons.css';
 
 main {
-    padding-top: 15vh;
+    padding-top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1450px;
+    margin: 0 auto;
+
     div{
         h1 {
                 font-family: "sofachrome", sans-serif;
@@ -10,7 +16,7 @@ main {
                 font-style: normal;
                 font-size: 24px;
                 text-align: center;
-                color: $lgblue;
+                color: $yellow;
             }
         h2 {
             font-family: "sofachrome", sans-serif;
@@ -19,12 +25,9 @@ main {
             font-size: 22px;
             padding-bottom: 1%;
             margin-top: 3%;
-            color: $lgblue;
-            padding-left: 25%;
+            color: $yellow;
         }
-        .dave{
-            padding-left: 25%;
-        }
+
     }
     .packages {
         height: 100%;
@@ -64,10 +67,6 @@ main {
                     rgba(229, 240, 255, 0.05) 0%,
                     rgba(249, 185, 111, 0.3) 100%
                 );
-            }
-            &.banner {
-                clip-path: polygon(39.25% 25%, 75% 60.5%, 75% 75%, 25% 25%);
-                background-color: $yellow;
             }
 
             h3 {
@@ -126,8 +125,6 @@ main {
                 }
 
                 ul {
-                    list-style-type: none;
-                    padding-left: 10px;
                     margin-top: 3%;
 
                     .include {
@@ -149,7 +146,8 @@ main {
             font-weight: 400;
             font-style: normal;
             font-size: 20px;
-            margin-top: 15%;
+            margin-top: 12%;
+            width:1450px;
 
             h2 {
                 font-family: "sofachrome", sans-serif;
@@ -160,14 +158,23 @@ main {
                 color: $yellow;
 
             }
+            .layout{
+                background-color:rgb(0,0,0,0.5);
+                z-index: 1000;
+                height: 650px;
+                width: 100%;
+                border-radius: $b-border;
+
+                position: absolute;
+                top: 1153px;
+            }
 
             .calendar {
-               width: 100%;
-                height: 100%;
+                max-width: 100%;
+                height: 650px;
                 border-radius: $b-border;
                 padding: 40px;
                 display: flex;
-                justify-content: space-between;
                 backdrop-filter: blur(16px) saturate(180%) opacity(50%);
                 -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
                 background: rgba(229, 240, 255, 0.5);
@@ -177,15 +184,6 @@ main {
                     rgba(229, 240, 255, 0.2) 100%
                 );
 
-                .layout{
-                    background-color: black;
-                    opacity: 50%;
-                    z-index: 1000;
-                    height: 100%;
-                    width: 100%;
-                    border-radius: $b-border;
-                    padding: 40px;
-                }
                 .days_container {
                     display: flex;
                     justify-content: center;
@@ -299,7 +297,7 @@ main {
                     border-right: 1px solid $blue;
                     padding: 0px 20px 0px 20px;
                     box-sizing: border-box;
-                    width: 300px;
+
 
                     .username {
                         .opacity {
@@ -340,12 +338,13 @@ main {
             }
             .validation_package {
                 margin-top: 95px;
+                width: 25%;
+                padding-left: 20px;
                 h3 {
                     font-family: "sofachrome", sans-serif;
                     font-weight: 300;
                     font-style: normal;
                     font-size: 20px;
-                    width: 350px;
                 }
 
                 .validation_prices {
@@ -400,13 +399,13 @@ main {
                 }
             }
         }
-        .list {
-            margin-top: 15%;
+        #list {
+            margin-top: 12%;
 
             .container_list {
                 border: 1px solid $blue;
                 border-radius: $b-border;
-                margin-top: 5%;
+                margin-top: 3%;
 
                 .reservation_title {
                     backdrop-filter: blur(16px) saturate(180%) opacity(1%);

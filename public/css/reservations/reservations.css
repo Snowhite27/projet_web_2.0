@@ -4,7 +4,12 @@
 /**p**/
 @import '../buttons/buttons.css';
 main {
-  padding-top: 15vh;
+  padding-top: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1450px;
+  margin: 0 auto;
 }
 main div h1 {
   font-family: "sofachrome", sans-serif;
@@ -12,7 +17,7 @@ main div h1 {
   font-style: normal;
   font-size: 24px;
   text-align: center;
-  color: #E5F0FF;
+  color: #F9B96F;
 }
 main div h2 {
   font-family: "sofachrome", sans-serif;
@@ -21,11 +26,7 @@ main div h2 {
   font-size: 22px;
   padding-bottom: 1%;
   margin-top: 3%;
-  color: #E5F0FF;
-  padding-left: 25%;
-}
-main div .dave {
-  padding-left: 25%;
+  color: #F9B96F;
 }
 main .packages {
   height: 100%;
@@ -57,11 +58,6 @@ main .packages .package.lord {
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
-}
-main .packages .package.banner {
-  -webkit-clip-path: polygon(39.25% 25%, 75% 60.5%, 75% 75%, 25% 25%);
-          clip-path: polygon(39.25% 25%, 75% 60.5%, 75% 75%, 25% 25%);
-  background-color: #F9B96F;
 }
 main .packages .package h3 {
   margin: 0;
@@ -111,8 +107,6 @@ main .packages .package .includes .title {
   font-weight: bold;
 }
 main .packages .package .includes ul {
-  list-style-type: none;
-  padding-left: 10px;
   margin-top: 3%;
 }
 main .packages .package .includes ul .include {
@@ -128,7 +122,8 @@ main .validation {
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
-  margin-top: 15%;
+  margin-top: 12%;
+  width: 1450px;
 }
 main .validation h2 {
   font-family: "sofachrome", sans-serif;
@@ -138,24 +133,25 @@ main .validation h2 {
   margin-top: 10%;
   color: #F9B96F;
 }
+main .validation .layout {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  height: 650px;
+  width: 100%;
+  border-radius: 20px;
+  position: absolute;
+  top: 1153px;
+}
 main .validation .calendar {
   max-width: 100%;
+  height: 650px;
   border-radius: 20px;
   padding: 40px;
   display: flex;
-  justify-content: space-between;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
-}
-main .validation .calendar .layout {
-  background-color: black;
-  opacity: 50%;
-  z-index: 50;
-  max-width: 100%;
-  border-radius: 20px;
-  padding: 40px;
 }
 main .validation .calendar .days_container {
   display: flex;
@@ -247,7 +243,6 @@ main .validation .calendar .user_infos {
   border-right: 1px solid #2B6388;
   padding: 0px 20px 0px 20px;
   box-sizing: border-box;
-  width: 300px;
 }
 main .validation .calendar .user_infos .username .opacity {
   opacity: 50%;
@@ -275,13 +270,14 @@ main .validation .calendar .user_infos .address .opacity {
 }
 main .validation .validation_package {
   margin-top: 95px;
+  width: 25%;
+  padding-left: 20px;
 }
 main .validation .validation_package h3 {
   font-family: "sofachrome", sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 20px;
-  width: 350px;
 }
 main .validation .validation_package .validation_prices {
   display: flex;
@@ -324,15 +320,15 @@ main .validation .validation_package .validation_includes ul .validation_include
 main .validation .validation_package .validation_includes ul .validation_include li {
   opacity: 50%;
 }
-main .list {
-  margin-top: 15%;
+main #list {
+  margin-top: 12%;
 }
-main .list .container_list {
+main #list .container_list {
   border: 1px solid #2B6388;
   border-radius: 20px;
-  margin-top: 5%;
+  margin-top: 3%;
 }
-main .list .container_list .reservation_title {
+main #list .container_list .reservation_title {
   backdrop-filter: blur(16px) saturate(180%) opacity(1%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background: rgba(229, 240, 255, 0.3);
@@ -342,18 +338,18 @@ main .list .container_list .reservation_title {
   align-items: center;
   padding: 20px;
 }
-main .list .container_list .reservation_title .width {
+main #list .container_list .reservation_title .width {
   width: 25%;
 }
-main .list .container_list .reservation_container {
+main #list .container_list .reservation_container {
   margin: 0px 20px 0px 20px;
 }
-main .list .container_list .reservation_list {
+main #list .container_list .reservation_list {
   display: flex;
   align-items: center;
   width: 100%;
   border-top: 1px solid #2B6388;
 }
-main .list .container_list .reservation_list .width {
+main #list .container_list .reservation_list .width {
   width: 25%;
 }/*# sourceMappingURL=reservations.css.map */
