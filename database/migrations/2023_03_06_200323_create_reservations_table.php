@@ -18,6 +18,7 @@ class CreateReservationsTable extends Migration
             $table->foreignId('package_id')->references('id')->on('packages');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->string('event_date')->nullable();
+            $table->string('event_date_end')->nullable();
             $table->timestamps();
         });
     }

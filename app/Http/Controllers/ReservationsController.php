@@ -117,16 +117,19 @@ class ReservationsController extends Controller
             'package_id' => 'required',
             'user_id' => 'required',
             'event_date' => 'required',
+            // 'event_date_end' => 'required'
         ], [
             'package_id.required' => 'Troubles niveau forfait',
             'user_id.required' => 'Trouble niveau user',
-            'event_date.required' => 'Trouble niveau de la date',
+            'event_date.required' => 'Trouble niveau de la date réservation',
+            'event_date_end.required' => 'Trouble niveau fin de date de réservation'
         ]);
 
         Reservation::create([
             'package_id' => $request->package_id,
             'user_id' => $request->user_id,
-            'event_date' => $request->event_date
+            'event_date' => $request->event_date,
+            'event_date_end' => $request->event_date_end
         ]);
     }
 

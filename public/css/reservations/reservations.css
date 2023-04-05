@@ -136,7 +136,7 @@ main .validation h2 {
   font-style: normal;
   font-size: 22px;
   margin-top: 10%;
-  color: #f9b96f;
+  color: #F9B96F;
 }
 main .validation .calendar {
   max-width: 100%;
@@ -148,6 +148,14 @@ main .validation .calendar {
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
+}
+main .validation .calendar .layout {
+  background-color: black;
+  opacity: 50%;
+  z-index: 50;
+  max-width: 100%;
+  border-radius: 20px;
+  padding: 40px;
 }
 main .validation .calendar .days_container {
   display: flex;
@@ -220,6 +228,13 @@ main .validation .calendar .days_container .days .day:hover {
   border: 2px solid #F9B96F;
 }
 main .validation .calendar .days_container .days .selected {
+  border: 3px rgba(249, 185, 111, 0.7) solid;
+  backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  background: rgba(229, 240, 255, 0.5);
+  background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
+}
+main .validation .calendar .days_container .days .endSelected {
   border: 3px rgba(249, 185, 111, 0.7) solid;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
@@ -329,6 +344,9 @@ main .list .container_list .reservation_title {
 }
 main .list .container_list .reservation_title .width {
   width: 25%;
+}
+main .list .container_list .reservation_container {
+  margin: 0px 20px 0px 20px;
 }
 main .list .container_list .reservation_list {
   display: flex;

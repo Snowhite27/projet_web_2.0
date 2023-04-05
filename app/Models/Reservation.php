@@ -12,7 +12,8 @@ class Reservation extends Model
     protected $fillable = [
         'package_id',
         'user_id',
-        'event_date'
+        'event_date',
+        'event_date_end'
     ];
 
     public function package()
