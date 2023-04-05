@@ -79,6 +79,9 @@ body #app .container {
   padding-top: 15vh;
   display: flex;
 }
+body #app .list {
+  width: 50%;
+}
 body #app .list .activity {
   height: 25vh;
   display: flex;
