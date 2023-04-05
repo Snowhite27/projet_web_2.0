@@ -258,6 +258,11 @@ section.actualites .container-actualites .carousel-container .carousel .actualit
   width: 350px;
   height: 297px;
 }
+section.actualites .container-actualites .carousel-container .carousel .actualite-card .actualite-image-box img {
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
 section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content {
   position: relative;
   width: 100%;
@@ -273,7 +278,8 @@ section.actualites .container-actualites .carousel-container .carousel .actualit
   font-size: 18px;
   color: #f9b96f;
 }
-section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .content {
+section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .content,
+section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .short_description {
   position: absolute;
   font-family: "roboto", sans-serif;
   font-weight: 400;
