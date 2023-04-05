@@ -17,14 +17,15 @@ const actual_date = ref()
 const event_convert_date = ref()
 
 
+
 /**
  * Actualise les dates à chaque 60 secondes
  */
     setInterval(e=> {
         const dates = new Date(Date.now())
         actual_date.value = dates.getUTCDate()
-        console.log(dates)
-    },60000)
+        console.log(actual_date.value)
+    },3000)
 
 console.log('time',actual_date)
 
@@ -64,6 +65,10 @@ function showPackage(package_infos, user){
  * @param {int} date / jour
  */
 function selectDate(date, user_package){
+    if(Date.now()>date *1000){
+return
+    }
+
     // class scss
     selected.value = date
     select_date.value = selected.value * 1000
@@ -100,10 +105,11 @@ function setDate(select_date, select_date_end){
 
 function convertDate(date){
     const convert_date = new Date(date).getUTCDate()
-    event_convert_date.value = convert_date
+
         const convert_date_month = new Date(date).getUTCMonth()
+        const convert_date_year = new Date(date).getUTCFullYear()
         const convert_month_string = new Date(Date.UTC(2000, convert_date_month +1)).toLocaleString('fr-CA', { month: 'long' });
-        return convert_date + " " + convert_month_string+" "+ year.value
+        return convert_date + " " + convert_month_string+" "+ convert_date_year
 }
 
 /**

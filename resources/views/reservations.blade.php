@@ -93,7 +93,8 @@
                             <div class="day" v-for="date of calendar.days"
                                 @click.prevent="selectDate(date.date_unix_time, select_package)"
                                 :class="{
-                                    'selected': selected == date.date_unix_time
+                                    'selected': selected == date.date_unix_time,
+                                    'endSelected': select_date_end >= (date.date_unix_time*1000) && selected < date.date_unix_time
                                 }">
                                 @{{ date.date }}
                             </div>
@@ -211,15 +212,17 @@
                                 <div class="width">
                                     <p>{{ $reservation->package->name }}</p>
                                 </div>
-                                {{-- <div class="width">
-                                    <p>@{{ convertDate({{$reservation->event_date}}) }}</p>
+                                <div class="width">
+                                    <p>@verbatim {{ convertDate( @endverbatim {{ $reservation->event_date }} @verbatim ) }} @endverbatim</p>
                                 </div>
                                 <div class="width">
-                                    <p>@{{ convertDate({{$reservation->event_date_end}}) }}</p>
-                                </div> --}}
+                                    <p>@verbatim {{ convertDate( @endverbatim {{ $reservation->event_date_end }} @verbatim ) }} @endverbatim</p>
+                                </div>
                                 <a
-                                    href="{{ route('delete', $reservation->id) }}"v-show="actual_date > event_convert_date">Supprimer</a>
+                                    href="{{ route('delete', $reservation->id) }}"v-show="actual_date < {{ date('d', $reservation->event_date/1000) }} ">Supprimer
+                                </a>
                             </div>
+
                         @endforeach
                     </div>
                 </div>

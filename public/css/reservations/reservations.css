@@ -284,9 +284,6 @@ main .validation .calendar .days_container .days .day {
   font-size: 18px;
   font-weight: 300;
 }
-main .validation .calendar .days_container .days .day:hover {
-  border: 2px solid #F9B96F;
-}
 main .validation .calendar .days_container .days .selected {
   border: 3px rgba(249, 185, 111, 0.7) solid;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
