@@ -69,10 +69,7 @@ a.button3:hover {
 
 main {
   padding-top: 20vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 1450px;
+  width: 88%;
   margin: 0 auto;
 }
 main div h1 {
@@ -109,7 +106,6 @@ main .packages .package {
   padding: 25px;
   box-sizing: border-box;
   width: 300px;
-  height: 550px;
   border-radius: 20px;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
@@ -159,16 +155,17 @@ main .packages .package .details {
 }
 main .packages .package .details .title {
   font-weight: bold;
+  padding: 5% 0% 1% 0%;
 }
 main .packages .package .details ul li {
   opacity: 50%;
-  margin-top: 3%;
 }
 main .packages .package .includes {
-  margin-top: 5%;
+  padding: 5% 0% 1% 0%;
 }
 main .packages .package .includes .title {
   font-weight: bold;
+  padding: 5% 0% 1% 0%;
 }
 main .packages .package .includes ul {
   margin-top: 3%;
@@ -187,7 +184,7 @@ main .validation {
   font-style: normal;
   font-size: 20px;
   margin-top: 12%;
-  width: 1450px;
+  max-width: 100%;
 }
 main .validation h2 {
   font-family: "sofachrome", sans-serif;
@@ -207,11 +204,14 @@ main .validation .layout {
   top: 1153px;
 }
 main .validation .calendar {
-  max-width: 100%;
-  height: 650px;
+  margin-top: 3% !important;
+  width: 100%;
+  margin: auto;
   border-radius: 20px;
   padding: 40px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
@@ -222,6 +222,7 @@ main .validation .calendar .days_container {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 3% !important;
 }
 main .validation .calendar .days_container h3 {
   margin: 0;
@@ -299,9 +300,7 @@ main .validation .calendar .days_container .days .endSelected {
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
 }
 main .validation .calendar .user_infos {
-  margin-top: 95px;
-  border-left: 1px solid #2B6388;
-  border-right: 1px solid #2B6388;
+  margin-top: 100px;
   padding: 0px 20px 0px 20px;
   box-sizing: border-box;
 }
@@ -330,66 +329,80 @@ main .validation .calendar .user_infos .address .opacity {
   opacity: 50%;
 }
 main .validation .validation_package {
-  margin-top: 95px;
-  width: 25%;
-  padding-left: 20px;
+  margin-left: 20px;
+  padding: 25px;
+  width: 300px;
+  border-radius: 20px;
+  backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  background: rgba(229, 240, 255, 0.5);
+  background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
 }
-main .validation .validation_package h3 {
+main .validation h3 {
   font-family: "sofachrome", sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 20px;
 }
-main .validation .validation_package .validation_prices {
+main .validation .validation_prices {
   display: flex;
   gap: 15px;
   align-items: baseline;
   padding-bottom: 3%;
 }
-main .validation .validation_package .validation_prices .validation_price {
+main .validation .validation_prices .validation_price {
   margin: 0;
   font-size: 40px;
 }
-main .validation .validation_package .validation_prices .day {
+main .validation .validation_prices .day {
   opacity: 50%;
 }
-main .validation .validation_package .validation_line {
+main .validation .validation_line {
   height: 2px;
   width: 100%;
   background-color: #2B6388;
   opacity: 50%;
 }
-main .validation .validation_package .validation_details .validation_title {
-  font-weight: bold;
+main .validation .validation_details {
+  padding-top: 3%;
 }
-main .validation .validation_package .validation_details ul li {
+main .validation .validation_details .validation_title {
+  font-weight: bold;
+  padding: 5% 0% 1% 0%;
+}
+main .validation .validation_details ul li {
   opacity: 50%;
   margin-top: 1%;
 }
-main .validation .validation_package .validation_includes .validation_title {
-  font-weight: bold;
+main .validation .validation_includes {
+  padding-bottom: 5%;
 }
-main .validation .validation_package .validation_includes ul {
+main .validation .validation_includes .validation_title {
+  font-weight: bold;
+  padding: 10% 0% 1% 0%;
+}
+main .validation .validation_includes ul {
   list-style-type: none;
   padding-left: 10px;
 }
-main .validation .validation_package .validation_includes ul .validation_include {
+main .validation .validation_includes ul .validation_include {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-main .validation .validation_package .validation_includes ul .validation_include li {
+main .validation .validation_includes ul .validation_include li {
   opacity: 50%;
 }
-main #list {
+
+#list {
   margin-top: 12%;
 }
-main #list .container_list {
+#list .container_list {
   border: 1px solid #2B6388;
   border-radius: 20px;
   margin-top: 3%;
 }
-main #list .container_list .reservation_title {
+#list .container_list .reservation_title {
   backdrop-filter: blur(16px) saturate(180%) opacity(1%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background: rgba(229, 240, 255, 0.3);
@@ -399,18 +412,18 @@ main #list .container_list .reservation_title {
   align-items: center;
   padding: 20px;
 }
-main #list .container_list .reservation_title .width {
+#list .container_list .reservation_title .width {
   width: 25%;
 }
-main #list .container_list .reservation_container {
+#list .container_list .reservation_container {
   margin: 0px 20px 0px 20px;
 }
-main #list .container_list .reservation_list {
+#list .container_list .reservation_list {
   display: flex;
   align-items: center;
   width: 100%;
   border-top: 1px solid #2B6388;
 }
-main #list .container_list .reservation_list .width {
+#list .container_list .reservation_list .width {
   width: 25%;
 }/*# sourceMappingURL=reservations.css.map */

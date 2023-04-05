@@ -62,7 +62,7 @@
 
             <section class="validation" v-if="Object.keys(select_package).length != 0">
 
-                <h2>Validation</h2>
+                <h2>Calendrier</h2>
                 <p>Validez votre date et confirmez votre réservation.</p>
                 {{-- *********************** CALENDAR ************************** --}}
 
@@ -137,7 +137,7 @@
 
                         </div>
                     @endif
-                    <div class="line"></div>
+
                     {{-- *********************** PACKAGES ************************** --}}
 
                     <div class="validation_package">
@@ -149,7 +149,7 @@
                             <p class="day">@{{ select_package.duration }}</p>
                         </div>
 
-                        <div class="validation_line"></div>
+
 
                         <div class="validation_details">
                             <p class="validation_title">Détails du forfait</p>
@@ -219,7 +219,7 @@
                                     <p>@verbatim {{ convertDate( @endverbatim {{ $reservation->event_date_end }} @verbatim ) }} @endverbatim</p>
                                 </div>
                                 <a
-                                    href="{{ route('delete', $reservation->id) }}"v-show="actual_date < {{ date('d', $reservation->event_date/1000) }} ">Supprimer
+                                    href="{{ route('delete', $reservation->id) }}"v-if="actual_date < {{ date('d', $reservation->event_date/1000) }} ">Supprimer
                                 </a>
                             </div>
 
