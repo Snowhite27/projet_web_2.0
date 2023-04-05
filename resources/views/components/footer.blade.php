@@ -6,15 +6,14 @@
             <div class="section experience">
                 <h3>L'expérience ArtTech</h3>
                 <p>Le festival ArtTech vous transporte dans un monde virtuel incroyable. Vous découvrirai des technologies immersives telles que la réalité virtuelle, la réalité augmentée, la projection 3D et bien plus encore. Lors du festival, vous serez en mesure de découvrir les dernières avancées en matière de technologie, de rencontrer des experts.</p><br>
-                <p>Participer au festival ArtTech est une expérience inoubliable et fascinante qui vous permettra de découvrir les technologies les plus innovantes du moment.</p>
             </div>
 
             <div class="section links">
                 <h3>Liens utiles</h3>
-                    <div><a href="{{ url('/home') }}">Accueil</a></div>
+                    <div><a href="{{ url('/') }}">Accueil</a></div>
                     <div><a href="{{ url('/reservations') }}">Réservations</a></div>
                     <div><a href="{{ url('/activities') }}">Activités</a></div>
-                    <div><a href="{{ url('/news') }}">Actualités</a></div>
+                    <div><a href="{{ url('/actualities') }}">Actualités</a></div>
                     <div><a href="{{ url('/contact') }}">Contact</a></div>
             </div>
 
@@ -40,8 +39,8 @@
         </div>
 
         <div class="packages">
-            <p>Réservez votre forfait personalisé!</p>
-            <a class="button2" href="{{ url('/reservation') }}">
+            <p>Réservez votre forfait personnalisé!</p>
+            <a class="button2" href="{{ url('/reservations') }}">
                 Forfaits
             </a>
         </div>

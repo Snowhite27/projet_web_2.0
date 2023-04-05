@@ -1,7 +1,5 @@
 @extends('layouts.news')
-@section('title', 'Actualités | Arttech')
 @section('content')
-<x-navbar></x-navbar>
 <main>
    <section class="actualites">
       <div class="section-header-content">
@@ -21,7 +19,8 @@
                   </div>
                   <div class="card-content">
                      <span class="title">{{ $article->name }}</span>
-                     <span class="content">{{ $article->description }}</span>
+                     <span class="short_description">{{ Str::limit($article->description, 150) }}</span>
+                     <span class="content" hidden>{{ $article->description }}</span>
                      <span class="date">{{ $article->created_at }}</span>
                      <span class="lire-plus"><a href="#">Lire plus &#8594;</a></span>
                   </div>
@@ -67,5 +66,4 @@
       <a class="button1" href="{{ url('/reservations') }}">Réservez maintenant!</a>
    </section>
 </main>
-<x-footer></x-footer>
 @endsection

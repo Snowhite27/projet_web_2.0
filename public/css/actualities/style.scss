@@ -1,5 +1,6 @@
 @import "variables";
-@import "../buttons/buttons";
+@import '../variablesScss.scss';
+@import '../buttons/buttons';
 
 /* Box sizing rules */
 *,
@@ -209,6 +210,12 @@ section.actualites {
                         position: relative;
                         width: 350px;
                         height: 297px;
+
+                        img {
+                            width: 100%;
+                            border-top-left-radius: 25px;
+                            border-top-right-radius: 25px;
+                        }
                     }
 
                     .card-content {
@@ -225,7 +232,8 @@ section.actualites {
                             font-size: 18px;
                             color: $gold;
                         }
-                        .content {
+                        .content,
+                        .short_description {
                             position: absolute;
                             font-family: "roboto", sans-serif;
                             font-weight: 400;
