@@ -75,16 +75,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/actualities', function () {
-    return view('actualities');
-});
-
-
-//Footer
-Route::get('/footer', function () {
-    return view('footer');
-});
-
 //Activities
 Route::get('/activities', [ActivityController::class, 'index'])->name('activities');
 
@@ -96,7 +86,6 @@ Route::get('/packages/{id}', [ReservationsController::class, 'get'])->name('pack
 Route::get('/calendar/{month}/{year}', [ReservationsController::class, 'getCalendar'])->name('calendar');
 Route::post('/reservations', [ReservationsController::class, 'save'])->name('reservation.save');
 Route::get('/delete/{id}', [ReservationsController::class, 'delete'])->name('delete');
-
 
 //Contact
 Route::get('/contact', function () {

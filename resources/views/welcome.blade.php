@@ -9,7 +9,7 @@
         <div class="hero-content">
             <h1>Festival des technologies immersives</h1>
             <p>*Billets en quantité limitée</p>
-            <a href="#" class="button2">Réservez</a>
+            <a href="{{ url('/reservations') }}" class="button2">Réservez</a>
         </div>
     </section>
     <section class="story-section">

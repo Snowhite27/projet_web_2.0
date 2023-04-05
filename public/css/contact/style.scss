@@ -1,14 +1,5 @@
-@import '../variablesScss.scss';
-@import '../buttons/buttons.css';
-
-
-// 0a0421
-// 143057
-// 2b6388
-// 2c2159
-// 9d4ab2
-// f9b96f
-// e5f0ff
+@import '../variablesScss';
+@import '../buttons/buttons';
 
 * {
     margin: 0;
@@ -16,8 +7,8 @@
 }
 
 body {
-    background-color: #0a0421;
-    color: #e5f0ff;
+    background-color: $dkpurp;
+    color: $lgblue;
     font-family: roboto;
 }
 
@@ -25,19 +16,16 @@ h1 {
     font-size: 24px;
     font-family: sofachrome;
 }
-
 .main {
     display: flex;
     flex-direction: column;
     width: 100%;
-
     .main_contact {
         display: flex;
         justify-content: space-evenly;
         width: 80%;
         margin: 0 auto;
         z-index: 1;
-
         .background_image_container {
             position: absolute;
             height: 100%;
@@ -47,22 +35,19 @@ h1 {
             background-size: cover;
             opacity: 10%;
         }
-
         .contact_container {
             display: flex;
             flex-direction: row;
             align-items: center;
             min-height: 100vh;
             max-height: fit;
-
             .divider {
                 height: 50%;
                 width: 1px;
-                background-color: #f9b96f;
+                background-color: $yellow;
                 opacity: 25%;
                 margin: 0 30px;
             }
-
             .information,
             .message,
             .contact {
@@ -71,73 +56,60 @@ h1 {
                 height: 50%;
                 display: flex;
                 flex-direction: column;
-                // height: 100vh;
             }
-
             .information > * {
                 font-size: 20px;
                 margin-bottom: 20px;
             }
-
             .message {
                 font-size: 20px;
                 justify-content: space-between;
-
                 input {
                     border-radius: 8px;
                     height: 38px;
                     opacity: 28%;
                     width: 100%;
                 }
-
                 textarea {
                     border-radius: 8px;
                     height: 152px;
                     width: 100%;
                     opacity: 28%;
                 }
-
                 .message_button {
                     opacity: 100%;
                     width: 150px;
                     margin: 0 auto;
                 }
             }
-
             .contact {
                 font-size: 20px;
                 &>* {margin-bottom: 50px;}
                 .numero_container {
                     display: flex;
                     flex-direction: row;
-
                     .numero_image {
                         width: 25px;
                         height: 25px;
                         margin-right: 20px;
                     }
-
                     .numero {
                         font-family: sofachrome;
-                        color: #f9b96f;
+                        color: $yellow;
                     }
                 }
-
                 .email_container {
                     display: flex;
                     flex-direction: row;
-
                     .email_image {
                         width: 25px;
                         height: 25px;
                         margin-right: 20px;
                     }
                 }
-
                 .location_container {
                     display: flex;
                     flex-direction: row;
-
                     .location_image {
                         width: 25px;
                         height: 25px;
@@ -149,7 +121,6 @@ h1 {
                     height: 1px;
                     width: 60%;
                 }
-
                 .social {
                     display: flex;
                     flex-direction: row;
@@ -162,14 +133,12 @@ h1 {
             }
         }
     }
-
     .map_container {
         width: 100%;
         height: 75vh;
         display: flex;
         justify-content: center;
         margin: auto;
-
         .map {
             height: 100%;
             width: 100%;
@@ -186,7 +155,6 @@ h1 {
     .main > .main_contact > .background_image_container {
         background-image: none;
     }
-
     .main > .main_contact > .contact_container > .message {
         input,
         textarea {

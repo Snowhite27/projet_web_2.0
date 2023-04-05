@@ -1,6 +1,5 @@
 <x-head></x-head>
 <title>ArtTech Fest || Réservations</title>
-
 <body>
     <main>
     <div id="app">
