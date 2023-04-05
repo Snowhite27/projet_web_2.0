@@ -13,10 +13,19 @@ class AdminController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $user_list = DB::table('users')
+
+        if($user->id == 1) {
+            $user_list = DB::table('users')
+                ->join('types', 'users.user_type', '=', 'types.id')
+                ->select('users.id', 'first_name', 'last_name', 'email', 'profile_picture', 'user_type', 'name')
+                ->get();
+        } else {
+            $user_list = DB::table('users')
             ->join('types', 'users.user_type', '=', 'types.id')
             ->select('users.id', 'first_name', 'last_name', 'email', 'profile_picture', 'user_type', 'name')
+            ->where('users.id', '=', $user->id)
             ->get();
+        }
 
         return view('admin.index')->with([
             'user' => $user,

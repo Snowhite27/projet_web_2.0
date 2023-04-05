@@ -21,17 +21,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/actualities', function () {
-    return view('actualities');
-});
-
-Route::get('/navbar', function () {
-    return view('navbar');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -43,8 +32,11 @@ Route::get('/navbar', function () {
 Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth'])->name('admin');
 
 //Accounts
+Route::get('/account/add', [UserController::class, 'add'])->middleware(['auth'])->name('user.add');
+Route::post('/account/add/submit', [UserController::class, 'addSubmit'])->middleware(['auth'])->name('user.add.submit');
 Route::get('/account/{id?}', [UserController::class, 'account'])->middleware(['auth'])->name('account');
 Route::match(['get', 'post'], '/account/modify/{id?}', [UserController::class, 'modify'])->middleware(['auth'])->name('user.modify');
+Route::delete('/account/remove/{id}', [UserController::class, 'remove'])->middleware(['auth'])->name('user.remove');
 
 //Articles
 Route::get('admin/articles/', [AdminController::class, 'showArticles'])->middleware(['auth'])->name('admin.articles');
@@ -79,23 +71,15 @@ Route::delete('/admin/reservations/remove/{id}', [ReservationsController::class,
 | Client section
 |--------------------------------------------------------------------------
 */
-
-//Header
-Route::get('/navbar', function () {
-    return view('navbar');
-});
-
-//Footer
-Route::get('/footer', function () {
-    return view('footer');
+Route::get('/', function () {
+    return view('welcome');
 });
 
 //Activities
 Route::get('/activities', [ActivityController::class, 'index'])->name('activities');
 
 //Articles
-Route::get('articles', [ArticleController::class, 'index'])->name('articles');
-
+Route::get('/actualities', [ArticleController::class, 'customerIndex'])->name('actualities');
 // Reservations
 Route::get('/reservations', [ReservationsController::class, 'customerIndex'])->name('reservations');
 Route::get('/packages/{id}', [ReservationsController::class, 'get'])->name('packages');
@@ -103,15 +87,10 @@ Route::get('/calendar/{month}/{year}', [ReservationsController::class, 'getCalen
 Route::post('/reservations', [ReservationsController::class, 'save'])->name('reservation.save');
 Route::get('/delete/{id}', [ReservationsController::class, 'delete'])->name('delete');
 
-
 //Contact
 Route::get('/contact', function () {
     return view('contact');
 });
-
-
-require __DIR__ . '/auth.php';
-
 
 
 require __DIR__ . '/auth.php';
