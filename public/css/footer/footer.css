@@ -85,4 +85,19 @@ body h4 {
 }
 .footer .copyright a {
   padding: 0;
+}
+
+@media (max-width: 1237px) {
+  .footer .sections {
+    flex-direction: column;
+  }
+  .footer .sections .section {
+    width: 100%;
+    padding: 5%;
+    text-align: center;
+  }
+  .footer .packages {
+    flex-direction: column;
+    gap: 5%;
+  }
 }/*# sourceMappingURL=footer.css.map */

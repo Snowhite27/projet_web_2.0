@@ -90,3 +90,19 @@ body{
     }
 }
 
+@media (max-width: 1237px){
+    .footer{
+        .sections{
+            flex-direction: column;
+            .section{
+                width: 100%;
+                padding: 5%;
+                text-align: center;
+            }
+        }
+        .packages{
+            flex-direction: column;
+            gap: 5%;
+        }
+    }
+}

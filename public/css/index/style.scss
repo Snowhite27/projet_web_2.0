@@ -94,6 +94,8 @@ button.scroll-top {
     }
 }
 
+// MAIN Content
+
 .hero-section {
     position: relative;
     display: block;
@@ -102,8 +104,7 @@ button.scroll-top {
     background-position: center center;
     background-size: cover;
     height: 100vh;
-    @media (max-width: $hero-lg) {
-    }
+
     video {
         position: absolute;
         left: 50%;
@@ -150,6 +151,26 @@ button.scroll-top {
             text-align: center;
             margin-bottom: 10px;
         }
+
+        .button1 {
+            width: 257px;
+            height: 62px;
+            font-family: roboto;
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #e5f0ff;
+            background: repeating-linear-gradient(
+                -45deg,
+                rgb(190, 48, 255) 0%,
+                hsl(33, 94%, 57%) 100%
+            );
+            border-radius: 12px;
+            margin-top: 2px;
+        }
     }
 }
 
@@ -166,7 +187,7 @@ button.scroll-top {
         top: 53px;
         left: 0;
         opacity: 50%;
-        max-width: 655px;
+        max-width: 0;
         height: 393px;
         width: 100%;
         background: rgb(157, 74, 178);
@@ -175,16 +196,58 @@ button.scroll-top {
             rgba(157, 74, 178, 1) 0%,
             rgba(10, 4, 33, 1) 55%
         );
+        &.animate {
+            animation: expand 1s ease-in-out forwards;
+        }
 
         @media (max-width: $story-xxl) {
-            max-width: 519px;
+            &.animate {
+                animation: expand-xxl 1s ease-in-out forwards;
+            }
         }
         @media (max-width: $story-xl) {
             top: 3%;
-            max-width: 508px;
+            &.animate {
+                animation: expand-xl 1s ease-in-out forwards;
+            }
         }
         @media (max-width: $story-md) {
             top: 3%;
+            &.animate {
+                animation: expand-md 1s ease-in-out forwards;
+            }
+        }
+    }
+
+    @keyframes expand {
+        0% {
+            max-width: 0;
+        }
+        100% {
+            max-width: 655px;
+        }
+    }
+    @keyframes expand-xxl {
+        0% {
+            max-width: 0;
+        }
+        100% {
+            max-width: 519px;
+        }
+    }
+    @keyframes expand-xl {
+        0% {
+            max-width: 0;
+        }
+        100% {
+            max-width: 508px;
+        }
+    }
+    @keyframes expand-md {
+        0% {
+            max-width: 0;
+        }
+        100% {
             max-width: 400px;
         }
     }
@@ -193,21 +256,45 @@ button.scroll-top {
         position: absolute;
         top: 53px;
         right: 0;
-        width: 200px;
+        width: 0px;
         height: 200px;
+
+        &.animate {
+            animation: grow 1s ease-in-out forwards;
+        }
+
         img.half-circle {
             opacity: 50%;
             width: 100%;
         }
         @media (max-width: $story-xxl) {
-            width: 150px;
             height: 150px;
+
+            &.animate {
+                animation: grow-xxl 1s ease-in-out forwards;
+            }
         }
         @media (max-width: $story-xl) {
             display: none;
         }
     }
 
+    @keyframes grow {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 200px;
+        }
+    }
+    @keyframes grow-xxl {
+        0% {
+            width: 0;
+        }
+        100% {
+            max-width: 150px;
+        }
+    }
     .img-story-container {
         position: absolute;
         max-width: 507px;
@@ -215,7 +302,9 @@ button.scroll-top {
         top: 17%;
         left: 16%;
         margin-right: 25rem;
+
         img.arttech-expo {
+            opacity: 0;
             width: 100%;
         }
         @media (max-width: $story-xxl) {
@@ -226,7 +315,29 @@ button.scroll-top {
             top: 6%;
             transform: translateX(-50%);
             width: 400px;
-            margin: 0;
+        }
+    }
+
+    .animate {
+        animation: slide-in-elliptic-left-fwd 0.7s
+            cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation-delay: 0.2s;
+    }
+
+    @keyframes slide-in-elliptic-left-fwd {
+        0% {
+            -webkit-transform: translateX(-800px) rotateY(30deg) scale(0);
+            transform: translateX(-800px) rotateY(30deg) scale(0);
+            -webkit-transform-origin: -100% 50%;
+            transform-origin: -100% 50%;
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0) rotateY(0) scale(1);
+            transform: translateX(0) rotateY(0) scale(1);
+            -webkit-transform-origin: 1800px 50%;
+            transform-origin: 1800px 50%;
+            opacity: 1;
         }
     }
 
@@ -263,6 +374,12 @@ button.scroll-top {
             font-size: 22px;
             color: $white;
             margin-bottom: 15px;
+            opacity: 0;
+
+            &.animate {
+                animation: fade 1s forwards;
+                animation-delay: 0.7s;
+            }
 
             @media (max-width: $story-xxl) {
                 font-size: 20px;
@@ -275,9 +392,23 @@ button.scroll-top {
             font-style: normal;
             font-size: 20px;
             color: $white;
+            opacity: 0;
+
+            &.animate {
+                animation: fade 1s forwards;
+                animation-delay: 1s;
+            }
 
             @media (max-width: $story-xxl) {
                 font-size: 16px;
+            }
+        }
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
             }
         }
     }
@@ -331,7 +462,26 @@ button.scroll-top {
             left: 0%;
 
             img {
+                opacity: 0;
                 width: 100%;
+
+                &.animate {
+                    animation: slide-in-top 0.5s
+                        cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+                }
+            }
+
+            @keyframes slide-in-top {
+                0% {
+                    -webkit-transform: translateY(-1000px);
+                    transform: translateY(-1000px);
+                    opacity: 0;
+                }
+                100% {
+                    -webkit-transform: translateY(0);
+                    transform: translateY(0);
+                    opacity: 1;
+                }
             }
 
             @media (max-width: $activity-xl) {
@@ -351,6 +501,24 @@ button.scroll-top {
             z-index: 1;
             img {
                 width: 100%;
+                opacity: 0;
+                &.animate {
+                    animation: slide-in-bottom 0.5s
+                        cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+                }
+            }
+
+            @keyframes slide-in-bottom {
+                0% {
+                    -webkit-transform: translateY(1000px);
+                    transform: translateY(1000px);
+                    opacity: 0;
+                }
+                100% {
+                    -webkit-transform: translateY(0);
+                    transform: translateY(0);
+                    opacity: 1;
+                }
             }
 
             @media (max-width: $activity-xl) {
@@ -368,7 +536,13 @@ button.scroll-top {
             left: 34%;
 
             img {
+                opacity: 0;
                 width: 100%;
+
+                &.animate {
+                    animation: slide-in-top 0.5s
+                        cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+                }
             }
 
             @media (max-width: $activity-xl) {
@@ -388,6 +562,11 @@ button.scroll-top {
             z-index: 1;
             img {
                 width: 100%;
+                opacity: 0;
+                &.animate {
+                    animation: slide-in-bottom 0.5s
+                        cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both;
+                }
             }
 
             @media (max-width: $activity-xl) {
@@ -404,7 +583,13 @@ button.scroll-top {
             position: absolute;
             left: 68%;
             img {
+                opacity: 0;
                 width: 100%;
+
+                &.animate {
+                    animation: slide-in-top 0.5s
+                        cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s both;
+                }
             }
             @media (max-width: $activity-xl) {
                 width: 220px;
@@ -429,6 +614,9 @@ button.scroll-top {
 
     .activities-content {
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         min-height: 311px;
         top: 55%;
         right: 50%;
@@ -442,6 +630,12 @@ button.scroll-top {
             font-size: 22px;
             color: $white;
             margin-bottom: 15px;
+            opacity: 0;
+            &.animate {
+                animation: fade 1s forwards;
+                animation-delay: 0.8s;
+            }
+
             @media (max-width: $activity-xl) {
                 font-size: 20px;
             }
@@ -454,11 +648,24 @@ button.scroll-top {
             font-size: 20px;
             margin-bottom: 25px;
             color: $white;
+            opacity: 0;
             @media (max-width: $activity-xl) {
                 font-size: 18px;
             }
+            &.animate {
+                animation: fade 1s forwards;
+                animation-delay: 1s;
+            }
         }
 
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
         @media (max-width: $activity-xl) {
             width: 500px;
             top: 55%;
@@ -470,6 +677,32 @@ button.scroll-top {
         @media (max-width: $activity-mds) {
             width: 375px;
             top: 45%;
+        }
+
+        .button1 {
+            width: 265px;
+            height: 62px;
+            font-family: roboto;
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #e5f0ff;
+            background: repeating-linear-gradient(
+                -45deg,
+                rgb(190, 48, 255) 0%,
+                hsl(33, 94%, 57%) 100%
+            );
+            border-radius: 12px;
+            margin-top: 2px;
+            opacity: 0;
+
+            &.animate {
+                animation: fade 1s forwards;
+                animation-delay: 1.2s;
+            }
         }
     }
     @media (max-width: $activity-xl) {
@@ -485,7 +718,11 @@ button.scroll-top {
     display: block;
     width: 100%;
     height: 100vh;
+
     .news-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         position: absolute;
         max-width: 583px;
         min-height: 311px;
@@ -500,6 +737,11 @@ button.scroll-top {
             font-size: 22px;
             margin-bottom: 15px;
             color: $white;
+            opacity: 0;
+
+            &.animate {
+                animation: fade 1s forwards;
+            }
             @media (max-width: $news-xxl) {
                 font-size: 20px;
             }
@@ -512,6 +754,13 @@ button.scroll-top {
             font-size: 20px;
             color: $white;
             margin-bottom: 15px;
+            opacity: 0;
+            text-align: center;
+
+            &.animate {
+                animation: fade 1s forwards;
+                animation-delay: 0.3s;
+            }
             @media (max-width: $news-xxl) {
                 font-size: 18px;
             }
@@ -531,6 +780,18 @@ button.scroll-top {
         @media (max-width: $news-lg) {
             top: 65%;
         }
+
+        .button2 {
+            width: 194px;
+            height: 53px;
+            font-size: 20px;
+            margin-top: 5px;
+            opacity: 0;
+            &.animate {
+                animation: fade 1s forwards;
+                animation-delay: 0.8s;
+            }
+        }
     }
 
     .news-image-container {
@@ -540,8 +801,27 @@ button.scroll-top {
         max-width: 595px;
         min-height: 570px;
         width: 39%;
-        img.news {
+
+        img {
             max-width: 100%;
+            opacity: 0;
+            &.animate {
+                animation: rotate-in-2-fwd-cw 0.5s
+                    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            }
+        }
+
+        @keyframes rotate-in-2-fwd-cw {
+            0% {
+                -webkit-transform: translateZ(-200px) rotate(-45deg);
+                transform: translateZ(-200px) rotate(-45deg);
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateZ(0) rotate(0);
+                transform: translateZ(0) rotate(0);
+                opacity: 1;
+            }
         }
 
         @media (max-width: $news-xxl) {
@@ -629,6 +909,10 @@ button.scroll-top {
         );
         opacity: 50%;
 
+        &.animate {
+            animation: vibrate-2 5s linear infinite both;
+        }
+
         @media (max-width: $news-xxl) {
             width: 60px;
             height: 60px;
@@ -686,6 +970,35 @@ button.scroll-top {
             height: 15px;
             bottom: 46%;
             left: 19%;
+        }
+        &.animate {
+            animation: vibrate-2 4s linear infinite both;
+        }
+    }
+    @keyframes vibrate-2 {
+        0% {
+            -webkit-transform: translate(0);
+            transform: translate(0);
+        }
+        20% {
+            -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+        }
+        40% {
+            -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+        }
+        60% {
+            -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+        }
+        80% {
+            -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+        }
+        100% {
+            -webkit-transform: translate(0);
+            transform: translate(0);
         }
     }
 }
