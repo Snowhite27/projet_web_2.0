@@ -213,6 +213,14 @@ main .validation .calendar {
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
 }
+main .validation .calendar .layout {
+  background-color: black;
+  opacity: 50%;
+  z-index: 50;
+  max-width: 100%;
+  border-radius: 20px;
+  padding: 40px;
+}
 main .validation .calendar .days_container {
   display: flex;
   justify-content: center;
@@ -284,6 +292,13 @@ main .validation .calendar .days_container .days .day:hover {
   border: 2px solid #F9B96F;
 }
 main .validation .calendar .days_container .days .selected {
+  border: 3px rgba(249, 185, 111, 0.7) solid;
+  backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  background: rgba(229, 240, 255, 0.5);
+  background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
+}
+main .validation .calendar .days_container .days .endSelected {
   border: 3px rgba(249, 185, 111, 0.7) solid;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
@@ -379,18 +394,23 @@ main .list {
 main .list .container_list {
   border: 1px solid #2B6388;
   border-radius: 20px;
+  margin-top: 5%;
 }
 main .list .container_list .reservation_title {
   backdrop-filter: blur(16px) saturate(180%) opacity(1%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background: rgba(229, 240, 255, 0.3);
-  background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
+  background: linear-gradient(360deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
   border-radius: 20px 20px 0px 0px;
   display: flex;
   align-items: center;
+  padding: 20px;
 }
 main .list .container_list .reservation_title .width {
   width: 25%;
+}
+main .list .container_list .reservation_container {
+  margin: 0px 20px 0px 20px;
 }
 main .list .container_list .reservation_list {
   display: flex;
