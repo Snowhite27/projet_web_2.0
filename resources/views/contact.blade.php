@@ -1,4 +1,5 @@
 <x-head></x-head>
+<title>ArtTech Fest || Contact</title>
 <body>
     <div class="main">
         <div class="main_contact">
@@ -63,4 +64,3 @@
     </div>
 </body>
 <x-footer></x-footer>
-</html>

@@ -1,7 +1,5 @@
 @extends('layouts.news')
-@section('title', 'Actualités | Arttech')
 @section('content')
-<x-navbar></x-navbar>
 <main>
    <section class="actualites">
       <div class="section-header-content">
@@ -67,5 +65,4 @@
       <a class="button1" href="{{ url('/reservations') }}">Réservez maintenant!</a>
    </section>
 </main>
-<x-footer></x-footer>
 @endsection

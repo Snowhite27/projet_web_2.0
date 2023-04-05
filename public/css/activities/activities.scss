@@ -1,50 +1,63 @@
-@import '../variablesScss.scss';
-@import '../buttons/buttons.css';
+@import '../variablesScss';
+@import '../buttons/buttons';
 
 body{
     background-color: $dkpurp;
     color: $lgblue;
-    font-family: roboto;
+    font-family: Roboto;
     h3{
         font-family: sofachrome light;
     }
-    .container{
-        padding-top: 15vh;
-        display: flex;
-    }
-    .list{
-        width: 50vw;
-        .activity{
-            height: 25vh;
+    #app{
+        .container{
+            padding-top: 15vh;
             display: flex;
-            gap: 12%;
-            align-items: center;
-            .picture{
-                img{
-                    height: 75%;
-                    padding: 25%;
+        }
+        .list{
+            .activity{
+                height: 25vh;
+                display: flex;
+                align-items: center;
+                .picture{
+                    height: 25vh;
+                    img{
+                        width: 20vw;
+                        max-width: 22vh;
+                        padding: 3vh;
+                    }
+                }
+                .text{
+                    height: 20vh;
+                    margin-bottom: 4vh;
+                    padding-top: 2vh;
+                    overflow: hidden;
+                    p{
+                        padding-right: 2vh;
+                    }
                 }
             }
-            .text{
-                p{
-                    width: 75%;
-                }
+            .activity:nth-child(1){
+                background: linear-gradient(-45deg, $blue 0%, $lgpurp 100%);
+            }
+            .activity:nth-child(2){
+                background: linear-gradient(-45deg, $dkpurp 0%, $blue 100%);
+            }
+            .activity:nth-child(3){
+                background: linear-gradient(-45deg, $purp 0%, $dkpurp 100%);
+            }
+            .activity:nth-child(4){
+                background: linear-gradient(-45deg, $blue 0%, $lgblue 100%);
+            }
+            .activity:nth-child(n+5) {
+                background: linear-gradient(-45deg, $blue 0%, $lgpurp 100%);
             }
         }
-        .activity:nth-child(1){
-            background: linear-gradient(-45deg, $blue 0%, $lgpurp 100%);
-        }
-        .activity:nth-child(2){
-            background: linear-gradient(-45deg, $dkpurp 0%, $blue 100%);
-        }
-        .activity:nth-child(3){
-            background: linear-gradient(-45deg, $purp 0%, $dkpurp 100%);
-        }
-        .activity:nth-child(4){
-            background: linear-gradient(-45deg, $blue 0%, $lgblue 100%);
-        }
-        .activity:nth-child(n+5) {
-            background: linear-gradient(-45deg, $blue 0%, $lgpurp 100%);
+        #pic{
+            h2{
+                font-family: Sofachrome light;
+                text-align: center;
+                padding-top: 25px;
+            }
         }
     }
 }
