@@ -35,10 +35,11 @@
                     <area onmouseover="swapPic(this,5)" target="" alt="Drone" title="" href="{{ url('/reservations') }}" coords="431,527,490,753,347,797,305,707,267,572" shape="poly">
                 </map>
                 <h2>Plan du site</h2>
+                <button class="scroll-top"> <i class="fa-solid fa-chevron-up"></i></button>
             </div>
         </div>
     </div>
-
+    <script src="{{ asset('js/scroll-top.js') }}" type="module"></script>
     <script src="{{ asset('js/activities.js') }}" type="module"></script>
 </body>
 <x-footer></x-footer>
