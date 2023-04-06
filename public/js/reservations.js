@@ -72,14 +72,12 @@ function selectDate(date, user_package){
     if(Date.now()>date *1000){
         return
     }
-    console.log(user_package)
 
     // class scss
     selected.value = date
     select_date.value = selected.value * 1000
-
     // if(user_package.duration == 'festival'){
-    //     select_date_end.value = select_date.value + ((86400*1000)*7)
+    //     select_date_end.value = Date.now() + ((86400*1000)* (31-Date.now()))
     // }
     if(user_package.duration == 'week'){
         select_date_end.value = select_date.value + ((86400*1000)*7)
@@ -87,7 +85,6 @@ function selectDate(date, user_package){
     else{
         select_date_end.value = select_date.value + (86400*1000)
     }
-
     setDate(select_date.value, select_date_end.value)
 }
 
@@ -107,14 +104,11 @@ function setDate(select_date, select_date_end){
         }else{
             set_date_string_end.value = set_date_end + " " + set_month_string_end+" "+ year.value
         }
-
     }
-
 }
 
 function convertDate(date){
-    const convert_date = new Date(date).getUTCDate()
-
+        const convert_date = new Date(date).getUTCDate()
         const convert_date_month = new Date(date).getUTCMonth()
         const convert_date_year = new Date(date).getUTCFullYear()
         const convert_month_string = new Date(Date.UTC(2000, convert_date_month +1)).toLocaleString('fr-CA', { month: 'long' });

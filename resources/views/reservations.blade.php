@@ -1,6 +1,6 @@
 <x-head></x-head>
 <title>ArtTech Fest || Réservations</title>
-
+<button class="scroll-top"> <i class="fa-solid fa-chevron-up"></i></button>
 <body>
     <main>
         <div id="app">
@@ -218,7 +218,7 @@
                                 <div class="width">
                                     <p>@verbatim {{ convertDate( @endverbatim {{ $reservation->event_date_end }} @verbatim ) }} @endverbatim</p>
                                 </div>
-                                <a
+                                <a class="button2"
                                  href="{{ route('delete', $reservation->id) }}"v-show="actual_date < {{ date('d', $reservation->event_date/1000) }} ">Supprimer
                                 </a>
                                 <p class="hidden"
@@ -237,4 +237,5 @@
     <x-footer></x-footer>
     </div>
     <script src="{{ asset('js/reservations.js') }}" type="module"></script>
+    <script src="{{ asset('js/scroll-top.js') }}" type="module"></script>
 </body>
