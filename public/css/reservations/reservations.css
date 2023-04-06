@@ -198,13 +198,20 @@ main .validation h2 {
   color: #F9B96F;
 }
 main .validation .layout {
-  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
   z-index: 1000;
-  height: 650px;
-  width: 100%;
+  height: 720px;
+  width: 85%;
   border-radius: 20px;
   position: absolute;
-  top: 1153px;
+  top: 138%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .validation .layout p {
+  font-size: bold;
 }
 main .validation .calendar {
   margin-top: 3% !important;
@@ -215,8 +222,8 @@ main .validation .calendar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  backdrop-filter: blur(16px) saturate(180%) opacity(50%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  backdrop-filter: blur(48px) saturate(180%) opacity(50%);
+  -webkit-backdrop-filter: blur(48px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
 }

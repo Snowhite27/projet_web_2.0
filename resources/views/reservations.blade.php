@@ -67,7 +67,7 @@
                 {{-- *********************** CALENDAR ************************** --}}
 
                 <div class="layout" v-if="month != 3">
-                    <p>Le festival n'est pas disponible dans ces dates</p>
+                    <p>Si vous voyez ceci c'est que le festival est terminé! Rencontrons nous l'année prochaine!</p>
                 </div>
                 <div class="calendar">
 
@@ -95,7 +95,7 @@
                                 :class="{
                                     'selected': selected == date.date_unix_time,
                                     'endSelected': select_date_end >= (date.date_unix_time*1000) && selected < date.date_unix_time,
-
+                                    'lordSelected': festival_date_end != null
                                 }">
                                 @{{ date.date }}
                             </div>

@@ -113,8 +113,12 @@ main {
                     padding:5% 0% 1% 0%;
                 }
 
-                ul li {
+                ul {
+
+                    li {
                     opacity: 50%;
+
+                }
                 }
             }
 
@@ -122,12 +126,10 @@ main {
                 padding:5% 0% 1% 0%;
                 .title {
                     font-weight: bold;
-                    padding:5% 0% 1% 0%;
                 }
 
                 ul {
                     margin-top: 3%;
-
                     .include {
                         display: flex;
                         align-items: center;
@@ -160,14 +162,21 @@ main {
 
             }
             .layout{
-                background-color:rgb(0,0,0,0.5);
+                backdrop-filter: blur(16px);
+                filter: drop-shadow(0 0 0.75rem $darkpurp);
                 z-index: 1000;
-                height: 650px;
-                width: 100%;
-                border-radius: $b-border;
-
+                height: 720px;
+                width: 85%;
+                border-radius: 20px;
                 position: absolute;
-                top: 1153px;
+                top: 138%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p{
+                    font-size: bold;
+                    box-shadow: 2px 2px 4px $darkpurp;
+                }
             }
 
             .calendar {
@@ -179,8 +188,8 @@ main {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                backdrop-filter: blur(16px) saturate(180%) opacity(50%);
-                -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+                backdrop-filter: blur(48px) saturate(180%) opacity(50%);
+                -webkit-backdrop-filter: blur(48px) saturate(180%) opacity(50%);
                 background: rgba(229, 240, 255, 0.5);
                 background: linear-gradient(
                     317deg,
@@ -354,15 +363,7 @@ main {
                     margin-left: 20px;
                     padding: 25px;
                     width: 300px;
-                    border-radius: $b-border;
-                    backdrop-filter: blur(16px) saturate(180%) opacity(50%);
-                    -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
-                    background: rgba(229, 240, 255, 0.5);
-                    background: linear-gradient(
-                        317deg,
-                        rgba(229, 240, 255, 0.01) 0%,
-                        rgba(229, 240, 255, 0.2) 100%
-                    );
+                    backdrop-filter: blur(16px);
 
             }
                 h3 {
