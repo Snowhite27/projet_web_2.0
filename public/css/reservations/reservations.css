@@ -69,7 +69,7 @@ a.button3:hover {
 
 main {
   padding-top: 20vh;
-  width: 88%;
+  width: 85%;
   margin: 0 auto;
 }
 main div h1 {
@@ -103,7 +103,7 @@ main .packages {
   margin-top: 3%;
 }
 main .packages .package {
-  padding: 25px;
+  padding: 25px 25px 50px 25px;
   box-sizing: border-box;
   width: 300px;
   border-radius: 20px;
@@ -113,6 +113,7 @@ main .packages .package {
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
 }
 main .packages .package.lord {
+  padding: 25px 25px 100px 25px;
   border: 3px rgba(249, 185, 111, 0.7) solid;
   backdrop-filter: blur(16px) saturate(180%) opacity(50%);
   -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
@@ -140,8 +141,10 @@ main .packages .package .prices .price {
 main .packages .package .prices .day {
   opacity: 50%;
 }
-main .packages .package .button1 {
+main .packages .package .button2 {
   width: 100%;
+  border-radius: 8px;
+  border: 2px solid #9d4ab2;
 }
 main .packages .package .line {
   margin-top: 20px;
@@ -159,13 +162,13 @@ main .packages .package .details .title {
 }
 main .packages .package .details ul li {
   opacity: 50%;
+  list-style: circle !important;
 }
 main .packages .package .includes {
   padding: 5% 0% 1% 0%;
 }
 main .packages .package .includes .title {
   font-weight: bold;
-  padding: 5% 0% 1% 0%;
 }
 main .packages .package .includes ul {
   margin-top: 3%;
@@ -195,13 +198,21 @@ main .validation h2 {
   color: #F9B96F;
 }
 main .validation .layout {
-  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
   z-index: 1000;
-  height: 650px;
-  width: 100%;
+  height: 720px;
+  width: 85%;
   border-radius: 20px;
   position: absolute;
-  top: 1153px;
+  top: 138%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .validation .layout p {
+  font-size: bold;
+  box-shadow: 2px 2px 4px #0A0421;
 }
 main .validation .calendar {
   margin-top: 3% !important;
@@ -212,8 +223,8 @@ main .validation .calendar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  backdrop-filter: blur(16px) saturate(180%) opacity(50%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  backdrop-filter: blur(48px) saturate(180%) opacity(50%);
+  -webkit-backdrop-filter: blur(48px) saturate(180%) opacity(50%);
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
 }
@@ -299,10 +310,18 @@ main .validation .calendar .days_container .days .endSelected {
   background: rgba(229, 240, 255, 0.5);
   background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
 }
+main .validation .calendar .days_container .days .lordSelected {
+  border: 3px rgba(249, 185, 111, 0.7) solid;
+  backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
+  background: rgba(229, 240, 255, 0.5);
+  background: linear-gradient(317deg, rgba(229, 240, 255, 0.05) 0%, rgba(249, 185, 111, 0.3) 100%);
+}
 main .validation .calendar .user_infos {
   margin-top: 100px;
   padding: 0px 20px 0px 20px;
   box-sizing: border-box;
+  max-width: 30%;
 }
 main .validation .calendar .user_infos .username .opacity {
   opacity: 50%;
@@ -332,11 +351,8 @@ main .validation .validation_package {
   margin-left: 20px;
   padding: 25px;
   width: 300px;
-  border-radius: 20px;
-  backdrop-filter: blur(16px) saturate(180%) opacity(50%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%) opacity(50%);
-  background: rgba(229, 240, 255, 0.5);
-  background: linear-gradient(317deg, rgba(229, 240, 255, 0.01) 0%, rgba(229, 240, 255, 0.2) 100%);
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
 }
 main .validation h3 {
   font-family: "sofachrome", sans-serif;
@@ -375,7 +391,7 @@ main .validation .validation_details ul li {
   margin-top: 1%;
 }
 main .validation .validation_includes {
-  padding-bottom: 5%;
+  padding-bottom: 10%;
 }
 main .validation .validation_includes .validation_title {
   font-weight: bold;
@@ -392,6 +408,11 @@ main .validation .validation_includes ul .validation_include {
 }
 main .validation .validation_includes ul .validation_include li {
   opacity: 50%;
+}
+main .validation .site .button2 {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #9d4ab2;
 }
 
 #list {
@@ -413,7 +434,7 @@ main .validation .validation_includes ul .validation_include li {
   padding: 20px;
 }
 #list .container_list .reservation_title .width {
-  width: 25%;
+  width: 20%;
 }
 #list .container_list .reservation_container {
   margin: 0px 20px 0px 20px;
@@ -425,5 +446,11 @@ main .validation .validation_includes ul .validation_include li {
   border-top: 1px solid #2B6388;
 }
 #list .container_list .reservation_list .width {
-  width: 25%;
+  width: 20%;
+}
+#list .container_list .hidden {
+  opacity: 0;
+  padding: 15px 30px;
+  cursor: default;
+  box-sizing: border-box;
 }/*# sourceMappingURL=reservations.css.map */
