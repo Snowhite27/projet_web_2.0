@@ -1,6 +1,5 @@
 <x-head></x-head>
 <title>ArtTech Fest || Réservations</title>
-</script>
 
 <body>
     <main>
@@ -63,15 +62,15 @@
 
             <section class="validation" v-if="Object.keys(select_package).length != 0">
 
-                <h2>Validation</h2>
+                <h2>Calendrier</h2>
                 <p>Validez votre date et confirmez votre réservation.</p>
                 {{-- *********************** CALENDAR ************************** --}}
 
-
+                <div class="layout" v-if="month != 3">
+                    <p>Le festival n'est pas disponible dans ces dates</p>
+                </div>
                 <div class="calendar">
-                    <div class="layout" v-if="month == 3">
-                        <p>Le festival n'est pas disponible dans ces dates</p>
-                    </div>
+
                     <div class="days_container">
 
                         <h3>@{{ month_string + " " + year }}</h3>
@@ -94,7 +93,8 @@
                             <div class="day" v-for="date of calendar.days"
                                 @click.prevent="selectDate(date.date_unix_time, select_package)"
                                 :class="{
-                                    'selected': selected == date.date_unix_time
+                                    'selected': selected == date.date_unix_time,
+                                    'endSelected': select_date_end >= (date.date_unix_time*1000) && selected < date.date_unix_time
                                 }">
                                 @{{ date.date }}
                             </div>
@@ -137,7 +137,7 @@
 
                         </div>
                     @endif
-                    <div class="line"></div>
+
                     {{-- *********************** PACKAGES ************************** --}}
 
                     <div class="validation_package">
@@ -149,7 +149,7 @@
                             <p class="day">@{{ select_package.duration }}</p>
                         </div>
 
-                        <div class="validation_line"></div>
+
 
                         <div class="validation_details">
                             <p class="validation_title">Détails du forfait</p>
@@ -179,8 +179,7 @@
 
                 </div>
             </section>
-            <section class="list" id="list">
-
+            <section  id="list">
                 <h2>Vos réservations</h2>
                 <p>Voici votre liste des réservations de vos forfaits. Si vous deviez supprimer un forfait, il vous est
                     possible si cela ne dépasse pas 24h avant l'évènement.</p>
@@ -213,15 +212,17 @@
                                 <div class="width">
                                     <p>{{ $reservation->package->name }}</p>
                                 </div>
-                                {{-- <div class="width">
-                                    <p>@{{ convertDate({{$reservation->event_date}}) }}</p>
+                                <div class="width">
+                                    <p>@verbatim {{ convertDate( @endverbatim {{ $reservation->event_date }} @verbatim ) }} @endverbatim</p>
                                 </div>
                                 <div class="width">
-                                    <p>@{{ convertDate({{$reservation->event_date_end}}) }}</p>
-                                </div> --}}
+                                    <p>@verbatim {{ convertDate( @endverbatim {{ $reservation->event_date_end }} @verbatim ) }} @endverbatim</p>
+                                </div>
                                 <a
-                                    href="{{ route('delete', $reservation->id) }}"v-show="actual_date > event_convert_date">Supprimer</a>
+                                    href="{{ route('delete', $reservation->id) }}"v-if="actual_date < {{ date('d', $reservation->event_date/1000) }} ">Supprimer
+                                </a>
                             </div>
+
                         @endforeach
                     </div>
                 </div>

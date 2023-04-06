@@ -117,7 +117,7 @@ class ReservationsController extends Controller
             'package_id' => 'required',
             'user_id' => 'required',
             'event_date' => 'required',
-            // 'event_date_end' => 'required'
+            'event_date_end' => 'required'
         ], [
             'package_id.required' => 'Troubles niveau forfait',
             'user_id.required' => 'Trouble niveau user',
