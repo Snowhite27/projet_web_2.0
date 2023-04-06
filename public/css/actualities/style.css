@@ -1,6 +1,3 @@
-/**
- * VARIABLES
- */
 /**H1**/
 /**H2**/
 /**H3**/
@@ -116,7 +113,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: #0a0421;
+  background-color: #0A0421;
 }
 
 button.scroll-top {
@@ -163,22 +160,22 @@ button.scroll-top:hover {
   17% {
     transform: scale(0.98);
     animation-timing-function: ease-out;
-    box-shadow: 0px 0px 20px 10px #2c2159;
+    box-shadow: 0px 0px 20px 10px #2C2159;
   }
   33% {
     transform: scale(0.87);
     animation-timing-function: ease-in;
-    box-shadow: 0px 0px 20px 10px #2c2159;
+    box-shadow: 0px 0px 20px 10px #2C2159;
   }
   45% {
     transform: scale(1);
     animation-timing-function: ease-out;
-    box-shadow: 0px 0px 20px 10px #9d4ab2;
+    box-shadow: 0px 0px 20px 10px #9D4AB2;
     background: rgb(10, 4, 33);
     background: radial-gradient(circle, rgb(10, 4, 33) 31%, rgb(157, 74, 178) 51%, rgb(44, 33, 89) 69%, rgb(20, 48, 87) 72%, rgb(249, 185, 111) 79%);
   }
   75% {
-    box-shadow: 0px 0px 20px 10px #9d4ab2;
+    box-shadow: 0px 0px 20px 10px #9D4AB2;
   }
   100% {
     box-shadow: 0px 0px 20px 10px #2B6388;
@@ -187,14 +184,13 @@ button.scroll-top:hover {
 section.actualites {
   display: block;
   position: relative;
-  height: 100vh;
+  height: 80vh;
   width: 100%;
 }
 section.actualites .section-header-content {
   display: flex;
   position: absolute;
   text-align: center;
-  top: 24%;
   flex-direction: column;
   align-items: center;
   width: 41em;
@@ -202,12 +198,12 @@ section.actualites .section-header-content {
   transform: translate(-50%, -50%);
 }
 section.actualites .section-header-content h1 {
+  text-align: center;
   font-family: "sofachrome", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 24px;
-  color: #f9b96f;
-  margin-bottom: 8px;
+  color: #F9B96F;
 }
 section.actualites .section-header-content p {
   font-family: "roboto", sans-serif;
@@ -218,7 +214,7 @@ section.actualites .section-header-content p {
 }
 section.actualites .container-actualites {
   position: relative;
-  top: 58%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -243,7 +239,7 @@ section.actualites .container-actualites .carousel-container .carousel {
 section.actualites .container-actualites .carousel-container .carousel .actualite-card {
   position: relative;
   width: 352px;
-  height: 476px;
+  height: 576px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background: rgb(229, 240, 255);
@@ -269,14 +265,16 @@ section.actualites .container-actualites .carousel-container .carousel .actualit
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  top: 65px;
 }
 section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .title {
+  text-align: center;
   position: absolute;
   font-family: "sofachrome", sans-serif;
   font-weight: bolder;
   font-style: normal;
   font-size: 18px;
-  color: #f9b96f;
+  color: #F9B96F;
 }
 section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .content,
 section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .short_description {
@@ -286,12 +284,12 @@ section.actualites .container-actualites .carousel-container .carousel .actualit
   font-style: normal;
   font-size: 16px;
   color: #ffffff;
-  top: 28px;
+  top: 58px;
   text-align: center;
 }
 section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .date {
   position: absolute;
-  top: 130px;
+  top: 160px;
   left: 11px;
   font-family: "roboto", sans-serif;
   font-weight: 100;
@@ -300,11 +298,13 @@ section.actualites .container-actualites .carousel-container .carousel .actualit
 }
 section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .lire-plus {
   position: absolute;
-  top: 108px;
+  top: 145px;
   left: 59%;
   font-family: "roboto", sans-serif;
-  color: #f9b96f;
   font-weight: bold;
+}
+section.actualites .container-actualites .carousel-container .carousel .actualite-card .card-content .lire-plus a {
+  color: #F9B96F;
 }
 section.actualites .container-actualites .chevron-left,
 section.actualites .container-actualites .chevron-right {
@@ -313,7 +313,7 @@ section.actualites .container-actualites .chevron-right {
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
-  background-color: #0a0421;
+  background-color: #0A0421;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -350,7 +350,7 @@ section.actualites button {
 }
 .modal .modal-content {
   position: relative;
-  background-color: #0a0421;
+  background-color: #0A0421;
   padding: 20px;
   border-radius: 5px;
   max-width: 90%;
@@ -365,7 +365,7 @@ section.actualites button {
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: bold;
-  color: #f9b96f;
+  color: #F9B96F;
   font-family: "sofachrome", sans-serif;
 }
 .modal .modal-content p {
@@ -380,7 +380,7 @@ section.actualites button {
   top: 0;
   right: 0;
   font-size: 44px;
-  color: #f9b96f;
+  color: #F9B96F;
   cursor: pointer;
   margin-right: 9px;
 }
@@ -425,7 +425,7 @@ section.next-event .immersion-box .event-content h2 {
   font-weight: bolder;
   font-style: normal;
   font-size: 22px;
-  color: #f9b96f;
+  color: #F9B96F;
 }
 section.next-event .immersion-box .event-content p {
   font-family: "roboto", sans-serif;
