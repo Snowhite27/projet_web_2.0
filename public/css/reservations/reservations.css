@@ -443,13 +443,9 @@ main .validation .site .button2 {
 #list .container_list .reservation_list .width {
   width: 20%;
 }
-#list .container_list .button2 {
-  width: 20%;
-  border-radius: 8px;
-  border: 2px solid #9d4ab2;
-}
 #list .container_list .hidden {
   opacity: 0;
   padding: 15px 30px;
   cursor: default;
+  box-sizing: border-box;
 }/*# sourceMappingURL=reservations.css.map */

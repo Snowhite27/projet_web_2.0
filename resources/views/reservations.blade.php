@@ -218,7 +218,7 @@
                                 <div class="width">
                                     <p>@verbatim {{ convertDate( @endverbatim {{ $reservation->event_date_end }} @verbatim ) }} @endverbatim</p>
                                 </div>
-                                <a class="button2"
+                                <a
                                  href="{{ route('delete', $reservation->id) }}"v-show="actual_date < {{ date('d', $reservation->event_date/1000) }} ">Supprimer
                                 </a>
                                 <p class="hidden"

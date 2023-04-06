@@ -480,16 +480,13 @@ main {
 
                     }
                 }
-                .button2 {
-                    width: 20%;
-                    border-radius: 8px;
-                    border: 2px solid #9d4ab2;
-                }
+
 
                 .hidden{
                   opacity: 0;
                   padding: 15px 30px;
                   cursor:default;
+                  box-sizing: border-box;
                 }
             }
         }
