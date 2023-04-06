@@ -18,17 +18,13 @@ const event_convert_date = ref()
 const lordCss = ref(null)
 
 
-
 /**
  * Actualise les dates à chaque 60 secondes
  */
     setInterval(e=> {
         const dates = new Date(Date.now())
         actual_date.value = dates.getUTCDate()
-        console.log(actual_date.value)
     },1000)
-
-console.log('time',actual_date)
 
 
 /**
@@ -44,9 +40,6 @@ function showPackage(package_infos, user){
      */
     fetch("/packages/" + id).then(reply => reply.json()).then(data=> {
     select_package.value = data
-    if(data.duration == "festival"){
-        lordCss.value = true
-    }
     })
     details.value = splitLine(package_infos.description)
     inclusions.value = splitLine(package_infos.includes)
@@ -61,7 +54,12 @@ function showPackage(package_infos, user){
     */
     fetch("/calendar/" + (month.value +1) + "/" + year.value).then(reply => reply.json()).then(data=> {
     calendar.value = data
+    if(select_package.value.duration == "festival"){
+        selectDate(calendar.value['days'][(actual_date.value) -1].date_unix_time, select_package.value)
+        console.log(calendar.value['days'][(actual_date.value) -1].date_unix_time, 'yo')
+     }
     })
+
 }
 
 /**
@@ -69,16 +67,20 @@ function showPackage(package_infos, user){
  * @param {int} date / jour
  */
 function selectDate(date, user_package){
-    if(Date.now()>date *1000){
+    console.log(date,user_package, 'ici')
+    if(Date.now() >= date *1000){
+        console.log('not working')
         return
     }
 
     // class scss
     selected.value = date
     select_date.value = selected.value * 1000
-    // if(user_package.duration == 'festival'){
-    //     select_date_end.value = Date.now() + ((86400*1000)* (31-Date.now()))
-    // }
+
+    if(user_package.duration == 'festival'){
+        select_date_end.value = select_date.value + ((86400*1000)* (31-actual_date.value))
+        console.log('works', select_date_end.value)
+    }
     if(user_package.duration == 'week'){
         select_date_end.value = select_date.value + ((86400*1000)*7)
     }

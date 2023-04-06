@@ -95,6 +95,7 @@
                                 :class="{
                                     'selected': selected == date.date_unix_time,
                                     'endSelected': select_date_end >= (date.date_unix_time*1000) && selected < date.date_unix_time,
+
                                 }">
                                 @{{ date.date }}
                             </div>
