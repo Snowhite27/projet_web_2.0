@@ -77,6 +77,7 @@ Route::get('/', function () {
 
 //Activities
 Route::get('/activities', [ActivityController::class, 'index'])->name('activities');
+Route::get('/virtualr', [ActivityController::class, 'virtualr'])->name('virtualr');
 
 //Articles
 Route::get('/actualities', [ArticleController::class, 'customerIndex'])->name('actualities');

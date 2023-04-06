@@ -12,52 +12,62 @@ body{
         .container{
             padding-top: 15vh;
             display: flex;
-        }
-        .list{
-            width: 50%;
-            .activity{
-                height: 25vh;
-                display: flex;
-                align-items: center;
-                .picture{
+            justify-content: space-around;
+            .list{
+                width: 50vw;
+                .activity{
+                    border-radius: 12px;
                     height: 25vh;
-                    img{
-                        width: 20vw;
-                        max-width: 22vh;
-                        padding: 3vh;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 12px;
+                    .picture{
+                        height: 25vh;
+                        img{
+                            width: 20vw;
+                            max-width: 22vh;
+                            padding: 3vh;
+                        }
+                    }
+                    .text{
+                        height: 20vh;
+                        margin-bottom: 4vh;
+                        padding-top: 2vh;
+                        overflow: hidden;
+                        h3{
+                            font-family: Sofachrome light;
+                            color: $lgblue;
+                        }
+                        p{
+                            padding-right: 2vh;
+                        }
                     }
                 }
-                .text{
-                    height: 20vh;
-                    margin-bottom: 4vh;
-                    padding-top: 2vh;
-                    overflow: hidden;
-                    p{
-                        padding-right: 2vh;
-                    }
+                .activity:nth-child(1){
+                    background: linear-gradient(-45deg, $blue 0%, $lgpurp 100%);
+                }
+                .activity:nth-child(2){
+                    background: linear-gradient(-45deg, $dkpurp 0%, $blue 100%);
+                }
+                .activity:nth-child(3){
+                    background: linear-gradient(-45deg, $purp 0%, $dkpurp 100%);
+                }
+                .activity:nth-child(4){
+                    background: linear-gradient(-45deg, $blue 0%, $lgblue 100%);
+                }
+                .activity:nth-child(n+5) {
+                    background: linear-gradient(-45deg, $blue 0%, $lgpurp 100%);
                 }
             }
-            .activity:nth-child(1){
-                background: linear-gradient(-45deg, $blue 0%, $lgpurp 100%);
-            }
-            .activity:nth-child(2){
-                background: linear-gradient(-45deg, $dkpurp 0%, $blue 100%);
-            }
-            .activity:nth-child(3){
-                background: linear-gradient(-45deg, $purp 0%, $dkpurp 100%);
-            }
-            .activity:nth-child(4){
-                background: linear-gradient(-45deg, $blue 0%, $lgblue 100%);
-            }
-            .activity:nth-child(n+5) {
-                background: linear-gradient(-45deg, $blue 0%, $lgpurp 100%);
-            }
-        }
-        #pic{
-            h2{
-                font-family: Sofachrome light;
-                text-align: center;
-                padding-top: 25px;
+            #pic{
+                img{
+                    border-radius: 12px;
+                }
+                h2{
+                    font-family: Sofachrome light;
+                    text-align: center;
+                    padding-top: 25px;
+                }
             }
         }
     }
