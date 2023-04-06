@@ -15,6 +15,7 @@ const set_date_string = ref('')
 const set_date_string_end = ref('')
 const actual_date = ref()
 const event_convert_date = ref()
+const lordCss = ref(null)
 
 
 
@@ -25,7 +26,7 @@ const event_convert_date = ref()
         const dates = new Date(Date.now())
         actual_date.value = dates.getUTCDate()
         console.log(actual_date.value)
-    },3000)
+    },1000)
 
 console.log('time',actual_date)
 
@@ -43,6 +44,9 @@ function showPackage(package_infos, user){
      */
     fetch("/packages/" + id).then(reply => reply.json()).then(data=> {
     select_package.value = data
+    if(data.duration == "festival"){
+        lordCss.value = true
+    }
     })
     details.value = splitLine(package_infos.description)
     inclusions.value = splitLine(package_infos.includes)
@@ -66,16 +70,21 @@ function showPackage(package_infos, user){
  */
 function selectDate(date, user_package){
     if(Date.now()>date *1000){
-return
+        return
     }
+    console.log(user_package)
 
     // class scss
     selected.value = date
     select_date.value = selected.value * 1000
 
-    if(user_package.duration == 'festival'){
+    // if(user_package.duration == 'festival'){
+    //     select_date_end.value = select_date.value + ((86400*1000)*7)
+    // }
+    if(user_package.duration == 'week'){
         select_date_end.value = select_date.value + ((86400*1000)*7)
-    }else{
+    }
+    else{
         select_date_end.value = select_date.value + (86400*1000)
     }
 
@@ -174,6 +183,7 @@ const root = {
         set_date_string_end,
         actual_date,
         event_convert_date,
+        lordCss,
 
 
         showPackage,
