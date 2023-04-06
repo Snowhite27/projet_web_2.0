@@ -1,6 +1,6 @@
 <x-head></x-head>
 <title>ArtTech Fest || Réservations</title>
-
+<button class="scroll-top"> <i class="fa-solid fa-chevron-up"></i></button>
 <body>
     <main>
         <div id="app">
@@ -67,7 +67,7 @@
                 {{-- *********************** CALENDAR ************************** --}}
 
                 <div class="layout" v-if="month != 3">
-                    <p>Le festival n'est pas disponible dans ces dates</p>
+                    <p>Si vous voyez ceci c'est que le festival est terminé! Rencontrons nous l'année prochaine!</p>
                 </div>
                 <div class="calendar">
 
@@ -94,7 +94,8 @@
                                 @click.prevent="selectDate(date.date_unix_time, select_package)"
                                 :class="{
                                     'selected': selected == date.date_unix_time,
-                                    'endSelected': select_date_end >= (date.date_unix_time*1000) && selected < date.date_unix_time
+                                    'endSelected': select_date_end >= (date.date_unix_time*1000) && selected < date.date_unix_time,
+                                    'lordSelected': festival_date_end != null && select_date < date.date_unix_time,
                                 }">
                                 @{{ date.date }}
                             </div>
@@ -219,8 +220,12 @@
                                     <p>@verbatim {{ convertDate( @endverbatim {{ $reservation->event_date_end }} @verbatim ) }} @endverbatim</p>
                                 </div>
                                 <a
-                                    href="{{ route('delete', $reservation->id) }}"v-if="actual_date < {{ date('d', $reservation->event_date/1000) }} ">Supprimer
+                                 href="{{ route('delete', $reservation->id) }}"v-show="actual_date < {{ date('d', $reservation->event_date/1000) }} ">Supprimer
                                 </a>
+                                <p class="hidden"
+                                    v-show="actual_date > {{ date('d', $reservation->event_date/1000) }} ">Supprimer
+                                </p>
+
                             </div>
 
                         @endforeach
@@ -233,4 +238,5 @@
     <x-footer></x-footer>
     </div>
     <script src="{{ asset('js/reservations.js') }}" type="module"></script>
+    <script src="{{ asset('js/scroll-top.js') }}" type="module"></script>
 </body>

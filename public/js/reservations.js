@@ -15,19 +15,36 @@ const set_date_string = ref('')
 const set_date_string_end = ref('')
 const actual_date = ref()
 const event_convert_date = ref()
-
+const festival_date_end = ref(null)
 
 
 /**
- * Actualise les dates à chaque 60 secondes
+ *
+ * @param {string} string  info de package.description et package.includes
+ * @returns
+ */
+function splitLine(string){
+    if(string == "package_infos.description"){
+        return string.split("\r\n")
+    }else{
+        return string.split("\r\n")
+    }
+}
+
+/**
+ * Mets la premièere lettre en majuscule
+ * @param {string}
+ * @returns
+ */
+function strUcFirst(a){return (a+'').charAt(0).toUpperCase()+a.substr(1)}
+
+/**
+ * Actualise les dates à chaque seconde
  */
     setInterval(e=> {
         const dates = new Date(Date.now())
         actual_date.value = dates.getUTCDate()
-        console.log(actual_date.value)
-    },3000)
-
-console.log('time',actual_date)
+    },1000)
 
 
 /**
@@ -57,7 +74,11 @@ function showPackage(package_infos, user){
     */
     fetch("/calendar/" + (month.value +1) + "/" + year.value).then(reply => reply.json()).then(data=> {
     calendar.value = data
+    if(select_package.value.duration == "festival"){
+        selectDate(calendar.value['days'][(actual_date.value) -1].date_unix_time, select_package.value)
+     }
     })
+
 }
 
 /**
@@ -65,24 +86,33 @@ function showPackage(package_infos, user){
  * @param {int} date / jour
  */
 function selectDate(date, user_package){
-    if(Date.now()>date *1000){
-return
+    console.log(date,user_package, 'ici')
+    if(user_package.duration !="festival"){
+        if(Date.now() > date *1000){
+            return
+        }
     }
 
     // class scss
     selected.value = date
     select_date.value = selected.value * 1000
 
-    if(user_package.duration == 'festival'){
+    if(user_package.duration == 'semaine'){
         select_date_end.value = select_date.value + ((86400*1000)*7)
-    }else{
-        select_date_end.value = select_date.value + (86400*1000)
     }
-
+    if(user_package.duration == 'journée'){
+        select_date_end.value = select_date.value + ((86400*1000))
+    }
+    if(user_package.duration == 'festival'){
+        festival_date_end.value = select_date.value + ((86400*1000)* (31-actual_date.value))
+        select_date_end.value = festival_date_end.value
+    }
     setDate(select_date.value, select_date_end.value)
 }
 
+
 function setDate(select_date, select_date_end){
+    console.log(select_date, select_date_end, 'testing' )
     if(select_date != null){
         const set_date = new Date(select_date).getUTCDate()
         const set_date_month = new Date(select_date).getUTCMonth()
@@ -98,14 +128,11 @@ function setDate(select_date, select_date_end){
         }else{
             set_date_string_end.value = set_date_end + " " + set_month_string_end+" "+ year.value
         }
-
     }
-
 }
 
 function convertDate(date){
-    const convert_date = new Date(date).getUTCDate()
-
+        const convert_date = new Date(date).getUTCDate()
         const convert_date_month = new Date(date).getUTCMonth()
         const convert_date_year = new Date(date).getUTCFullYear()
         const convert_month_string = new Date(Date.UTC(2000, convert_date_month +1)).toLocaleString('fr-CA', { month: 'long' });
@@ -130,31 +157,11 @@ function saveReservation(package_id, user_id, date, date_end){
         body: post,
     }
     fetch("/reservations/", options).then(resp => resp.text()).then(data=> {
-console.log(data)
     })
     window.location.reload();
 }
 
 
-/**
- *
- * @param {string} string  info de package.description et package.includes
- * @returns
- */
-function splitLine(string){
-    if(string == "package_infos.description"){
-        return string.split("\r\n")
-    }else{
-        return string.split("\r\n")
-    }
-}
-
-/**
- * Mets la premièere lettre en majuscule
- * @param {string}
- * @returns
- */
-function strUcFirst(a){return (a+'').charAt(0).toUpperCase()+a.substr(1)}
 
 const root = {
    setup(){
@@ -174,6 +181,7 @@ const root = {
         set_date_string_end,
         actual_date,
         event_convert_date,
+        festival_date_end,
 
 
         showPackage,
