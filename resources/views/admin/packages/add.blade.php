@@ -17,6 +17,7 @@
                             <x-label class="text-white" for="duration" :value="__('Duration')" />
                             <select class="rounded mb-4 w-full bg-[#464849] text-white" name="duration" id="duration">
                                 <option value="journée">Journée</option>
+                                <option value="semaine">Semaine</option>
                                 <option value="festival" selected>Festival</option>
                             </select>
                         </div>
