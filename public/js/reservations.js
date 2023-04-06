@@ -15,7 +15,7 @@ const set_date_string = ref('')
 const set_date_string_end = ref('')
 const actual_date = ref()
 const event_convert_date = ref()
-
+const lordCss = ref(null)
 
 
 /**
@@ -24,10 +24,7 @@ const event_convert_date = ref()
     setInterval(e=> {
         const dates = new Date(Date.now())
         actual_date.value = dates.getUTCDate()
-        console.log(actual_date.value)
-    },3000)
-
-console.log('time',actual_date)
+    },1000)
 
 
 /**
@@ -57,7 +54,12 @@ function showPackage(package_infos, user){
     */
     fetch("/calendar/" + (month.value +1) + "/" + year.value).then(reply => reply.json()).then(data=> {
     calendar.value = data
+    if(select_package.value.duration == "festival"){
+        selectDate(calendar.value['days'][(actual_date.value) -1].date_unix_time, select_package.value)
+        console.log(calendar.value['days'][(actual_date.value) -1].date_unix_time, 'yo')
+     }
     })
+
 }
 
 /**
@@ -65,8 +67,10 @@ function showPackage(package_infos, user){
  * @param {int} date / jour
  */
 function selectDate(date, user_package){
-    if(Date.now()>date *1000){
-return
+    console.log(date,user_package, 'ici')
+    if(Date.now() > date *1000){
+        console.log(Date.now(), date*1000)
+        return
     }
 
     // class scss
@@ -74,11 +78,15 @@ return
     select_date.value = selected.value * 1000
 
     if(user_package.duration == 'festival'){
+        select_date_end.value = select_date.value + ((86400*1000)* (31-actual_date.value))
+        console.log('works', select_date_end.value)
+    }
+    if(user_package.duration == 'week'){
         select_date_end.value = select_date.value + ((86400*1000)*7)
-    }else{
+    }
+    else{
         select_date_end.value = select_date.value + (86400*1000)
     }
-
     setDate(select_date.value, select_date_end.value)
 }
 
@@ -98,14 +106,11 @@ function setDate(select_date, select_date_end){
         }else{
             set_date_string_end.value = set_date_end + " " + set_month_string_end+" "+ year.value
         }
-
     }
-
 }
 
 function convertDate(date){
-    const convert_date = new Date(date).getUTCDate()
-
+        const convert_date = new Date(date).getUTCDate()
         const convert_date_month = new Date(date).getUTCMonth()
         const convert_date_year = new Date(date).getUTCFullYear()
         const convert_month_string = new Date(Date.UTC(2000, convert_date_month +1)).toLocaleString('fr-CA', { month: 'long' });
@@ -174,6 +179,7 @@ const root = {
         set_date_string_end,
         actual_date,
         event_convert_date,
+        lordCss,
 
 
         showPackage,
