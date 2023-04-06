@@ -14,6 +14,10 @@ class ActivityController extends Controller
         ]);
     }
 
+    public function virtualr() {
+        return view('virtualr');
+    }
+
     public function add() {
         return view('admin.activities.add');
     }
