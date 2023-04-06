@@ -1,0 +1,140 @@
+/**H1**/
+/**H2**/
+/**H3**/
+/**p**/
+/**H1**/
+/**H2**/
+/**H3**/
+/**p**/
+.button1 {
+  width: 130px;
+  height: 25px;
+  font-family: roboto;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #E5F0FF;
+  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
+  border-radius: 12px;
+}
+
+a.button1:hover {
+  background: transparent;
+  outline: solid 3px #9D4AB2;
+  outline-offset: -3px;
+  box-shadow: 0 0 10px #9D4AB2, 0 0 40px #9D4AB2, 0 0 80px #9D4AB2;
+}
+
+.button2 {
+  width: 125px;
+  height: 20px;
+  font-family: roboto;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #9D4AB2;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #E5F0FF;
+}
+
+a.button2:hover {
+  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}
+
+.button3 {
+  width: 83px;
+  height: 13px;
+  font-family: roboto;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #E5F0FF;
+  background: repeating-linear-gradient(-45deg, rgb(190, 48, 255) 0%, hsl(33, 94%, 57%) 100%);
+  border-radius: 12px;
+}
+
+a.button3:hover {
+  background: transparent;
+  outline: solid 3px #9D4AB2;
+  outline-offset: -3px;
+  box-shadow: 0 0 10px #9D4AB2, 0 0 40px #9D4AB2, 0 0 80px #9D4AB2;
+}
+
+* {
+  margin: 0;
+  font-family: Roboto;
+  color: #E5F0FF;
+}
+* h1 {
+  font-family: Sofachrome;
+  color: #F9B96F;
+}
+
+body {
+  background: fixed #0A0421;
+  opacity: 98%;
+  display: flex;
+}
+body .background {
+  z-index: -1;
+  position: fixed;
+}
+body .background img {
+  filter: blur(5px);
+  width: 100vw;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body .container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  animation-name: text-focus-in;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+body .container .lftside video {
+  width: 45vw;
+  margin: 5% 5% 1% 5%;
+  border-radius: 12px;
+}
+body .container .lftside p {
+  width: 45vw;
+  margin-left: 5%;
+  font-size: 22px;
+}
+body .container .lftside a {
+  margin: 5%;
+}
+body .container .rightside {
+  color: #F9B96F;
+  background: none;
+  text-align: center;
+  position: absolute;
+  top: 10%;
+}
+body .container .rightside h1 {
+  font-family: Sofachrome;
+}
+
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=virtualr.css.map */
