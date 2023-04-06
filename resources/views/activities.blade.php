@@ -7,7 +7,7 @@
                 @foreach ($activities as $activity)
                     <div class="activity">
                         <div class="picture">
-                            <img src="{{ asset('images/activities/' . ($activity->picture)) }}" alt="Activité réalité virtuelle">
+                            <img src="{{ asset('images/activities/' . ($activity->picture)) }}" alt="{{ asset('images/activities/' . ($activity->name)) }}">
                         </div>
                         <div class="text">
                             <h3>{{ $activity->name }}</h3><br>
@@ -25,14 +25,14 @@
                 }
             </script>
 
-            <div id="pic" style="height: auto; width: auto; background-image: url({{ asset('images/general/pw2_sitemap_01.webp') }}); background-repeat: no-repeat">
+            <div id="pic" style="height: auto; width: auto; border-radius:12px; background-image: url({{ asset('images/general/pw2_sitemap_01.webp') }}); background-repeat: no-repeat">
                 <img id="hovered" src="{{ asset('images/general/pw2_sitemap_01.webp') }}" usemap="#image-map"/>
                 <map name="image-map">
-                    <area onmouseover="swapPic(this,1)" target="" alt="mapping video" title="" href="#" coords="133,27,328,58,311,329,72,373" shape="poly">
-                    <area onmouseover="swapPic(this,2)" target="" alt="conference" title="" href="" coords="329,57,442,78,502,293,313,327" shape="poly" class="highlight" @mouseover="highlightArea(2)" @mouseout="resetHighlight">
-                    <area onmouseover="swapPic(this,3)" target="" alt="VR" title="" href="" coords="442,77,924,160,888,349,504,293" shape="poly">
-                    <area onmouseover="swapPic(this,4)" target="" alt="Escape room" title="" href="" coords="204,351,383,316,431,525,267,571" shape="poly">
-                    <area onmouseover="swapPic(this,5)" target="" alt="Drone" title="" href="" coords="431,527,490,753,347,797,305,707,267,572" shape="poly">
+                    <area onmouseover="swapPic(this,1)" target="" alt="mapping video" title="" href="{{ url('/reservations') }}" coords="133,27,328,58,311,329,72,373" shape="poly">
+                    <area onmouseover="swapPic(this,2)" target="" alt="conference" title="" href="{{ url('/reservations') }}" coords="329,57,442,78,502,293,313,327" shape="poly" class="highlight" @mouseover="highlightArea(2)" @mouseout="resetHighlight">
+                    <area onmouseover="swapPic(this,3)" target="" alt="VR" title="" href="{{ url('/virtualr') }}" coords="442,77,924,160,888,349,504,293" shape="poly">
+                    <area onmouseover="swapPic(this,4)" target="" alt="Escape room" title="" href="{{ url('/reservations') }}" coords="204,351,383,316,431,525,267,571" shape="poly">
+                    <area onmouseover="swapPic(this,5)" target="" alt="Drone" title="" href="{{ url('/reservations') }}" coords="431,527,490,753,347,797,305,707,267,572" shape="poly">
                 </map>
                 <h2>Plan du site</h2>
             </div>
